@@ -21,18 +21,62 @@ CellML File.
     </orderedlist>
   </sect2>
   <sect2>
-    <title>Equivalent documents</title>
+    <title>Equivalent CellML Files</title>
     <orderedlist>
       <listitem>
         <para>
-CellML Processing Software MUST treat all well-formed representations of the same
-XML Information Set identically.
+Two CellML Files shall be equivalent if one can be transformed to another by
+making zero or more of the following changes:
         </para>
+        <orderedlist>
+          <listitem>
+            <para>
+Changing the representation the XML file in ways which
+do not change the XML Information Set represented.
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+Adding, removing, and/or modifying comment information items.
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+Changing (inserting, removing, and/or modifying) the namespace
+information items without changing the namespace that any
+element information item or attribute information item is in.
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+The following paragraph applies only to character information items which are
+the direct child of an element information element in a CellML namespace, or in
+the MathML or RDF namespace.
+            </para>
+            <para>
+Inserting or removing character information items that consist entirely of
+whitespace characters, changing the number of whitespace characters in such
+an information item, or changing the number of whitespace characters at the
+beginning or end of a character information item.
+            </para>
+          </listitem>
+        </orderedlist>
       </listitem>
       <listitem>
         <para>
-CellML Processing Software MUST treat XML Information Sets which differ only by
-comment information items identically.
+CellML Processing Software MUST treat CellML Files which are equivalent
+according to the above rules in an identical fashion.
+        </para>
+      </listitem>
+    </orderedlist>
+  </sect2>
+  <sect2>
+    <title>Use of the CellML namespaces</title>
+    <orderedlist>
+      <listitem>
+        <para>
+CellML Files MUST NOT contain any element or attribute information items in a
+CellML namespace, except as permitted in this specification.
         </para>
       </listitem>
     </orderedlist>
