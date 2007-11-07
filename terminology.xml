@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE article SYSTEM "-//OASIS//DTD DocBook XML">
+<sect1>
+  <title>Definitions</title>
+  <para>
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
+ NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
+"OPTIONAL" in this document are to be interpreted as described in
+RFC 2119.
+  </para>
+  <para>
+The key phrase "information item", as well as any specific type of information
+item such as an "element information item", are to be interpreted as described
+in <xref linkend="XML-INFOSET"/>.
+  </para>
+  <glosslist>
+    <glossentry>
+      <glossterm>CellML File</glossterm>
+      <glossdef>
+        <para>
+A file which is represented according to the rules described in this document.
+        </para>
+      </glossdef>
+    </glossentry>
+    <glossentry>
+      <glossterm>CellML Model</glossterm>
+      <glossdef>
+        <para>
+A mathematical model represented by a hierarchy of one or CellML files,
+according to the rules described in this document.
+        </para>
+      </glossdef>
+    </glossentry>
+    <glossentry>
+      <glossterm>CellML Processing Software</glossterm>
+      <glossdef>
+        <para>
+Software which processes CellML in accordance with the rules of this document.
+        </para>
+      </glossdef>
+    </glossentry>
+    <glossentry>
+      <glossterm>Namespace</glossterm>
+      <glossdef>
+        <para>
+An XML namespace, as defined in <xref linkend="XML-NAMESPACE"/>.
+        </para>
+      </glossdef>
+    </glossentry>
+    <glossentry>
+      <glossterm>CellML Namespace</glossterm>
+      <glossdef>
+        <para>
+Any namespace starting with http://www.cellml.org/cellml/
+        </para>
+      </glossdef>
+    </glossentry>
+    <glossentry>
+      <glossterm>CellML 1.1 Namespace</glossterm>
+      <glossdef>
+        <para>
+The namespace http://www.cellml.org/cellml/1.1#
+        </para>
+      </glossdef>
+    </glossentry>
+    <glossentry>
+      <glossterm>CellML 1.2 Namespace</glossterm>
+      <glossdef>
+        <para>
+The namespace http://www.cellml.org/cellml/1.2#
+        </para>
+      </glossdef>
+    </glossentry>
+  </glosslist>
+</sect1>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE article SYSTEM "-//OASIS//DTD DocBook XML">
+<article lang="en" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="spec-metadata.xml"/>
+  <xi:include href="abstract.xml"/>
+  <xi:include href="terminology.xml"/>
+  <xi:include href="general-matters.xml"/>
+  <xi:include href="normative-references.xml"/>
+</article>

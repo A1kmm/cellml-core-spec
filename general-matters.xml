@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE article SYSTEM "-//OASIS//DTD DocBook XML">
+<sect1>
+  <title>General matters</title>
+  <sect2>
+    <title>CellML and XML</title>
+    <orderedlist>
+      <listitem>
+        <para>
+Every CellML File SHALL be represented in an XML document which conforms with
+the well-formedness requirements of the XML 1.0 specification <xref linkend="XML"/>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+In this document, the remaining provisions relating to CellML Files shall be
+interpreted as being constraints on the XML Information Set represented by that
+CellML File.
+        </para>
+      </listitem>
+    </orderedlist>
+  </sect2>
+  <sect2>
+    <title>Equivalent documents</title>
+    <orderedlist>
+      <listitem>
+        <para>
+CellML Processing Software MUST treat all well-formed representations of the same
+XML Information Set identically.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+CellML Processing Software MUST treat XML Information Sets which differ only by
+comment information items identically.
+        </para>
+      </listitem>
+    </orderedlist>
+  </sect2>
+</sect1>
