@@ -42,9 +42,9 @@ Adding, removing, and/or modifying comment information items.
           </listitem>
           <listitem>
             <para>
-Changing (inserting, removing, and/or modifying) the namespace
-information items without changing the namespace that any
-element information item or attribute information item is in.
+Changing (inserting, removing, and/or modifying) one or more namespace
+information items, and/or modifying the prefix of one or more information
+items, without changing the namespace that any information item is in.
             </para>
           </listitem>
           <listitem>
@@ -77,6 +77,23 @@ according to the above rules in an identical fashion.
         <para>
 CellML Files MUST NOT contain any element or attribute information items in a
 CellML namespace, except as permitted in this specification.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+CellML Files MUST NOT contain any attribute information items which are children
+of element information items in a CellML namespace, except as permitted in
+this specification.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+CellML Processing Software SHOULD NOT attempt to process CellML Files which
+contain information items in a CellML namespace other than the CellML 1.1
+namespace and the CellML 1.2 namespace. CellML Processing Software MAY also
+process namespaces from another version of CellML but such software MUST
+NOT write CellML Files which do not wholy comply with the rules of a particular
+version of CellML.
         </para>
       </listitem>
     </orderedlist>
