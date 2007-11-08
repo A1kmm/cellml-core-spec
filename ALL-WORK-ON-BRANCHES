@@ -1,0 +1,3 @@
+Note:
+All work goes on on the branches. Check out a refspec such as "normative" to see such work.
+e.g. git checkout normative
