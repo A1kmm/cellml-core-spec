@@ -20,6 +20,7 @@ CellML File.
       </listitem>
     </orderedlist>
   </sect2>
+
   <sect2>
     <title>Equivalent CellML Files</title>
     <orderedlist>
@@ -81,19 +82,16 @@ CellML namespace, except as permitted in this specification.
       </listitem>
       <listitem>
         <para>
-CellML Files MUST NOT contain any attribute information items which are children
-of element information items in a CellML namespace, except as permitted in
-this specification.
+CellML Files MUST NOT contain any character information items which are
+children of element information items in a CellML namespace, except as
+permitted in this specification.
         </para>
       </listitem>
       <listitem>
         <para>
 CellML Processing Software SHOULD NOT attempt to process CellML Files which
 contain information items in a CellML namespace other than the CellML 1.1
-namespace and the CellML 1.2 namespace. CellML Processing Software MAY also
-process namespaces from another version of CellML but such software MUST
-NOT write CellML Files which do not wholy comply with the rules of a particular
-version of CellML.
+or CellML 1.2 namespaces.
         </para>
       </listitem>
     </orderedlist>
