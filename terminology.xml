@@ -71,5 +71,37 @@ The namespace http://www.cellml.org/cellml/1.2#
         </para>
       </glossdef>
     </glossentry>
+    <glossentry>
+      <glossterm>Basic Latin alphabetic character</glossterm>
+      <glossdef>
+        <para>
+A Unicode character in the range U+0041 to U+005A or in the range U+0061 to U+007A.
+        </para>
+      </glossdef>
+    </glossentry>
+    <glossentry>
+      <glossterm>European numeric character</glossterm>
+      <glossdef>
+        <para>
+A Unicode character in the range U+0030 to U+0039.
+        </para>
+      </glossdef>
+    </glossentry>
+    <glossentry>
+      <glossterm>Basic Latin alphanumeric character</glossterm>
+      <glossdef>
+        <para>
+A Unicode character which is either a basic Latin alphabetic character or a European numeric character.
+        </para>
+      </glossdef>
+    </glossentry>
+    <glossentry>
+      <glossterm>Basic Latin underscore</glossterm>
+      <glossdef>
+        <para>
+The Unicode character U+005F.
+        </para>
+      </glossdef>
+    </glossentry>
   </glosslist>
 </sect1>

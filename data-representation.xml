@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE article SYSTEM "-//OASIS//DTD DocBook XML">
+<sect1>
+  <title>Data representation formats in CellML</title>
+  <para>
+    The following data representation formats are defined for use in this specification:
+    <orderedlist>
+      <listitem>
+        <para>
+          A CellML identifier:
+          <orderedlist>
+            <listitem>
+              <para>
+SHALL be a sequence of Unicode characters.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+SHALL NOT contain any characters except basic Latin alphanumeric characters and basic Latin underscores.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+SHALL contain one or more basic Latin alphabetic characters.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+SHALL NOT begin with a European numeric character.
+              </para>
+            </listitem>
+          </orderedlist>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          A positive integer string:
+          <orderedlist>
+            <listitem>
+              <para>
+SHALL be a base 10 representation of a positive integer.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+SHALL consist entirely of European numeric characters.
+              </para>
+            </listitem>
+          </orderedlist>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          An integer string:
+          <orderedlist>
+            <listitem>
+              <para>
+SHALL be a base 10 representation of an integer.
+              </para>
+              <para>
+When the integer being represented is negative, SHALL consist of the Basic Latin
+hyphen-minus character U+002D, followed by the positive integer string
+representation of the absolute value of the integer.
+              </para>
+              <para>
+When the integer being represented is positive, SHALL consist of the positive
+integer string representation of the integer.
+              </para>
+            </listitem>
+          </orderedlist>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          A basic real number string:
+          <orderedlist>
+            <listitem>
+              <para>
+SHALL be a base 10 representation of a real number.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+Where the number is negative, SHALL begin with the Basic Latin
+hyphen-minus character U+002D as the sign indicator.
+              </para>
+            </listitem>
+            <listitem>
+MAY contain a single decimal point separator, which SHALL be the basic
+Latin full stop character U+002E.
+            </listitem>
+            <listitem>
+              <para>
+Other than the sign indicator and the decimal point separator, SHALL consist
+only of European numeric characters.
+              </para>
+            </listitem>
+          </orderedlist>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          A real number string:
+          <orderedlist>
+            <listitem>
+              <para>
+                <!-- Note for annotators: No requirement for the real number to
+                     be normalised was included here.
+                  -->
+SHALL be a base 10 representation of a real number
+<mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+  <mml:mrow>
+    <mml:mi>r</mml:mi>
+    <mml:mo>=</mml:mo>
+    <mml:mrow>
+      <mml:mi>s</mml:mi>
+      <mml:mo>&#xD7;<!-- times --></mml:mo>
+      <mml:msup>
+        <mml:mn>10</mml:mn>
+        <mml:mi>e</mml:mi>
+      </mml:msup>
+    </mml:mrow>
+  </mml:mrow>
+</mml:math>, where s is the significand, a real number, and e is the
+exponent, an integer.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+The representation of the number SHALL be the representation of the significand
+followed immediately by the representation of the exponent.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+The significand SHALL be represented as a basic real number string.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+If the exponent is zero, the exponent MAY be represented by an
+empty string, or MAY be represented according to the following rule. If the
+exponent is non-zero, it MUST be represented according to the following rule.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+An exponent SHALL be represented by an exponent separator character, followed
+by the integer string representation of the exponent's value. The exponent
+separator character SHALL be either the Unicode Basic Latin character 'E' or
+the Unicode Basic Latin character 'e'.
+              </para>
+            </listitem>
+          </orderedlist>
+        </para>
+      </listitem>
+    </orderedlist>
+  </para>
+</sect1>
