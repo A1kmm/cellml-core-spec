@@ -29,6 +29,13 @@ SHALL contain one or more basic Latin alphabetic characters.
 SHALL NOT begin with a European numeric character.
               </para>
             </listitem>
+            <listitem>
+              <para>
+SHALL, when comparing two identifiers, be considered equivalent to another
+identifier if and only if both identifiers have identical sequences of
+Unicode character codes.
+              </para>
+            </listitem>
           </orderedlist>
         </para>
       </listitem>
