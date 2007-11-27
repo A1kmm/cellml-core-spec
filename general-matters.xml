@@ -7,26 +7,26 @@
     <orderedlist>
       <listitem>
         <para>
-Every CellML File SHALL be represented in an XML document which conforms with
+Every CellML Document SHALL be represented in an XML document which conforms with
 the well-formedness requirements of the XML 1.0 specification <xref linkend="XML"/>.
         </para>
       </listitem>
       <listitem>
         <para>
-In this document, the remaining provisions relating to CellML Files shall be
+In this document, the remaining provisions relating to CellML Documents shall be
 interpreted as being constraints on the XML Information Set represented by that
-CellML File.
+CellML Document.
         </para>
       </listitem>
     </orderedlist>
   </section>
 
   <section>
-    <title>Equivalent CellML Files</title>
+    <title>Equivalent CellML Documents</title>
     <orderedlist>
       <listitem>
         <para>
-Two CellML Files shall be equivalent if one can be transformed to another by
+Two CellML Documents shall be equivalent if one can be transformed to another by
 making zero or more of the following changes:
         </para>
         <orderedlist>
@@ -65,7 +65,7 @@ beginning or end of a character information item.
       </listitem>
       <listitem>
         <para>
-CellML Processing Software MUST treat CellML Files which are equivalent
+CellML Processing Software MUST treat CellML Documents which are equivalent
 according to the above rules in an identical fashion.
         </para>
       </listitem>
@@ -76,20 +76,20 @@ according to the above rules in an identical fashion.
     <orderedlist>
       <listitem>
         <para>
-CellML Files MUST NOT contain any element or attribute information items in a
+CellML Documents MUST NOT contain any element or attribute information items in a
 CellML namespace, except as permitted in this specification.
         </para>
       </listitem>
       <listitem>
         <para>
-CellML Files MUST NOT contain any character information items which are
+CellML Documents MUST NOT contain any character information items which are
 children of element information items in a CellML namespace, except as
 permitted in this specification.
         </para>
       </listitem>
       <listitem>
         <para>
-CellML Processing Software SHOULD NOT attempt to process CellML Files which
+CellML Processing Software SHOULD NOT attempt to process CellML Documents which
 contain information items in a CellML namespace other than the CellML 1.1
 or CellML 1.2 namespaces.
         </para>
