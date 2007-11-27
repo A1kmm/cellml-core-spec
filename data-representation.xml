@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE article SYSTEM "-//OASIS//DTD DocBook XML">
-<sect1>
+<section>
   <title>Data representation formats in CellML</title>
   <para>
     The following data representation formats are defined for use in this specification:
@@ -156,4 +156,4 @@ the Unicode Basic Latin character 'e'.
       </listitem>
     </orderedlist>
   </para>
-</sect1>
+</section>

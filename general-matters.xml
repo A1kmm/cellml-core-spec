@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE article SYSTEM "-//OASIS//DTD DocBook XML">
-<sect1>
+<section>
   <title>General matters</title>
-  <sect2>
+  <section>
     <title>CellML and XML</title>
     <orderedlist>
       <listitem>
@@ -19,9 +19,9 @@ CellML File.
         </para>
       </listitem>
     </orderedlist>
-  </sect2>
+  </section>
 
-  <sect2>
+  <section>
     <title>Equivalent CellML Files</title>
     <orderedlist>
       <listitem>
@@ -70,8 +70,8 @@ according to the above rules in an identical fashion.
         </para>
       </listitem>
     </orderedlist>
-  </sect2>
-  <sect2>
+  </section>
+  <section>
     <title>Use of the CellML namespaces</title>
     <orderedlist>
       <listitem>
@@ -95,5 +95,5 @@ or CellML 1.2 namespaces.
         </para>
       </listitem>
     </orderedlist>
-  </sect2>
-</sect1>
+  </section>
+</section>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE article SYSTEM "-//OASIS//DTD DocBook XML">
-<sect1>
+<section>
   <title>Definitions</title>
   <para>
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
@@ -104,4 +104,4 @@ The Unicode character U+005F.
       </glossdef>
     </glossentry>
   </glosslist>
-</sect1>
+</section>
