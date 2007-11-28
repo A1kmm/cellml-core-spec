@@ -72,7 +72,7 @@ according to the above rules in an identical fashion.
     </orderedlist>
   </section>
   <section>
-    <title>Use of the CellML namespaces</title>
+    <title>Use of namespaces</title>
     <orderedlist>
       <listitem>
         <para>
@@ -92,6 +92,40 @@ permitted in this specification.
 CellML Processing Software SHOULD NOT attempt to process CellML Files which
 contain information items in a CellML namespace other than the CellML 1.1
 or CellML 1.2 namespaces.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+CellML Files MUST NOT contain any element information items in the RDF
+namespace, unless:
+          <orderedlist>
+            <listitem>
+the element information item or one of its ancestors is an element information
+item in the RDF namespace, with local name RDF (the RDF element information
+item), and,
+            </listitem>
+            <listitem>
+the RDF element information item forms the top-level of a valid
+RDF/XML tree, per production 7.2.9 in <xref linkend="RDF-XML"/>.
+            </listitem>
+          </orderedlist>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+CellML Files MUST NOT contain any element information items in the MathML
+namespace, unless:
+          <orderedlist>
+            <listitem>
+the element information item or one of its ancestors is an element information
+item in the MathML namespace, with local name math (the math element information
+item), and,
+            </listitem>
+            <listitem>
+the math element information item forms the top-level of a valid
+MathML tree, as described in <xref linkend="MathML"/>.
+            </listitem>
+          </orderedlist>
         </para>
       </listitem>
     </orderedlist>

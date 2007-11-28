@@ -72,6 +72,31 @@ The namespace http://www.cellml.org/cellml/1.2#
       </glossdef>
     </glossentry>
     <glossentry>
+      <glossterm>MathML Namespace</glossterm>
+      <glossdef>
+        <para>
+The namespace http://www.w3.org/1998/Math/MathML
+        </para>
+      </glossdef>
+    </glossentry>
+    <glossentry>
+      <glossterm>RDF Namespace</glossterm>
+      <glossdef>
+        <para>
+The namespace http://www.w3.org/1999/02/22-rdf-syntax-ns#
+        </para>
+      </glossdef>
+    </glossentry>
+    <glossentry>
+      <glossterm>Extension Namespace</glossterm>
+      <glossdef>
+        <para>
+Any namespace which is not a CellML namespace, and is not the RDF namespace,
+the MathML namespace, or the empty namespace.
+        </para>
+      </glossdef>
+    </glossentry>
+    <glossentry>
       <glossterm>Basic Latin alphabetic character</glossterm>
       <glossdef>
         <para>
@@ -100,6 +125,14 @@ A Unicode character which is either a basic Latin alphabetic character or a Euro
       <glossdef>
         <para>
 The Unicode character U+005F.
+        </para>
+      </glossdef>
+    </glossentry>
+    <glossentry>
+      <glossterm>RDF Triple</glossterm>
+      <glossdef>
+        <para>
+As defined in <xref linkend="RDF-CONCEPTS"/>.
         </para>
       </glossdef>
     </glossentry>

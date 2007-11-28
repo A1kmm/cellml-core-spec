@@ -26,4 +26,28 @@ Namespaces in XML (Second Edition)
     </citetitle>
     <date>16 August 2006</date>
   </biblioentry>
+  <biblioentry id="RDF-CONCEPTS">
+    <citetitle>
+      <ulink url="http://www.w3.org/TR/2004/REC-rdf-concepts-20040210/">
+Resource Description Framework (RDF): Concepts and Abstract Syntax
+      </ulink>
+    </citetitle>
+    <date>10 February 2004</date>
+  </biblioentry>
+  <biblioentry id="RDF-XML">
+    <citetitle>
+      <ulink url="http://www.w3.org/TR/2004/REC-rdf-syntax-grammar-20040210/">
+RDF/XML Syntax Specification (revised)
+      </ulink>
+    </citetitle>
+    <date>10 February 2004</date>
+  </biblioentry>
+  <biblioentry id="MathML">
+    <citetitle>
+      <ulink url="http://www.w3.org/TR/2003/REC-MathML2-20031021/">
+Mathematical Markup Language (MathML) Version 2.0 (Second Edition)
+      </ulink>
+    </citetitle>
+    <date>21 October 2003</date>
+  </biblioentry>
 </bibliography>
