@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <script type="text/javascript">
+<![CDATA[
+function startTransform()
+{
+  var processor = new XSLTProcessor();
+  processor.setParameter("", "section.autolabel", "1");
+  processor.importStylesheet(window.toplevelStylesheet);
+  window.container.appendChild(
+    processor.transformToFragment(window.toplevelDocbook, document));
+}
+
+function processAllXInclude(el)
+{
+  var s = el.getElementsByTagNameNS("http://www.w3.org/2001/XInclude", "include");
+  var i;
+  while (s.length)
+  {
+    var n = s[0];
+    var p = n.parentNode;
+    var nextsib = n.nextSibling;
+    p.removeChild(n);
+
+    var xhr = new XMLHttpRequest();
+    xhr.isToplevel = false;
+    xhr.onreadystatechange = getDownloadCompleted(xhr);
+    xhr.insertInto = p;
+    xhr.doXInclude = true;
+    xhr.insertBefore = nextsib;
+
+    window.pendingRequests++;
+
+    xhr.open("GET", n.getAttribute("href"), true);
+    xhr.send(null);
+  }
+}
+
+function downloadCompleted()
+{
+  if (this.readyState != 4)
+    return;
+
+  var el;
+  if (this.doXInclude)
+  {
+    el = this.responseXML.documentElement;
+    processAllXInclude(el);
+  }
+  else
+  {
+    el = this.responseXML;
+  }
+
+  if (this.isToplevel == true)
+  {
+    window[this.saveTo] = el;
+  }
+  else
+  {
+    this.insertInto.insertBefore(el,
+                                 this.insertBefore);
+  }
+
+  window.pendingRequests--;
+
+  if (window.pendingRequests == 0)
+    startTransform();
+}
+
+function getDownloadCompleted(xhr)
+{
+  xhr.downloadCompleted = downloadCompleted;
+  return function() { return xhr.downloadCompleted(); }
+}
+
+function processAndAppend()
+{
+  window.container = document.getElementById("doc-container");
+
+  window.pendingRequests = 2;
+  var xhr = new XMLHttpRequest();
+
+  xhr.isToplevel = true;
+  xhr.saveTo = "toplevelDocbook";
+  xhr.onreadystatechange = getDownloadCompleted(xhr);
+  xhr.doXInclude = true;
+
+  xhr.open("GET", "toplevel.xml", true);
+  xhr.send(null);
+
+  xhr = new XMLHttpRequest();
+  xhr.isToplevel = true;
+  xhr.doXInclude = false;
+  xhr.saveTo = "toplevelStylesheet";
+  xhr.onreadystatechange = getDownloadCompleted(xhr);
+
+  xhr.open("GET", "nwalsh/xhtml/docbook.xsl", true);
+  xhr.send(null);
+}
+]]>
+    </script>
+  </head>
+  <body onload="processAndAppend()">
+    <noscript>
+Sorry, visualisation requires Javascript features to work properly. Please try
+enabling Javascript.
+    </noscript>
+    <p id="doc-container" />
+  </body>
+</html>
