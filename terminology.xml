@@ -92,7 +92,9 @@ The namespace http://www.w3.org/1999/02/22-rdf-syntax-ns#
       <glossdef>
         <para>
 Any namespace which is not a CellML namespace, and is not the RDF namespace,
-the MathML namespace, or the empty namespace.
+the MathML namespace, http://www.w3.org/XML/1998/namespace,
+http://www.w3.org/2000/xmlns/, http://www.w3.org/1999/xlink, or the empty
+namespace.
         </para>
       </glossdef>
     </glossentry>
@@ -125,6 +127,14 @@ A Unicode character which is either a basic Latin alphabetic character or a Euro
       <glossdef>
         <para>
 The Unicode character U+005F.
+        </para>
+      </glossdef>
+    </glossentry>
+    <glossentry>
+      <glossterm>Whitespace character</glossterm>
+      <glossdef>
+        <para>
+Any one of the Unicode characters U+0020, U+0009, U+000D or U+000A.
         </para>
       </glossdef>
     </glossentry>

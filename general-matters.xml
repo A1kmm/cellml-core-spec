@@ -71,6 +71,18 @@ according to the above rules in an identical fashion.
       </listitem>
     </orderedlist>
   </section>
+
+  <section>
+    <title>Character information items</title>
+    <orderedlist>
+      <para>
+An element information item in the CellML namespace MUST NOT contain any
+character information items, except for character information items which
+consist entirely of whitespace characters.
+      </para>
+    </orderedlist>
+  </section>
+
   <section>
     <title>Use of namespaces</title>
     <orderedlist>
@@ -126,6 +138,30 @@ the math element information item forms the top-level of a valid
 MathML tree, as described in <xref linkend="MathML"/>.
             </listitem>
           </orderedlist>
+        </para>
+      </listitem>
+    </orderedlist>
+  </section>
+  <section>
+    <title>Extension elements</title>
+    <orderedlist>
+      <listitem>
+        <para>
+CellML Files MAY contain zero or more element or attribute information items
+in an extension namespace (extension information items).
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+CellML Processing Software MUST NOT raise an error when it encounters an
+unrecognised extension element.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+CellML Processing Software which reads CellML and then writes a modified
+version back out SHOULD preserve unrecognised extension information items when
+the parent information item is not modified.
         </para>
       </listitem>
     </orderedlist>
