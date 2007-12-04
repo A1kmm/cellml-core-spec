@@ -143,18 +143,26 @@ MathML tree, as described in <xref linkend="MathML"/>.
     </orderedlist>
   </section>
   <section>
-    <title>Extension elements</title>
+    <title>Extension information items</title>
     <orderedlist>
       <listitem>
         <para>
 CellML Files MAY contain zero or more element or attribute information items
-in an extension namespace (extension information items).
+in an extension namespace (extension information items), as children of CellML
+Information Items.
         </para>
       </listitem>
       <listitem>
         <para>
-CellML Processing Software MUST NOT raise an error when it encounters an
-unrecognised extension element.
+Extension information items MAY contain extension information items as their
+children. In addition, extension elements MAY contain presentation MathML
+children.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+CellML Processing Software MUST NOT raise an error solely because it encounters
+an unrecognised extension element.
         </para>
       </listitem>
       <listitem>
