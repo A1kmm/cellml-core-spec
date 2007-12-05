@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE article SYSTEM "-//OASIS//DTD DocBook XML">
+<section>
+  <title>Interpretation of CellML models</title>
+  <section>
+    <title>Interpretation of imports</title>
+    <para>
+      Each import element present in a CellML file (the importing file)
+      SHALL define a new and separate instance of the CellML file referenced
+      by the href attribute (the imported file).
+    </para>
+  </section>
+  <section>
+    <title>Component reference</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          A component reference SHALL be the name of a component, and SHALL be
+          interpreted based on the context within the model in which it occurs.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          A component reference present in an information item which is a
+          descendant of a model element SHALL be identical to either the name
+          attribute on a component element or to the name attribute on an import
+          component element.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          A component reference which is identical to the name attribute on a
+          component element SHALL be treated as a reference to that component
+          element.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          A component reference which is identical to the name attribute on an
+          import component element SHALL be treated as if the component reference
+          appeared in the imported model, and referred to the name specified in
+          the component_ref attribute of the import component element.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Its is noted for the avoidance of doubt that CellML Models MAY apply
+          the previous rule recursively, to reference an import component element
+          which in turn references another import component element.
+        </para>
+      </listitem>
+    </orderedlist>
+  </section>
+  <section>
+    <title>Variable reference</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          When present in an information item which is a descendant of a
+          component element, a variable reference SHALL be the name of a
+          variable, and SHALL refer to the variable element in the same
+          component with a name attribute equal matching the variable
+          reference.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          In all other cases, SHALL consist of a component reference and a
+          variable name. In this case, the variable reference SHALL be treated
+          as if it was present in the component element referenced by the
+          component reference.
+        </para>
+      </listitem>
+    </orderedlist>
+  </section>
+  <section>
+    <title>Variable equivalence networks</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          A variable equivalence network SHALL be a directed graph with one
+          node for every variable element in the CellML model.
+        </para>
+        <para>
+          For every map_variables element present in the model, there SHALL
+          be an edge in the variable equivalence network.
+        </para>
+        <para>
+          One endpoint of the edge in the variable equivalence network SHALL
+          be the node corresponding to the variable referenced by
+          the component_1 and variable_1 attributes.
+        </para>
+        <para>
+          One endpoint of the edge in the variable equivalence network SHALL
+          be the node corresponding to the variable referenced by
+          the component_2 and variable_2 attributes.
+        </para>
+      </listitem>
+    </orderedlist>
+  </section>
+</section>
