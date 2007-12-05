@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE article SYSTEM "-//OASIS//DTD DocBook XML">
+<section>
+  <title>The model element information item</title>
+  <section>
+    <title>Top-level of CellML Files</title>
+    <para>
+      The top-level element information item in a CellML File MUST be an
+      element information item in the CellML 1.1 namespace, with local name
+      model. This element information item is referred to in this specification
+      as the model element.
+    </para>
+  </section>
+  <section>
+    <title>Specific information items</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          Every model element MUST contain a name attribute in the empty
+          namespace. The value of the name attribute MUST be a valid CellML
+          identifier, and SHALL be interpreted as a unique identifier for the
+          model.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          In addition, a model element MAY contain zero or more specific
+          information item children, each of which MUST be of one of the
+          following types:
+          <orderedlist>
+            <listitem>
+              <para>
+                a component element information item
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                a connection element information item
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                a group element information item
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                an import element information item
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                a units element information item
+              </para>
+            </listitem>
+          </orderedlist>
+        </para>
+      </listitem>
+    </orderedlist>
+  </section>
+</section>

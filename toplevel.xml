@@ -6,5 +6,6 @@
   <xi:include href="terminology.xml"/>
   <xi:include href="general-matters.xml"/>
   <xi:include href="data-representation.xml"/>
+  <xi:include href="model-element-item.xml"/>
   <xi:include href="normative-references.xml"/>
 </article>
