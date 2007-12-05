@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE article SYSTEM "-//OASIS//DTD DocBook XML">
+<section id="component-element">
+  <title>The component element information item</title>
+  <para>
+    Component element information items (referred to in this specification as
+    component elements) are element information items in the CellML 1.1
+    namespace with local name equal to component, and which appear as a child
+    of a model element.
+  </para>
+  <section>
+    <title>Specific information items</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          Every component element MUST contain a name attribute in the empty
+          namespace. The value of the name attribute MUST be a valid CellML
+          identifier. The value of the name attribute MUST NOT be identical to
+          the name attribute on any component element or import component
+          element.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Every component element MUST contain one or more variable elements.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          A component element MAY contain zero or more additional specific
+          information item children, each of which MUST be of one of the
+          following types:
+          <orderedlist>
+            <listitem>
+              <para>
+                a content mathematics element
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                a units element
+              </para>
+            </listitem>
+          </orderedlist>
+        </para>
+      </listitem>
+    </orderedlist>
+  </section>
+</section>

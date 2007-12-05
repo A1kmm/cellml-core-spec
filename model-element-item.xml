@@ -24,33 +24,33 @@
       </listitem>
       <listitem>
         <para>
-          In addition, a model element MAY contain zero or more specific
+          A model element MAY contain zero or more additional specific
           information item children, each of which MUST be of one of the
           following types:
           <orderedlist>
             <listitem>
               <para>
-                a component element information item
+                a component element (<xref linkend="component-element" />),
               </para>
             </listitem>
             <listitem>
               <para>
-                a connection element information item
+                a connection element (<xref linkend="connection-element" />),
               </para>
             </listitem>
             <listitem>
               <para>
-                a group element information item
+                a group element (<xref linkend="group-element" />),
               </para>
             </listitem>
             <listitem>
               <para>
-                an import element information item
+                an import element (<xref linkend="import-element" />),
               </para>
             </listitem>
             <listitem>
               <para>
-                a units element information item
+                a units element (<xref linkend="units-element" />)
               </para>
             </listitem>
           </orderedlist>

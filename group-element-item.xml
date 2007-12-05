@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE article SYSTEM "-//OASIS//DTD DocBook XML">
+<section id="group-element">
+  <title>The group element information item</title>
+  <para>
+    Group element information items (referred to in this specification as
+    group elements) are element information items in the CellML 1.1
+    namespace with local name equal to group.
+  </para>
+</section>
