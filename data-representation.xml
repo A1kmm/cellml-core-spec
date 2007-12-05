@@ -31,7 +31,7 @@ SHALL NOT begin with a European numeric character.
             </listitem>
             <listitem>
               <para>
-SHALL, when comparing two identifiers, be considered equivalent to another
+SHALL, when comparing two identifiers, be considered identical to another
 identifier if and only if both identifiers have identical sequences of
 Unicode character codes.
               </para>
