@@ -7,4 +7,21 @@
     connection elements) are element information items in the CellML 1.1
     namespace with local name equal to connection.
   </para>
+  <section>
+    <title>Specific information items</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          Every connection element MUST contain exactly one map_component
+          element.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Every connection element MUST contain one or more map_variables
+          element. 
+        </para>
+      </listitem>
+    </orderedlist>
+  </section>
 </section>
