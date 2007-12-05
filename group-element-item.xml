@@ -7,4 +7,20 @@
     group elements) are element information items in the CellML 1.1
     namespace with local name equal to group.
   </para>
+  <section>
+    <title>Specific information items</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          Every group element MUST contain one or more relationship_ref
+          element.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Every group element MUST contain one or more component_ref element.
+        </para>
+      </listitem>
+    </orderedlist>
+  </section>
 </section>
