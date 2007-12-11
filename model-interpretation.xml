@@ -59,7 +59,7 @@
           When present in an information item which is a descendant of a
           component element, a variable reference SHALL be the name of a
           variable, and SHALL refer to the variable element in the same
-          component with a name attribute equal matching the variable
+          component with a name attribute identical to the variable
           reference.
         </para>
       </listitem>
