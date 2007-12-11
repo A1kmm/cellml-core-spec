@@ -74,13 +74,11 @@ according to the above rules in an identical fashion.
 
   <section>
     <title>Character information items</title>
-    <orderedlist>
-      <para>
-An element information item in the CellML namespace MUST NOT contain any
-character information items, except for character information items which
-consist entirely of whitespace characters.
-      </para>
-    </orderedlist>
+    <para>
+      An element information item in the CellML namespace MUST NOT contain any
+      character information items, except for character information items which
+      consist entirely of whitespace characters.
+    </para>
   </section>
 
   <section>
