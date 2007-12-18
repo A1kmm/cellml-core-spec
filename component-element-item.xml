@@ -16,7 +16,7 @@
           Every component element MUST contain a name attribute in the empty
           namespace. The value of the name attribute MUST be a valid CellML
           identifier. The value of the name attribute MUST NOT be identical to
-          the name attribute on any component element or import component
+          the name attribute on any other component element or import component
           element.
         </para>
       </listitem>
