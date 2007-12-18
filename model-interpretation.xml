@@ -74,6 +74,106 @@
     </orderedlist>
   </section>
   <section>
+    <title>Interpretation of grouping</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          Two relationship_ref elements SHALL be considered to refer to the
+          same relationship if and only all of the following conditions hold:
+          <orderedlist>
+            <listitem>
+              <para>
+                the attribute information item with local name relationship
+                is in an identical namespace on both element information items.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                the attribute information item with local name relationship
+                has identical values on each of the element information items.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                either the attribute information item in the empty namespace and
+                with local name "name" is absent on both
+                element information items, or, it is present on both element
+                information items and has identical value.
+              </para>
+            </listitem>
+          </orderedlist>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          For every distinct relationship referred to by a relationship_ref
+          element in the CellML model, there SHALL be a conceptual
+          relationship digraph in which there is one node for every
+          component in the CellML model.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Where a component_ref element appears as a child of another
+          component_ref element, then for all relationship_ref elements which
+          are children of the ancestral group element, there SHALL be an arc in
+          the relationship digraph corresponding to the relationship referenced
+          by the relationship_ref element, and that arc SHALL be from the
+          component referenced by the parent component_ref element and to the
+          component referenced by the child component_ref element.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The term encapsulation digraph SHALL refer to the relationship digraph
+          for the relationship corresponding to the relationship_ref attribute
+          in the empty namespace and with value "encapsulation", and with no
+          name attribute.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The encapsulation digraph MUST NOT contain any loops, and MUST NOT
+          contain any cycles in the underlying graph (that is, it must be a
+          tree).
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The encapsulated set for a component A SHALL be the set of all
+          components to which there exists an arc in the encapsulation digraph
+          from the node corresponding to A.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The encapsulation parent for a component A SHALL be the component
+          corresponding to the node which is the parent node in the
+          encapsulation digraph of the node corresponding to A.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The sibling set for a component A SHALL be the set of all components
+          which have the same encapsulation parent as A, or in the case that A
+          has no encapsulation parent, SHALL be the set of all components which
+          do not have an encapsulation parent.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The hidden set for a component A SHALL be the set of all components
+          B where component B is not in the encapsulated set for component A,
+          and component B is not the encapsulation parent of component A,
+          and component B is not in the sibling set for component A.
+        </para>
+      </listitem>
+      <!-- To do: Add in something about containment, or get community
+           consensus to drop containment from the core specification and move
+           it into the metadata. See tracker item 316. -->
+    </orderedlist>
+  </section>
+  <section>
     <title>Variable equivalence networks</title>
     <orderedlist>
       <listitem>
@@ -81,19 +181,119 @@
           A variable equivalence network SHALL be a directed graph with one
           node for every variable element in the CellML model.
         </para>
+      </listitem>
+      <listitem>
         <para>
           For every map_variables element present in the model, there SHALL
-          be an edge in the variable equivalence network.
+          be an arc in the variable equivalence network.
         </para>
+      </listitem>
+      <listitem>
         <para>
-          One endpoint of the edge in the variable equivalence network SHALL
-          be the node corresponding to the variable referenced by
+          One endpoint of the arc in the variable equivalence network SHALL
+          be the node corresponding to the variable (A) referenced by
           the component_1 and variable_1 attributes.
         </para>
+      </listitem>
+      <listitem>
         <para>
-          One endpoint of the edge in the variable equivalence network SHALL
-          be the node corresponding to the variable referenced by
+          One endpoint of the arc in the variable equivalence network SHALL
+          be the node corresponding to the variable (B) referenced by
           the component_2 and variable_2 attributes.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          CellML models MUST NOT contain map_variables elements for which
+          variable A is in the hidden set of variable B.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          When variable A is in the sibling set of variable B, the applicable
+          interface for variables A and B SHALL be the public interface. Where
+          variable A is in the encapsulated set of variable B, the applicable
+          interface for variable A SHALL be the public interface, and the
+          applicable interface for variable B SHALL be the private interface.
+          Where variable B is in the encapsulated set of variable A, the applicable
+          interface for variable A SHALL be the private interface, and the
+          applicable interface for variable B SHALL be the public interface.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          CellML models MUST NOT contain map_variables elements unless the
+          value of the applicable interface attributes on variables A and B are
+          both either in or out, and those two attribute values are different
+          from each other.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The direction of the arc SHALL be from the node corresponding to the
+          variable with the applicable interface attribute equal to in, and
+          SHALL be to the node corresponding to the variable with the
+          applicable interface attribute equal to out.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          For the purposes of this specification, the variable elements in a
+          CellML Model SHALL be treated as belonging to one of several disjoint
+          sets of connected variables. Each set of connected variables is a
+          set of all variable elements for which the corresponding nodes
+          in the variable equivalence network form a weakly connected subgraph.
+          Each set of connected variables represents one variable in the
+          mathematical model.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          In every set of connected variables, there MUST be at exactly one variable
+          element which has neither a public interface of in nor a private
+          interface of in. This variable element is referred to as the source
+          variable element. Within this specification, the variable in the
+          mathematical model is described as if it was in the units specified
+          on the source variable element.
+        </para>
+      </listitem>
+    </orderedlist>
+  </section>
+  <section>
+    <title>Interpretation of the mathematics</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          Every MathML element which appears as a direct child information
+          item of the MathML math element information item SHALL be treated
+          as a statement which holds true unconditionally.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Every variable name given using the MathML ci element SHALL be treated
+          as a variable reference within the component element ancestor the
+          MathML is contained within.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Every such variable reference SHALL be treated as a linear
+          expression
+          <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+            <mml:mrow>
+              <mml:mrow>
+                <mml:mi>m</mml:mi>
+                <mml:mchar name="InvisibleTimes" />
+                <mml:mi>x</mml:mi>
+              </mml:mrow>
+              <mml:mo>+</mml:mo>
+              <mml:mi>c</mml:mi>
+            </mml:mrow>
+          </mml:math>. x SHALL represent the variable in the mathematical
+          model, in the units on the source variable element, while m and c
+          SHALL represent constants, the meaning of which is specified in the
+          interpretation of units subsection.
         </para>
       </listitem>
     </orderedlist>
