@@ -3,9 +3,9 @@
 <section>
   <title>The model element information item</title>
   <section>
-    <title>Top-level of CellML Files</title>
+    <title>Top-level of CellML Infosets</title>
     <para>
-      The top-level element information item in a CellML File MUST be an
+      The top-level element information item in a CellML Infoset MUST be an
       element information item in the CellML 1.1 namespace, with local name
       model. This element information item is referred to in this specification
       as the model element.

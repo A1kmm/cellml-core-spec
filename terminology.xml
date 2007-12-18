@@ -15,10 +15,11 @@ in <xref linkend="XML-INFOSET"/>.
   </para>
   <glosslist>
     <glossentry>
-      <glossterm>CellML File</glossterm>
+      <glossterm>CellML Infoset</glossterm>
       <glossdef>
         <para>
-A file which is represented according to the rules described in this document.
+An XML Information Set containing a hierarchy of information items
+conforming to the rules described in this document.
         </para>
       </glossdef>
     </glossentry>
@@ -26,7 +27,7 @@ A file which is represented according to the rules described in this document.
       <glossterm>CellML Model</glossterm>
       <glossdef>
         <para>
-A mathematical model represented by a hierarchy of one or CellML files,
+A mathematical model represented by a hierarchy of one or CellML Infosets,
 according to the rules described in this document.
         </para>
       </glossdef>

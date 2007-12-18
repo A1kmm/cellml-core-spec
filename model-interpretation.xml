@@ -5,9 +5,9 @@
   <section>
     <title>Interpretation of imports</title>
     <para>
-      Each import element present in a CellML file (the importing file)
-      SHALL define a new and separate instance of the CellML file referenced
-      by the href attribute (the imported file).
+      Each import element present in a CellML Infoset (the importing infoset)
+      SHALL define a new and separate instance of the CellML Infoset referenced
+      by the href attribute (the imported infoset).
     </para>
   </section>
   <section>
