@@ -119,3 +119,5 @@ Proposed differences from CellML 1.1
   consistency problems that arise otherwise - see the earlier mailing list
   thread on this.
 
+* Add support for non-scalar mathematics, subject to what the secondary
+  specification allows.
