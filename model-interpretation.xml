@@ -260,6 +260,515 @@
     </orderedlist>
   </section>
   <section>
+    <title>Units reference</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          A units reference SHALL be a CellML identifier, and SHALL be
+          interpreted based on the context within the model in which it occurs.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          A CellML Infoset MUST NOT contain a units reference to which one of
+          the units scoping rules does not apply.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Where more than one of the units scoping rules apply, the applicable rule
+          which appears first in this specification SHALL apply.
+        </para>
+      </listitem>
+      <listitem>
+        <para>The units scoping rules are as follows:</para>
+        <orderedlist>
+          <listitem>
+            <para>
+              Where a units reference appears in an information item which is
+              descended from a component element, and there is a units element
+              child of that component element with a name attribute identical to
+              the units reference, then the units reference SHALL refer to that
+              units element.
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              Where there is a units element child of the model element ancestor
+              of the information item containing the units reference, such that the
+              units element has a name attribute identical to the units reference,
+              then the units reference SHALL refer to that units element.
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              Where there is an import units element in the CellML Infoset, such that
+              the import units element has a name attribute identical to the units
+              reference, then the units reference SHALL be treated as if the
+              units reference appeared in the imported model, and referred to the
+              name specified in the units_ref attribute of the import units element.
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              Where the units reference is equal to a cell in the name column
+              of table <xref linkend='units-table' />, then the units reference SHALL be a
+              reference to the built in unit corresponding to that row of the
+              table.
+            </para>
+          </listitem>
+        </orderedlist>
+      </listitem>
+    </orderedlist>
+  </section>
+  <table id='units-table' frame='all'>
+    <title>Built in units</title>
+    <tgroup cols='3'>
+      <thead>
+        <row>
+          <entry>Name</entry>
+          <entry>Is base unit?</entry>
+          <entry>Linear combination of base units</entry>
+        </row>
+      </thead>
+      <tbody>
+        <row>
+          <entry>ampere</entry>
+          <entry>yes</entry>
+          <entry>-</entry>
+        </row>
+        <row>
+          <entry>becquerel</entry>
+          <entry>no</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup>
+                  <mml:mi>second</mml:mi>
+                  <mml:mn>-1</mml:mn>
+                </mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>candela</entry>
+          <entry>yes</entry>
+          <entry>-</entry>
+        </row>
+        <row>
+          <entry>celsius</entry>
+          <entry>no</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>kelvin</mml:mi>
+                <mml:mo>+</mml:mo>
+                <mml:mn>273.15</mml:mn>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>coulomb</entry>
+          <entry>no</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>second</mml:mi>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>ampere</mml:mi>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>dimensionless</entry>
+          <entry>yes</entry>
+          <entry>-</entry>
+        </row>
+        <row>
+          <entry>farad</entry>
+          <entry>no</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>metre</mml:mi><mml:mn>-2</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>kilogram</mml:mi><mml:mn>-1</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>second</mml:mi><mml:mn>4</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>ampere</mml:mi><mml:mn>2</mml:mn></mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>gram</entry>
+          <entry>no</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:msup>
+                  <mml:mn>10</mml:mn>
+                  <mml:mn>-3</mml:mn>
+                </mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>kilogram</mml:mi>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>gray</entry>
+          <entry>no</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>metre</mml:mi><mml:mn>2</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>second</mml:mi><mml:mn>-2</mml:mn></mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>henry</entry>
+          <entry>no</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>metre</mml:mi><mml:mn>2</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>kilogram</mml:mi>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>second</mml:mi><mml:mn>-2</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>ampere</mml:mi><mml:mn>-2</mml:mn></mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>hertz</entry>
+          <entry>no</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>second</mml:mi><mml:mn>-1</mml:mn></mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>joule</entry>
+          <entry>no</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>metre</mml:mi><mml:mn>2</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>kilogram</mml:mi>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>second</mml:mi><mml:mn>-2</mml:mn></mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>katal</entry>
+          <entry>no</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>second</mml:mi><mml:mn>-1</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>mol</mml:mi>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>kelvin</entry>
+          <entry>yes</entry>
+          <entry>-</entry>
+        </row>
+        <row>
+          <entry>kilogram</entry>
+          <entry>yes</entry>
+          <entry>-</entry>
+        </row>
+        <row>
+          <entry>liter</entry>
+          <entry>no</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:msup>
+                  <mml:mn>10</mml:mn>
+                  <mml:mn>-3</mml:mn>
+                </mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup>
+                  <mml:mi>metre</mml:mi>
+                  <mml:mn>3</mml:mn>
+                </mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>litre</entry>
+          <entry>no</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:msup>
+                  <mml:mn>10</mml:mn>
+                  <mml:mn>-3</mml:mn>
+                </mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup>
+                  <mml:mi>metre</mml:mi>
+                  <mml:mn>3</mml:mn>
+                </mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>lumen</entry>
+          <entry>no</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>candela</mml:mi>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>lux</entry>
+          <entry>no</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup>
+                  <mml:mi>metre</mml:mi>
+                  <mml:mn>-2</mml:mn>
+                </mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>candela</mml:mi>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>meter</entry>
+          <entry>no</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>metre</mml:mi>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>metre</entry>
+          <entry>yes</entry>
+          <entry>-</entry>
+        </row>
+        <row>
+          <entry>mole</entry>
+          <entry>yes</entry>
+          <entry>-</entry>
+        </row>
+        <row>
+          <entry>newton</entry>
+          <entry>yes</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>metre</mml:mi>
+                <mml:mi>kilogram</mml:mi>
+                <mml:msup><mml:mi>second</mml:mi><mml:mn>-2</mml:mn></mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>ohm</entry>
+          <entry>yes</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>metre</mml:mi>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>pascal</entry>
+          <entry>yes</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>metre</mml:mi>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>radian</entry>
+          <entry>yes</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>metre</mml:mi>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>second</entry>
+          <entry>yes</entry>
+          <entry>-</entry>
+        </row>
+        <row>
+          <entry>siemens</entry>
+          <entry>yes</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>metre</mml:mi>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>sievert</entry>
+          <entry>yes</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>metre</mml:mi>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>steradian</entry>
+          <entry>yes</entry>
+          <entry>-</entry>
+        </row>
+        <row>
+          <entry>tesla</entry>
+          <entry>yes</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>metre</mml:mi>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>volt</entry>
+          <entry>yes</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>metre</mml:mi>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>watt</entry>
+          <entry>yes</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>metre</mml:mi>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>weber</entry>
+          <entry>yes</entry>
+          <entry>
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>metre</mml:mi>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+      </tbody>
+    </tgroup>
+  </table>
+  <section>
+    <title>Interpretation of units</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          The base units SHALL consist of the user defined base.
+        </para>
+        <para>
+          Every units element SHALL be reduced into a linear combination of
+          base units according to the rules .
+        </para>
+      </listitem>
+    </orderedlist>
+  </section>
+  <section>
     <title>Interpretation of the mathematics</title>
     <orderedlist>
       <listitem>
@@ -284,7 +793,6 @@
             <mml:mrow>
               <mml:mrow>
                 <mml:mi>m</mml:mi>
-                <mml:mchar name="InvisibleTimes" />
                 <mml:mi>x</mml:mi>
               </mml:mrow>
               <mml:mo>+</mml:mo>
