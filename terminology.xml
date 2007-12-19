@@ -27,7 +27,7 @@ conforming to the rules described in this document.
       <glossterm>CellML Model</glossterm>
       <glossdef>
         <para>
-A mathematical model represented by a hierarchy of one or CellML Infosets,
+A mathematical model represented by a hierarchy of one or more CellML Infosets,
 according to the rules described in this document.
         </para>
       </glossdef>
