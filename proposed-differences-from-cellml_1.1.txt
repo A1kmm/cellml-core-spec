@@ -1,0 +1,121 @@
+Proposed differences from CellML 1.1
+  (actual semantic differences not differences in how we write up the
+   specification. This does include where 1.1 contradicts itself).
+
+* Remove the CellML Subset / "fully MathML capable software" - instead, delegate
+  the exact description of what mathematical expressions are allowed in models
+  to secondary specifications which refine the mathematics allowed in CellML to
+  the point that the secondary specification can realistically be completely
+  implemented for all cases.
+
+  This will allow for tools to support multiple secondary specifications if
+  they deal with more than one problem domain.
+
+* Remove the recommended prefixes for namespaces in the normative
+  specification, although this could go in the informative specification as a
+  suggestion. This should help ensure that no one relies on things having a
+  particular prefix, which the current specification doesn't go out of its
+  way to prevent.
+
+* Make CellML identifiers like _1a valid. The 1.1 specification currently
+  contradicts itself on whether this identifier is valid.
+
+* Assume attributes without an explicit prefix are in the empty namespace, in
+  accordance with 6.2 of the namespaces in XML document. This means that it would
+  be invalid to explicitly put an attribute in the CellML namespaces.
+  <model xmlns="http://www.cellml.org/cellml/1.1#"
+         xmlns:cellml="http://www.cellml.org/cellml/1.1#"
+         cellml:name="test">...</model>
+  would be invalid, while
+  <model xmlns="http://www.cellml.org/cellml/1.1#" name="test">...</model>
+  remains valid. This seems to be consistent with how people have actually
+  implemented CellML processing software.
+
+* Software will be required to identify cases (and report an error) where
+  future CellML elements are present (unrecognised namespaces starting with
+  http://www.cellml.org/cellml/).
+
+* It will be valid to define presentation MathML from within extension elements.
+  This should be legitimate content for an extension element.
+
+* Software will no longer be encouraged to alert the user to unrecognised
+  extension elements. Extension elements shouldn't contain information which is
+  essential to the model processing, so there is no need to warn the user.
+
+* In CellML 1.1, only one connection element can be present for all variables
+  being connected for a particular pair of components. This restriction can
+  make coding models unnecessarily hard and there is no evidence that it
+  reduces the implementation burden. Therefore, it makes sense to remove this
+  restriction. It will still not be possible to connect the same variables more
+  than once.
+
+* The current specification says:
+  "A variable with either a private_interface or public_interface attribute
+   value of "in" must be mapped to no more than one other variable in the
+   model. [ Note that a similar restriction does not apply to variables with
+   interface values of "out". An output variable can be mapped to multiple
+   input variables in various components in the current model. ]"
+
+  The problem with this is that it doesn't properly account for mappings where
+  a variable is forwarded into an encapsulated block. As an example, consider
+  the following encapsulation hierarchy (higher components encapsulate lower
+  ones)...
+
+                   A
+                   |
+                   B
+                  / \
+                 C   D
+
+  Suppose that component A has, for variable v, public_interface="none",
+  private_interface="out", and B has for variable v, public_interface="in",
+  private_interface="out" (connected to A), and C and D have public_interface="in",
+  private_interface="none", both of which are connected to B.
+
+  There is no reason why this should not be valid. However, the specification
+  contradicts itself on whether this is allowed. On one hand, because B has
+  private_interface="out", it "can be mapped to multiple input variables in
+  various components in the current model.", but because it has a public
+  interface of in, it "must be mapped to no more than one other variable in the
+  model".
+
+  This can be fixed by firstly defining the interpretation of connections and
+  interfaces, and then adding constraints based on that which actually describe
+  which connections are allowed to each set of variables.
+
+* CellML 1.1 provides facilities for the support of scripting. While we
+  probably shouldn't rule this out in the next version, it should be delegated
+  to the secondary specifications mentioned above.
+
+* The reaction element will be removed from the specification. The informative
+  specification will provide alternative ways to represent the same information
+  without breaking tools which are not reaction aware, making CellML more domain
+  independent.
+
+* metre and meter, and litre and liter will be described as being equivalent
+  to one another, instead of being separate, dimensionally incompatible units.
+
+* The multiplier and prefix attribute part of the units conversion formula were
+  incorrect in the CellML 1.1 specification, when compared to the examples. The
+  1.2 specification will describe units conversions correctly.
+
+* Units conversion on connections is not mandatory in CellML 1.1. This will
+  result in different results in different packages. In CellML 1.2 it will
+  be mandatory.
+
+* Software will not be permitted to automatically (i.e. without asking the
+  user) insert constants into the mathematics in an attempt to correct any
+  units inconsistencies identified, but will of course be able to report on any
+  errors identified.
+
+* Containment information will no longer be permitted, nor will user defined
+  relationships. Only a single encapsulation tree will be permitted. Instead,
+  in the informative version of the specification, users will be encouraged to
+  represent such information as RDF in metadata.
+
+* Import semantics will be changed so that each import element creates one
+  separate instance of the model, and a given unit or component can only be
+  imported once per import element. This is required to avoid various
+  consistency problems that arise otherwise - see the earlier mailing list
+  thread on this.
+
