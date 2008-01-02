@@ -312,7 +312,7 @@
           <listitem>
             <para>
               Where the units reference is equal to a cell in the name column
-              of table <xref linkend='units-table' />, then the units reference SHALL be a
+              of <xref linkend='units-table' />, then the units reference SHALL be a
               reference to the built in unit corresponding to that row of the
               table.
             </para>
@@ -840,11 +840,68 @@
     <orderedlist>
       <listitem>
         <para>
-          The base units SHALL consist of the user defined base.
+          The base units SHALL consist of the user defined base units, and the
+          built in base units (those units defined in rows of
+          <xref linkend='units-table' /> having 'yes' in the 'Is base unit?'
+          column).
         </para>
+      </listitem>
+      <listitem>
         <para>
-          Every units element SHALL be reduced into a linear combination of
-          base units according to the rules .
+          The base unit reduction of a units reference SHALL consist of a
+          real valued offset, a real valued multiplier, and a set of
+          tuples each consisting of a base unit and a real valued exponent.
+          The base unit reduction of a  units reference SHALL be determined as
+          follows:
+          <orderedlist>
+            <listitem>
+              <para>
+                Where the units reference is to a unit which is a base unit,
+                then the base unit reduction of the units reference SHALL have
+                offset 0, prefix 1, and the set of tuples SHALL have a single
+                member, which SHALL consist of the base units being referenced
+                and the exponent 1.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                Where the units reference is to built in units other than a
+                base unit, then the base unit reduction SHALL be derived from
+                the row of <xref linkend='units-table' /> for which the value
+                in the 'Name' column matches the name of the units reference.
+                The offset of the base unit reduction SHALL be equal to the
+                number in the 'Offset from base units' column of the row, and
+                the multiplier SHALL be equal to the number at the start of
+                the 'Multiplier and dimensions in terms of base units' column
+                of the row.
+                The set of tuples SHALL contain one member for every built in
+                base unit named in the 'Multiplier and dimensions in terms of
+                base units' column of the row, and each of these tuples SHALL
+                contain the built in unit referenced, and the exponent appearing
+                in superscript immediately after the units name in the table
+                cell.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                Where the units reference is to a unit which is neither built
+                in, nor a base unit, the resultant base unit reduction SHALL be
+                defined as a composition of the base unit reductions referenced
+                from the unit element information items (the operand base unit
+                reductions), in accordance with the following rules:
+                <orderedlist>
+                  <listitem>
+                    <para>
+                      Models MUST NOT contain units element information
+                      items which have more than one operand base unit
+                      reduction, and also have one or more operand base
+                      unit reductions with offset not equal to zero.
+                    </para>
+                  </listitem>
+                </orderedlist>
+              </para>
+            </listitem>
+          </orderedlist>
         </para>
       </listitem>
     </orderedlist>
