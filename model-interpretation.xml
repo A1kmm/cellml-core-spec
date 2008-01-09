@@ -1072,7 +1072,7 @@
       </listitem>
     </orderedlist>
   </section>
-  <section>
+  <section id="units-on-variables">
     <title>The effect of units on variables</title>
     <orderedlist>
       <listitem>
@@ -1216,7 +1216,7 @@
           </mml:math>. In this equation, x represents the variable in the
           mathematical model, in the units on the source variable element,
           while the remaining variables SHALL be interpreted as specified in
-          the section 'The effect of units on variables'.
+          <xref linkend="units-on-variables"/>.
         </para>
       </listitem>
       <listitem>
