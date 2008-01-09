@@ -6,12 +6,12 @@
   <xi:include href="terminology.xml"/>
   <xi:include href="general-matters.xml"/>
   <xi:include href="data-representation.xml"/>
-  <xi:include href="model-interpretation.xml"/>
   <xi:include href="model-element-item.xml"/>
   <xi:include href="component-element-item.xml"/>
   <xi:include href="connection-element-item.xml"/>
   <xi:include href="group-element-item.xml"/>
   <xi:include href="import-element-item.xml"/>
   <xi:include href="units-element-item.xml"/>
+  <xi:include href="model-interpretation.xml"/>
   <xi:include href="normative-references.xml"/>
 </article>
