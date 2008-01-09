@@ -8,6 +8,7 @@
   <xi:include href="data-representation.xml"/>
   <xi:include href="model-element-item.xml"/>
   <xi:include href="component-element-item.xml"/>
+  <xi:include href="variable-element-item.xml"/>
   <xi:include href="connection-element-item.xml"/>
   <xi:include href="group-element-item.xml"/>
   <xi:include href="import-element-item.xml"/>

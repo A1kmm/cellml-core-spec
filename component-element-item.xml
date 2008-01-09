@@ -17,12 +17,13 @@
           namespace. The value of the name attribute MUST be a valid CellML
           identifier. The value of the name attribute MUST NOT be identical to
           the name attribute on any other component element or import component
-          element.
+          element in the CellML Infoset.
         </para>
       </listitem>
       <listitem>
         <para>
-          Every component element MUST contain one or more variable elements.
+          Every component element MUST contain one or more variable elements
+          (<xref linkend="variable-element" />).
         </para>
       </listitem>
       <listitem>
@@ -39,6 +40,7 @@
             <listitem>
               <para>
                 a units element
+                (<xref linkend="units-element" />)
               </para>
             </listitem>
           </orderedlist>

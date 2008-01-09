@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE article SYSTEM "-//OASIS//DTD DocBook XML">
+<section id="variable-element">
+  <title>The variable element information item</title>
+  <para>
+    Variable element information items (referred to in this specification as
+    variable elements) are element information items in the CellML 1.1
+    namespace with local name equal to component, and which appear as a child
+    of a component element.
+  </para>
+  <section>
+    <title>Specific information items</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          Every variable element MUST have each of the following attribute
+          information items in the empty namespace:
+          <orderedlist>
+            <listitem>
+              <para>
+                The name attribute. The value of the name attribute MUST be a
+                valid CellML Identifier. The value of the name attribute MUST
+                NOT be identical to the name attribute on any sibling variable
+                element.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                The units attribute. The value of the units attribute MUST be a
+                valid CellML Identifier, and MUST meet the constraints described
+                in <xref linkend="units-on-variables" />.
+              </para>
+            </listitem>
+          </orderedlist>
+        </para>
+      </listitem>
+    </orderedlist>
+  </section>
+</section>
