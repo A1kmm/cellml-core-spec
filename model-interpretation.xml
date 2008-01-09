@@ -1073,8 +1073,90 @@
     </orderedlist>
   </section>
   <section>
+    <title>The effect of units on variables</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          The units attribute on a variable element MUST be a valid units
+          reference. The target of this units reference is referred to in
+          as the variable units, and the corresponding base
+          units reduction is referred to as the variable base units reduction.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The variable base units reduction of a variable element MUST have an
+          identical set of tuples to the set of tuples on the source variable
+          base element units reduction. Two sets of tuples SHALL be
+          considered identical if and only if neither set contains any tuple
+          not present in the other. Two tuples are considered identical if both
+          the base units and exponent on the tuple are the same.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The following symbols are defined for the purposes of the formulae in
+          the 'Interpretation of Mathematics' section:
+          <orderedlist>
+            <listitem>
+              <para>
+                <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+                  <mml:msub>
+                    <mml:mi>m</mml:mi>
+                    <mml:mi>V</mml:mi>
+                  </mml:msub>
+                </mml:math>
+                is the multiplier on the variable base units reduction.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+                  <mml:msub>
+                    <mml:mi>o</mml:mi>
+                    <mml:mi>V</mml:mi>
+                  </mml:msub>
+                </mml:math>
+                is the offset on the variable base units reduction.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+                  <mml:msub>
+                    <mml:mi>m</mml:mi>
+                    <mml:mi>S</mml:mi>
+                  </mml:msub>
+                </mml:math>
+                is the multiplier on the source variable base units reduction.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+                  <mml:msub>
+                    <mml:mi>o</mml:mi>
+                    <mml:mi>S</mml:mi>
+                  </mml:msub>
+                </mml:math>
+                is the offset on the source variable base units reduction.
+              </para>
+            </listitem>
+          </orderedlist>
+        </para>
+      </listitem>
+    </orderedlist>
+  </section>
+  <section>
     <title>Interpretation of the mathematics</title>
     <orderedlist>
+      <listitem>
+        <para>
+          Every MathML element which appears as a direct child information
+          item of the MathML math element information item SHALL be treated
+          as a statement which holds true unconditionally.
+        </para>
+      </listitem>
       <listitem>
         <para>
           Every MathML element which appears as a direct child information
@@ -1096,16 +1178,56 @@
           <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
             <mml:mrow>
               <mml:mrow>
-                <mml:mi>m</mml:mi>
+                <mml:mfrac>
+                  <mml:msub>
+                    <mml:mi>m</mml:mi>
+                    <mml:mi>V</mml:mi>
+                  </mml:msub>
+                  <mml:msub>
+                    <mml:mi>m</mml:mi>
+                    <mml:mi>S</mml:mi>
+                  </mml:msub>
+                </mml:mfrac>
+                <mml:mo>&#x00D7;<!--times--></mml:mo>
                 <mml:mi>x</mml:mi>
               </mml:mrow>
               <mml:mo>+</mml:mo>
-              <mml:mi>c</mml:mi>
+              <mml:msub>
+                <mml:mi>o</mml:mi>
+                <mml:mi>V</mml:mi>
+              </mml:msub>
+              <mml:mo>-</mml:mo>
+              <mml:mfrac>
+                <mml:msub>
+                  <mml:mi>m</mml:mi>
+                  <mml:mi>V</mml:mi>
+                </mml:msub>
+                <mml:msub>
+                  <mml:mi>m</mml:mi>
+                  <mml:mi>S</mml:mi>
+                </mml:msub>
+              </mml:mfrac>
+              <mml:mo>&#x00D7;<!--times--></mml:mo>
+              <mml:msub>
+                <mml:mi>o</mml:mi>
+                <mml:mi>S</mml:mi>
+              </mml:msub>
             </mml:mrow>
-          </mml:math>. x SHALL represent the variable in the mathematical
-          model, in the units on the source variable element, while m and c
-          SHALL represent constants, the meaning of which is specified in the
-          interpretation of units subsection.
+          </mml:math>. In this equation, x represents the variable in the
+          mathematical model, in the units on the source variable element,
+          while the remaining variables SHALL be interpreted as specified in
+          the section 'The effect of units on variables'.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Every MathML cn element MUST have an attribute information item in
+          the CellML 1.1 namespace, with local name units. The value of this
+          attribute information item MUST be a valid units reference. The
+          referenced units SHALL NOT affect the mathematical interpreation of
+          the CellML model. However, CellML Processing Software MAY use this
+          information to assist the user in the detection and correction of
+          units errors in the CellML Model.
         </para>
       </listitem>
     </orderedlist>
