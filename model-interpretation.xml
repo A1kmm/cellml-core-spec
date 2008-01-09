@@ -835,6 +835,99 @@
       </tbody>
     </tgroup>
   </table>
+  <table id='prefix-table' frame='all'>
+    <title>Prefix values</title>
+    <tgroup cols='2'>
+      <thead>
+        <row>
+          <entry>Prefix Name</entry>
+          <entry>Prefix Term</entry>
+        </row>
+      </thead>
+      <tbody>
+        <row>
+          <entry>yotta</entry>
+  	  <entry>24</entry>
+        </row>
+        <row>
+          <entry>zetta</entry>
+ 	  <entry>21</entry>
+        </row>
+        <row>
+          <entry>exa</entry>
+ 	  <entry>18</entry>
+        </row>
+        <row>
+          <entry>peta</entry>
+ 	  <entry>15</entry>
+        </row>
+        <row>
+          <entry>tera</entry>
+ 	  <entry>12</entry>
+        </row>
+        <row>
+          <entry>giga</entry>
+ 	  <entry>9</entry>
+        </row>
+        <row>
+          <entry>mega</entry>
+ 	  <entry>6</entry>
+        </row>
+        <row>
+          <entry>kilo</entry>
+ 	  <entry>3</entry>
+        </row>
+        <row>
+          <entry>hecto</entry>
+ 	  <entry>2</entry>
+        </row>
+        <row>
+          <entry>deka</entry>
+ 	  <entry>1</entry>
+        </row>
+        <row>
+          <entry>deci</entry>
+  	  <entry>-1</entry>
+        </row>
+        <row>
+          <entry>centi</entry>
+ 	  <entry>-2</entry>
+        </row>
+        <row>
+          <entry>milli</entry>
+ 	  <entry>-3</entry>
+        </row>
+        <row>
+          <entry>micro</entry>
+ 	  <entry>-6</entry>
+        </row>
+        <row>
+          <entry>nano</entry>
+ 	  <entry>-9</entry>
+        </row>
+        <row>
+          <entry>pico</entry>
+ 	  <entry>-12</entry>
+        </row>
+        <row>
+          <entry>femto</entry>
+ 	  <entry>-15</entry>
+        </row>
+        <row>
+          <entry>atto</entry>
+ 	  <entry>-18</entry>
+        </row>
+        <row>
+          <entry>zepto</entry>
+ 	  <entry>-21</entry>
+        </row>
+        <row>
+          <entry>yocto</entry>
+ 	  <entry>-24</entry>
+        </row>
+      </tbody>
+    </tgroup>
+  </table>
   <section>
     <title>Interpretation of units</title>
     <orderedlist>
@@ -892,10 +985,83 @@
                 <orderedlist>
                   <listitem>
                     <para>
-                      Models MUST NOT contain units element information
-                      items which have more than one operand base unit
-                      reduction, and also have one or more operand base
-                      unit reductions with offset not equal to zero.
+                      The prefix term is a conceptual property of unit
+                      elements, defined here for later use. If the unit element
+                      does not have a prefix information item, the prefix term
+                      SHALL have value zero. If the prefix
+                      attribute information item has a real number value, then
+                      the prefix term SHALL have that value. Otherwise, the
+                      prefix attribute information item MUST have a value taken
+                      from the 'Prefix Name' column of
+                      <xref linkend='prefix-table' />, and the prefix term
+                      SHALL have the value taken from the 'Prefix Term' column
+                      of the same row.
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      The exponent term is a conceptual property of unit
+                      elements, defined here for later use. If a unit element
+                      has no exponent attribute information item, the exponent
+                      term SHALL have value 1.0. Otherwise, the value of the
+                      exponent attribute information item MUST be a real number,
+                      and the value of the exponent term SHALL be that number.
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      The multiplier term is a conceptual property of unit
+                      elements, defined here for later use. The multiplier term
+                      SHALL be the real number value of the multiplier attribute
+                      information item on the units element (or 1.0 in the
+                      absence of such an attribute information item),
+                      multiplied by 10.0 raised to the power of the negative of
+                      the product of the prefix term and the value of the
+                      exponent attribute information item.
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      The offset term is a conceptual property of unit
+                      elements, defined here for later use. If a unit element
+                      has no offset attribute information item, the offset
+                      term SHALL have value 0.0. Otherwise, the value of the
+                      offset attribute information item MUST be a real number,
+                      and the value of the offset term SHALL be that number.
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      Where the units reference is to a units element with a
+                      single unit child element, then the resultant base unit
+                      reduction SHALL have multiplier equal to the product of
+                      the multiplier of the operand base unit reduction and the
+                      multiplier term of the unit element. It SHALL have offset
+                      equal to the sum of the offset of the operand base unit
+                      reduction and the offset term of the unit element.
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      Where the units reference is to a units element with a
+                      number of unit child elements not equal to one, then the
+                      resultant base unit reduction SHALL have multiplier equal
+                      to the product of the multipliers of each operand base
+                      unit reduction, and the multiplier term of each unit
+                      element.  It SHALL have offset equal to zero.
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      The set of tuples on the resultant base unit reduction
+                      SHALL have one member for every distinct base unit present
+                      in the set of tuples for any of the operand base unit
+                      reductions. The exponent alongside each of these base
+                      units in the resultant base unit reduction SHALL be the sum,
+                      across all tuples for the base unit from operand base
+                      unit reductions, of pairwise products of the exponent
+                      term on the corresponding unit element and the exponent
+                      from the tuple.
                     </para>
                   </listitem>
                 </orderedlist>
