@@ -34,6 +34,34 @@
           </orderedlist>
         </para>
       </listitem>
+      <listitem>
+        <para>
+          Every variable element MAY contain one or more of the following attribute
+          information items in the empty namespace:
+          <orderedlist>
+            <listitem>
+              <para>
+                The public_interface attribute. If the attribute is present, it
+                MUST have value in, out, or none.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                The private_interface attribute. If the attribute is present, it
+                MUST have value in, out, or none. It MUST NOT have value in if
+                the public_interface attribute also has the value in.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                The initial_value attribute. If the attribute is present, it MUST
+                meet the requirements described in
+                <xref linkend="initial-value-interpretation"/>.
+              </para>
+            </listitem>
+          </orderedlist>
+        </para>
+      </listitem>
     </orderedlist>
   </section>
 </section>
