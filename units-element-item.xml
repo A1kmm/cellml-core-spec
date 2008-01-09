@@ -5,7 +5,8 @@
   <para>
     Units element information items (referred to in this specification as
     units elements) are element information items in the CellML 1.1
-    namespace with local name equal to units.
+    namespace with local name equal to units, and with either a component
+    or model element as their parent.
   </para>
   <section>
     <title>Specific information items</title>
@@ -20,7 +21,15 @@
           or of any import units element in the CellML Infoset. Where the parent
           of the units element is a component element, the value of the name
           attribute MUST NOT be identical to the name attribute of any other
-          units element child of that component element.
+          units element child of that component element. In any case, the value
+          of the name attribute MUST NOT be equal to a cell in the name column
+          of <xref linkend='units-table' />.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          A units element MAY contain one or more unit element children
+          (<xref linkend="unit-element" />).
         </para>
       </listitem>
     </orderedlist>

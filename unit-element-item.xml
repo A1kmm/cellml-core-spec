@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE article SYSTEM "-//OASIS//DTD DocBook XML">
+<section id="unit-element">
+  <title>The unit element information item</title>
+  <para>
+    Unit element information items (referred to in this specification as
+    unit elements) are element information items in the CellML 1.1
+    namespace with local name equal to unit, and with a units element as their parent.
+  </para>
+  <section>
+    <title>Specific information items</title>
+    <orderedlist>
+    </orderedlist>
+  </section>
+</section>

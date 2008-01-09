@@ -13,6 +13,7 @@
   <xi:include href="group-element-item.xml"/>
   <xi:include href="import-element-item.xml"/>
   <xi:include href="units-element-item.xml"/>
+  <xi:include href="unit-element-item.xml"/>
   <xi:include href="model-interpretation.xml"/>
   <xi:include href="normative-references.xml"/>
 </article>
