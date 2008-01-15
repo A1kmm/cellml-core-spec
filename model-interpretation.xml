@@ -259,7 +259,7 @@
       </listitem>
     </orderedlist>
   </section>
-  <section>
+  <section id="units-reference">
     <title>Units reference</title>
     <orderedlist>
       <listitem>
@@ -928,7 +928,7 @@
       </tbody>
     </tgroup>
   </table>
-  <section>
+  <section id="interpretation-of-units">
     <title>Interpretation of units</title>
     <orderedlist>
       <listitem>
@@ -989,8 +989,9 @@
                       elements, defined here for later use. If the unit element
                       does not have a prefix information item, the prefix term
                       SHALL have value zero. If the prefix
-                      attribute information item has a real number value, then
-                      the prefix term SHALL have that value. Otherwise, the
+                      attribute information item has a value which is a real
+                      number string, then the prefix term SHALL have the
+                      corresponding numerical value. Otherwise, the
                       prefix attribute information item MUST have a value taken
                       from the 'Prefix Name' column of
                       <xref linkend='prefix-table' />, and the prefix term
@@ -1004,8 +1005,9 @@
                       elements, defined here for later use. If a unit element
                       has no exponent attribute information item, the exponent
                       term SHALL have value 1.0. Otherwise, the value of the
-                      exponent attribute information item MUST be a real number,
-                      and the value of the exponent term SHALL be that number.
+                      exponent attribute information item MUST be a real number
+                      string, and the value of the exponent term SHALL be the
+                      numerical value of that string.
                     </para>
                   </listitem>
                   <listitem>
@@ -1026,8 +1028,9 @@
                       elements, defined here for later use. If a unit element
                       has no offset attribute information item, the offset
                       term SHALL have value 0.0. Otherwise, the value of the
-                      offset attribute information item MUST be a real number,
-                      and the value of the offset term SHALL be that number.
+                      offset attribute information item MUST be a real number
+                      string, and the value of the offset term SHALL be the
+                      numerical value of that string.
                     </para>
                   </listitem>
                   <listitem>

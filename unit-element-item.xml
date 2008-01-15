@@ -10,6 +10,46 @@
   <section>
     <title>Specific information items</title>
     <orderedlist>
+      <listitem>
+        <para>
+          Every unit element MUST contain a units attribute information item
+          in the empty namespace. The value of the units attribute MUST be a
+          valid units reference, as defined in <xref linkend="units-reference"/>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          A unit element MAY contain any of the following attribute information
+          items in the empty namespace:
+          <orderedlist>
+            <listitem>
+              <para>
+                The prefix attribute. If present, the value of the attribute
+                MUST meet the constraints specified in
+                <xref linkend="interpretation-of-units"/>.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                The offset attribute. If present, the value of the attribute
+                MUST be a real number string.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                The multiplier attribute. If present, the value of the attribute
+                MUST be a real number string.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                The exponent attribute. If present, the value of the attribute
+                MUST be a real number string.
+              </para>
+            </listitem>
+          </orderedlist>
+        </para>
+      </listitem>
     </orderedlist>
   </section>
 </section>
