@@ -41,11 +41,11 @@ Unicode character codes.
       </listitem>
       <listitem>
         <para>
-          A positive integer string:
+          A non-negative integer string:
           <orderedlist>
             <listitem>
               <para>
-SHALL be a base 10 representation of a positive integer.
+SHALL be a base 10 representation of a non-negative integer.
               </para>
             </listitem>
             <listitem>
@@ -66,11 +66,11 @@ SHALL be a base 10 representation of an integer.
               </para>
               <para>
 When the integer being represented is negative, SHALL consist of the Basic Latin
-hyphen-minus character U+002D, followed by the positive integer string
+hyphen-minus character U+002D, followed by the  integer string
 representation of the absolute value of the integer.
               </para>
               <para>
-When the integer being represented is positive, SHALL consist of the positive
+When the integer being represented is non-negative, SHALL consist of the non-negative
 integer string representation of the integer.
               </para>
             </listitem>
