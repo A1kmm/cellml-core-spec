@@ -10,6 +10,9 @@
   <xi:include href="component-element-item.xml"/>
   <xi:include href="variable-element-item.xml"/>
   <xi:include href="connection-element-item.xml"/>
+  <xi:include href="map-components-element-item.xml"/>
+  <xi:include href="map-variables-element-item.xml"/>
+  <xi:include href="connection-element-item.xml"/>
   <xi:include href="group-element-item.xml"/>
   <xi:include href="import-element-item.xml"/>
   <xi:include href="units-element-item.xml"/>

@@ -12,14 +12,14 @@
     <orderedlist>
       <listitem>
         <para>
-          Every connection element MUST contain exactly one map_component
-          element.
+          Every connection element MUST contain exactly one
+          map_component element (<xref linkend="map-component-element" />).
         </para>
       </listitem>
       <listitem>
         <para>
           Every connection element MUST contain one or more map_variables
-          element. 
+          element (<xref linkend="map-variables-element" />).
         </para>
       </listitem>
     </orderedlist>

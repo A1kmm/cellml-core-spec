@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE article SYSTEM "-//OASIS//DTD DocBook XML">
+<section id="map-variables-element">
+  <title>The map_variables element information item</title>
+  <para>
+    map_variables element information items (referred to in this specification
+    as map_variables elements) are element information items in the CellML 1.1
+    namespace with local name equal to map_variables, and which appear as a child
+    of a connection element.
+  </para>
+  <section>
+    <title>Specific information items</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          The variable_1 attribute. The value of the variable_1 attribute MUST
+          be a valid CellML Identifier. The value of this attribute MUST be equal
+          to the name attribute on a variable element in
+          the component element referenced by the component_1 attribute on the
+          map_components element which is a sibling of this element.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The variable_1 attribute. The value of the variable_2 attribute MUST
+          be a valid CellML Identifier. The value of this attribute MUST be equal
+          to the name attribute on a variable element in
+          the component element referenced by the component_2 attribute on the
+          map_components element which is a sibling of this element.
+        </para>
+      </listitem>
+    </orderedlist>
+  </section>
+</section>
