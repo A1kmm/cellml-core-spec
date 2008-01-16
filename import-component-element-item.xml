@@ -26,7 +26,9 @@
           empty namespace. The value of the component_ref attribute MUST be a valid
           CellML identifier. The value of the component_ref attribute MUST
           match the value of the name attribute on a component or import component
-          element in the imported CellML Infoset.
+          element in the imported CellML Infoset. The value of the component_ref
+          attribute MUST NOT match the value of the component_ref attribute on any
+          sibling import component element.
         </para>
       </listitem>
     </orderedlist>
