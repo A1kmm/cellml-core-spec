@@ -170,6 +170,13 @@ version back out SHOULD preserve unrecognised extension information items when
 the parent information item is not modified.
         </para>
       </listitem>
+      <listitem>
+        <para>
+CellML Processing Software MUST NOT allow the mathematical interpretation of a
+CellML Model to be altered by any information present in extension information
+items.
+        </para>
+      </listitem>
     </orderedlist>
   </section>
   <section>
