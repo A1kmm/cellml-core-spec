@@ -225,4 +225,23 @@ items.
       </listitem>
     </orderedlist>
   </section>
+  <section>
+    <title>RDF Element Information Items</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          Every element information item in the CellML namespace MAY contain
+          zero or more RDF Element Information Item children.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          An RDF Element Information Item SHALL be an element item in the RDF
+          namespace, with local name RDF (the RDF element information item), and
+          MUST form the top-level of a valid RDF/XML tree, per production
+          7.2.9 in <xref linkend="RDF-XML"/>.
+        </para>
+      </listitem>
+    </orderedlist>
+  </section>
 </section>
