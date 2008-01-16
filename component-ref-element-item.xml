@@ -12,7 +12,7 @@
     <orderedlist>
       <listitem>
         <para>
-          Every component_ref element MUST contain exactly one attribute
+          Every component_ref element MUST contain an attribute
           information item in the empty namespace and with local name
           component. The value of this attribute MUST be a valid CellML
           Identifier, and MUST match the name attribute on a component or
