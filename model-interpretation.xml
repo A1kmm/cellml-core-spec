@@ -3,14 +3,6 @@
 <section>
   <title>Interpretation of CellML models</title>
   <section>
-    <title>Interpretation of imports</title>
-    <para>
-      Each import element present in a CellML Infoset (the importing infoset)
-      SHALL define a new and separate instance of the CellML Infoset referenced
-      by the href attribute (the imported infoset).
-    </para>
-  </section>
-  <section>
     <title>Component reference</title>
     <orderedlist>
       <listitem>
@@ -1192,13 +1184,52 @@
     </orderedlist>
   </section>
   <section>
+    <title>Interpretation of imports</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          Each import element present in a CellML Infoset (the importing infoset)
+          SHALL define a new and separate instance of the CellML Infoset referenced
+          by the href attribute (the imported infoset).
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The following component elements SHALL be "pertinent component elements":
+          <orderedlist>
+            <listitem>
+              <para>
+                all component elements in the top-level CellML
+                Infoset for the CellML Model, and,
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                all component elements referenced by import components in the top-level
+                CellML Infoset, and,
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                all component elements which are descendants in the encapsulation
+                digraph of a pertinent component element.
+              </para>
+            </listitem>
+          </orderedlist>
+        </para>
+      </listitem>
+    </orderedlist>
+  </section>
+  <section>
     <title>Interpretation of the mathematics</title>
     <orderedlist>
       <listitem>
         <para>
-          Every MathML element which appears as a direct child information
-          item of the MathML math element information item SHALL be treated
-          as a statement which holds true unconditionally.
+          Every MathML element in the CellML Model, which appears as a direct
+          child information item of the MathML math element information item,
+          which in turn appears as a child information item of a pertinent component
+          element, SHALL be treated as a statement which holds true
+          unconditionally.
         </para>
       </listitem>
       <listitem>
