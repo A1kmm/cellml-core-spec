@@ -13,12 +13,13 @@
       <listitem>
         <para>
           Every group element MUST contain one or more relationship_ref
-          element.
+          elements (<xref linkend="relationship-ref-element" />).
         </para>
       </listitem>
       <listitem>
         <para>
-          Every group element MUST contain one or more component_ref element.
+          Every group element MUST contain one or more component_ref elements
+          (<xref linkend="component-ref-element" />).
         </para>
       </listitem>
     </orderedlist>

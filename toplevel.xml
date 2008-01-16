@@ -13,6 +13,8 @@
   <xi:include href="map-components-element.xml"/>
   <xi:include href="map-variables-element.xml"/>
   <xi:include href="group-element-item.xml"/>
+  <xi:include href="relationship-ref-element-item.xml"/>
+  <xi:include href="component-ref-element-item.xml"/>
   <xi:include href="import-element-item.xml"/>
   <xi:include href="units-element-item.xml"/>
   <xi:include href="unit-element-item.xml"/>

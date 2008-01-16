@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE article SYSTEM "-//OASIS//DTD DocBook XML">
+<section id="relationship-ref-element">
+  <title>The relationship_ref element information item</title>
+  <para>
+    relationship_ref element information items (referred to in this
+    specification as relationship_ref elements) are element information items
+    in the CellML 1.1 namespace with local name equal to relationship_ref.
+  </para>
+  <section>
+    <title>Specific information items</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          Every relationship_ref element MUST contain exactly one attribute
+          information item with local name relationship. This limit of one
+          attribute information item SHALL apply without regard to the
+          namespace the attribute information item is in, and SHALL, to the
+          extent that it conflicts, override the ordinary rules for extension
+          information items. In the event that the relationship attribute
+          is in the empty namespace, it MUST either take the value
+          encapsulation or containment.
+        </para>
+      </listitem>
+      <!-- if I didn't want to get rid of it due to definitional and ideological
+           problems, I would also define name here. This is something which
+           needs more discussion.
+        -->
+    </orderedlist>
+  </section>
+</section>

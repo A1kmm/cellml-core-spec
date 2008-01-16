@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE article SYSTEM "-//OASIS//DTD DocBook XML">
+<section id="component-ref-element">
+  <title>The component_ref element information item</title>
+  <para>
+    component_ref element information items (referred to in this
+    specification as component_ref elements) are element information items
+    in the CellML 1.1 namespace with local name equal to component_ref.
+  </para>
+  <section>
+    <title>Specific information items</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          Every component_ref element MUST contain exactly one attribute
+          information item in the empty namespace and with local name
+          component. The value of this attribute MUST be a valid CellML
+          Identifier, and MUST match the name attribute on a component or
+          import component element in the CellML Infoset.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Every component_ref element MAY in turn contain zero or more
+          component_ref element children. In addition, component_ref elements
+          which are children of group elements MUST contain at least one
+          component_ref element child.
+        </para>
+      </listitem>
+    </orderedlist>
+  </section>
+</section>
