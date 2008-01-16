@@ -50,4 +50,12 @@ Mathematical Markup Language (MathML) Version 2.0 (Second Edition)
     </citetitle>
     <date>21 October 2003</date>
   </biblioentry>
+  <biblioentry id="XLINK">
+    <citetitle>
+      <ulink url="http://www.w3.org/TR/2001/REC-xlink-20010627/">
+XML Linking Language (XLink) Version 1.0
+      </ulink>
+    </citetitle>
+    <date>27 June 2001</date>
+  </biblioentry>
 </bibliography>

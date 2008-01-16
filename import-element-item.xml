@@ -7,4 +7,28 @@
     import elements) are element information items in the CellML 1.1
     namespace with local name equal to import.
   </para>
+  <section>
+    <title>Specific information items</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          Every import element MUST contain an attribute information item in
+          the namespace http://www.w3.org/1999/xlink, and with local name href.
+          The value of this attribute SHALL be a valid locator href, as defined
+          in section 5.4 of the XLink specification (<xref linkend="XLINK" />).
+          The href attribute SHALL be treated according to the XLink specification,
+          by applying the rules for simple-type elements. When describing an import
+          element or one of its children, the phrase "imported CellML Infoset"
+          SHALL refer to the CellML Infoset obtained by parsing the XML document
+          referenced by the href attribute.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Every import element MAY contain one or more import component
+          elements, and MAY contain one or more import units elements.
+        </para>
+      </listitem>
+    </orderedlist>
+  </section>
 </section>
