@@ -196,6 +196,15 @@
       </listitem>
       <listitem>
         <para>
+          CellML models MUST NOT contain any pair of map_variables elements which
+          each make reference to the same sets of variables (without regard to
+          whether the variable_1 attribute of one map_variables element references
+          the variable referenced by the variable_1 or variable_2 attribute of
+          the other).
+        </para>
+      </listitem>
+      <listitem>
+        <para>
           CellML models MUST NOT contain map_variables elements for which
           variable A is in the hidden set of variable B.
         </para>
