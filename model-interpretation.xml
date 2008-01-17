@@ -160,6 +160,13 @@
           and component B is not in the sibling set for component A.
         </para>
       </listitem>
+      <listitem>
+        <para>
+          CellML models MUST NOT contain map_components elements such that the
+          component referenced by the component_1 attribute is in the hidden set
+          of the component referenced by the component_2 attribute.
+        </para>
+      </listitem>
       <!-- To do: Add in something about containment, or get community
            consensus to drop containment from the core specification and move
            it into the metadata. See tracker item 316. -->
@@ -205,18 +212,14 @@
       </listitem>
       <listitem>
         <para>
-          CellML models MUST NOT contain map_variables elements for which
-          variable A is in the hidden set of variable B.
-        </para>
-      </listitem>
-      <listitem>
-        <para>
           When variable A is in the sibling set of variable B, the applicable
           interface for variables A and B SHALL be the public interface. Where
-          variable A is in the encapsulated set of variable B, the applicable
+          the component parent element of variable A is in the encapsulated set of the
+          component parent element of variable B, the applicable
           interface for variable A SHALL be the public interface, and the
           applicable interface for variable B SHALL be the private interface.
-          Where variable B is in the encapsulated set of variable A, the applicable
+          Where the component parent element of variable B is in the encapsulated set of
+          the component parent element of variable A, the applicable
           interface for variable A SHALL be the private interface, and the
           applicable interface for variable B SHALL be the public interface.
         </para>
