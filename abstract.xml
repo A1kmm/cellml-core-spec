@@ -2,17 +2,13 @@
 <!DOCTYPE article SYSTEM "-//OASIS//DTD DocBook XML">
 <abstract>
   <para>
-This document is an unofficial working draft managed by Andre. The below describes the intended
-status of the specification, and not the current status right now.
+This document is an unofficial working draft managed by Andre. The below describes the intended status of the specification, and not the current status right now.
   </para>
   <para>
 This document specifies CellML 1.2, an XML-based language for describing and
 exchanging mathematical models.
   </para>
   <para>
-This is the <emphasis>normative</emphasis> specification of CellML. It is intended to
-provide the minimum amount of information needed to accurately describe CellML.
-An alternative version is available which is annotated with much more
-explanatory material.
+This is the <emphasis>normative</emphasis> specification of CellML. It is intended to provide the minimum amount of information needed to accurately describe CellML. An alternative version is available which is annotated with much more explanatory material.
   </para>
 </abstract>
