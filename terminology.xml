@@ -92,7 +92,7 @@ An XML namespace, as defined in <xref linkend="XML-NAMESPACE"/>.
       <glossterm>Extension Namespace</glossterm>
       <glossdef>
         <para>
-          Any namespace which is not a CellML namespace, and is not the RDF namespace, the MathML namespace, <uri>http://www.w3.org/XML/1998/namespace</uri>, <uri>http://www.w3.org/2000/xmlns/</uri>, http://www.w3.org/1999/xlink, or the empty namespace.
+          Any namespace which is not a CellML namespace, and is not the RDF namespace, the MathML namespace, <uri>http://www.w3.org/XML/1998/namespace</uri>, <uri>http://www.w3.org/2000/xmlns/</uri>, <uri>http://www.w3.org/1999/xlink</uri>, or the empty namespace.
         </para>
       </glossdef>
     </glossentry>
