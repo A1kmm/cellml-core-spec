@@ -52,7 +52,7 @@ An XML namespace, as defined in <xref linkend="XML-NAMESPACE"/>.
       <glossterm>CellML Namespace</glossterm>
       <glossdef>
         <para>
-Any namespace starting with http://www.cellml.org/cellml/
+          Any namespace starting with <uri>http://www.cellml.org/cellml/</uri>
         </para>
       </glossdef>
     </glossentry>
@@ -60,7 +60,7 @@ Any namespace starting with http://www.cellml.org/cellml/
       <glossterm>CellML 1.1 Namespace</glossterm>
       <glossdef>
         <para>
-The namespace http://www.cellml.org/cellml/1.1#
+          The namespace <uri>http://www.cellml.org/cellml/1.1#</uri>
         </para>
       </glossdef>
     </glossentry>
@@ -68,7 +68,7 @@ The namespace http://www.cellml.org/cellml/1.1#
       <glossterm>CellML 1.2 Namespace</glossterm>
       <glossdef>
         <para>
-The namespace http://www.cellml.org/cellml/1.2#
+          The namespace <uri>http://www.cellml.org/cellml/1.2#</uri>
         </para>
       </glossdef>
     </glossentry>
@@ -76,7 +76,7 @@ The namespace http://www.cellml.org/cellml/1.2#
       <glossterm>MathML Namespace</glossterm>
       <glossdef>
         <para>
-The namespace http://www.w3.org/1998/Math/MathML
+          The namespace <uri>http://www.w3.org/1998/Math/MathML</uri>
         </para>
       </glossdef>
     </glossentry>
@@ -84,7 +84,7 @@ The namespace http://www.w3.org/1998/Math/MathML
       <glossterm>RDF Namespace</glossterm>
       <glossdef>
         <para>
-The namespace http://www.w3.org/1999/02/22-rdf-syntax-ns#
+          The namespace <uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#</uri>
         </para>
       </glossdef>
     </glossentry>
@@ -100,10 +100,7 @@ The namespace http://www.cellml.org/metadata/1.0#
       <glossterm>Extension Namespace</glossterm>
       <glossdef>
         <para>
-Any namespace which is not a CellML namespace, and is not the RDF namespace,
-the MathML namespace, http://www.w3.org/XML/1998/namespace,
-http://www.w3.org/2000/xmlns/, http://www.w3.org/1999/xlink, or the empty
-namespace.
+          Any namespace which is not a CellML namespace, and is not the RDF namespace, the MathML namespace, <uri>http://www.w3.org/XML/1998/namespace</uri>, <uri>http://www.w3.org/2000/xmlns/</uri>, http://www.w3.org/1999/xlink, or the empty namespace.
         </para>
       </glossdef>
     </glossentry>
