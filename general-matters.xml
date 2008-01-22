@@ -260,9 +260,9 @@ items.
       <listitem>
         <para>
           Two CellML Infosets which differ only by the addition, removal, or
-          modification of RDF Element Information Items, but which have the
-          same set of all RDF triples SHALL be termed RDF-equivalent
-          CellML Infosets.
+          modification of RDF Element Information Items (or Information Items
+          descended from them), but which have the same set of all RDF triples,
+          SHALL be termed RDF-equivalent CellML Infosets.
         </para>
       </listitem>
       <listitem>
