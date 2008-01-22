@@ -154,7 +154,9 @@ Information Items.
         <para>
 Extension information items MAY contain extension information items as their
 children. In addition, extension elements MAY contain presentation MathML
-children.
+children. For the avoidance of doubt, it is noted that extension information
+items MAY also contain any other information items not disallowed
+by this specification or a referenced normative specification.
         </para>
       </listitem>
       <listitem>
