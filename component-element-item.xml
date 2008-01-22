@@ -22,16 +22,16 @@
       </listitem>
       <listitem>
         <para>
-          Every component element MUST contain one or more variable elements
-          (<xref linkend="variable-element" />).
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          A component element MAY contain zero or more additional specific
+          A component element MAY contain zero or more specific
           information item children, each of which MUST be of one of the
           following types:
           <orderedlist>
+            <listitem>
+              <para>
+                a variable element
+                (<xref linkend="variable-element" />).
+              </para>
+            </listitem>
             <listitem>
               <para>
                 a content mathematics element
