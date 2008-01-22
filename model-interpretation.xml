@@ -213,24 +213,44 @@
       <listitem>
         <para>
           When variable A is in the sibling set of variable B, the applicable
-          interface for variables A and B SHALL be the public interface. Where
-          the component parent element of variable A is in the encapsulated set of the
-          component parent element of variable B, the applicable
-          interface for variable A SHALL be the public interface, and the
-          applicable interface for variable B SHALL be the private interface.
-          Where the component parent element of variable B is in the encapsulated set of
-          the component parent element of variable A, the applicable
-          interface for variable A SHALL be the private interface, and the
-          applicable interface for variable B SHALL be the public interface.
+          interface for variables A and B SHALL be the public interface.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Where the component parent element of variable A is in the
+          encapsulated set of the component parent element of variable B,
+          the applicable interface for variable A SHALL be the public interface,
+          and the applicable interface for variable B SHALL be the private
+          interface.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Where the component parent element of variable B is in the
+          encapsulated set of the component parent element of variable A,
+          the applicable interface for variable A SHALL be the private
+          interface, and the applicable interface for variable B SHALL be the
+          public interface.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
           For a given variable, if the applicable interface is the public
           interface, the applicable interface attribute SHALL be the
           public_interface attribute information item on the corresponding
           variable element. If the applicable interface is the private
           interface, the applicable interface attribute SHALL be the
           private_interface attribute information item on the corresponding
-          variable element. In any case, if the applicable interface attribute
-          is absent, the rules in this section SHALL still apply as if the
-          applicable interface attribute was present, and had the value none.
+          variable element.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          In any case, if the applicable interface attribute
+          is absent, the following rules in this section SHALL still apply as if
+          the applicable interface attribute was present, and had the value
+          none.
         </para>
       </listitem>
       <listitem>
