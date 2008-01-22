@@ -3,7 +3,7 @@
 <section id="map-components-element">
   <title>The map_components element information item</title>
   <para>
-    map_component element information items (referred to in this specification
+    map_components element information items (referred to in this specification
     as map_components elements) are element information items in the CellML 1.1
     namespace with local name equal to map_components, and which appear as a child
     of a connection element.
