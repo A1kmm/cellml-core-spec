@@ -13,7 +13,8 @@
     <orderedlist>
       <listitem>
         <para>
-          The component_1 attribute. The value of the component_1 attribute MUST
+          Each map_components element MUST define a component_1 attribute. The
+          value of the component_1 attribute MUST
           be a valid CellML Identifier. The value of this attribute MUST be equal
           to the name attribute on a component or import component element in
           the CellML Infoset.
@@ -21,7 +22,8 @@
       </listitem>
       <listitem>
         <para>
-          The component_2 attribute. The value of the component_2 attribute MUST
+          Each map_components element MUST define a component_2 attribute. The
+          value of the component_2 attribute MUST
           be a valid CellML Identifier. The value of this attribute MUST be equal
           to the name attribute on a component or import component element in
           the CellML Infoset. It MUST NOT be equal to the value of the
