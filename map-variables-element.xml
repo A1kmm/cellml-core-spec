@@ -13,20 +13,22 @@
     <orderedlist>
       <listitem>
         <para>
-          The variable_1 attribute. The value of the variable_1 attribute MUST
-          be a valid CellML Identifier. The value of this attribute MUST be equal
-          to the name attribute on a variable element in
-          the component element referenced by the component_1 attribute on the
-          map_components element which is a sibling of this element.
+          Each map_variables element MUST contain a variable_1 attribute. The
+          value of the variable_1 attribute MUST be a valid CellML Identifier.
+          The value of this attribute MUST be equal to the name attribute on a
+          variable element child of the component element referenced by the
+          component_1 attribute on the map_components element which is a
+          sibling of this element.
         </para>
       </listitem>
       <listitem>
         <para>
-          The variable_1 attribute. The value of the variable_2 attribute MUST
-          be a valid CellML Identifier. The value of this attribute MUST be equal
-          to the name attribute on a variable element in
-          the component element referenced by the component_2 attribute on the
-          map_components element which is a sibling of this element.
+          Each map_variables element MUST contain a variable_2 attribute. The
+          value of the variable_2 attribute MUST be a valid CellML Identifier.
+          The value of this attribute MUST be equal to the name attribute on
+          a variable element child of the component element referenced by the
+          component_2 attribute on the map_components element which is a
+          sibling of this element.
         </para>
       </listitem>
     </orderedlist>
