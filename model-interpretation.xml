@@ -212,7 +212,8 @@
       </listitem>
       <listitem>
         <para>
-          When variable A is in the sibling set of variable B, the applicable
+          When the component parent element of variable A is in the sibling set of
+          the component parent element of variable B, the applicable
           interface for variables A and B SHALL be the public interface.
         </para>
       </listitem>
