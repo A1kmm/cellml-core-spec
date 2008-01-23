@@ -36,7 +36,11 @@
             <listitem>
               <para>
                 The offset attribute. If present, the value of the attribute
-                MUST be a real number string.
+                MUST be a real number string. If the attribute is present and
+                has value other than a real number string representing 0,
+                then this unit element MUST NOT have any sibling
+                unit elements, and the value of the exponent attribute, if
+                present, MUST be a real number string representing 1.
               </para>
             </listitem>
             <listitem>
