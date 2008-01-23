@@ -66,7 +66,7 @@ SHALL be a base 10 representation of an integer.
               </para>
               <para>
 When the integer being represented is negative, SHALL consist of the Basic Latin
-hyphen-minus character U+002D, followed by the  integer string
+hyphen-minus character U+002D, followed by the non-negative integer string
 representation of the absolute value of the integer.
               </para>
               <para>
