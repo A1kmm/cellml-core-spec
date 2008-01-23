@@ -34,7 +34,9 @@
             </listitem>
             <listitem>
               <para>
-                a content mathematics element
+                an element information item in the MathML namespace, and with
+                local name math, which MUST be the top-level of a content
+                MathML tree, as described in <xref linkend="MathML"/>.
               </para>
             </listitem>
             <listitem>
