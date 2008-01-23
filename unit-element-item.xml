@@ -15,10 +15,15 @@
           Every unit element MUST contain a units attribute information item
           in the empty namespace. The value of the units attribute MUST be a
           valid units reference, as defined in <xref linkend="units-reference"/>.
-          In addition, the units reference MUST NOT be one such that the digraph
-          consisting of units elements, with edges from units elements to units
-          elements referenced by the units attribute of unit element children of
-          those units element, contains one or more cycles.
+          The units element inclusion digraph SHALL be a conceptual digraph
+          defined for the purpose of the constraint in this paragraph, and
+          which contains one node for every units element in the model. The
+          units element inclusion digraph SHALL contain an arc from
+          units element A to units element B if and only if units element A
+          contains a unit element with units attribute value that is a
+          units reference to units element B. The value of the units attribute
+          MUST NOT be such that the units element inclusion digraph contains
+          one or more cycles.
         </para>
       </listitem>
       <listitem>
