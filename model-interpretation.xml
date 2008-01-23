@@ -975,6 +975,13 @@
       </listitem>
       <listitem>
         <para>
+          There SHALL be one user defined base unit for every units element
+          which has a base_units attribute in the empty namespace, having value
+          yes.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
           The base unit reduction of a units reference SHALL consist of a
           real valued offset, a real valued multiplier, and a set of
           tuples each consisting of a base unit and a real valued exponent.

@@ -28,6 +28,14 @@
       </listitem>
       <listitem>
         <para>
+          A units element MAY contain a base_units attribute in the empty
+          namespace. If present, the value of the base_units attribute MUST
+          be equal to either yes or no. If the attribute is present and equal
+          to yes, then the following paragraph does not apply.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
           A units element MAY contain one or more unit element children
           (<xref linkend="unit-element" />).
         </para>
