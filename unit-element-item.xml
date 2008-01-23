@@ -15,6 +15,10 @@
           Every unit element MUST contain a units attribute information item
           in the empty namespace. The value of the units attribute MUST be a
           valid units reference, as defined in <xref linkend="units-reference"/>.
+          In addition, the units reference MUST NOT be one such that the digraph
+          consisting of units elements, with edges from units elements to units
+          elements referenced by the units attribute of unit element children of
+          those units element, contains one or more cycles.
         </para>
       </listitem>
       <listitem>
