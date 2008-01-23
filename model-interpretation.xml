@@ -1123,12 +1123,12 @@
           The units attribute on a variable element MUST be a valid units
           reference. The target of this units reference is referred to in
           as the variable units, and the corresponding base
-          units reduction is referred to as the variable base units reduction.
+          units reduction is referred to as the variable base unit reduction.
         </para>
       </listitem>
       <listitem>
         <para>
-          The variable base units reduction of a variable element MUST have an
+          The variable base unit reduction of a variable element MUST have an
           identical set of tuples to the set of tuples on the source variable
           base element units reduction. Two sets of tuples SHALL be
           considered identical if and only if neither set contains any tuple
@@ -1149,7 +1149,7 @@
                     <mml:mi>V</mml:mi>
                   </mml:msub>
                 </mml:math>
-                is the multiplier on the variable base units reduction.
+                is the multiplier on the variable base unit reduction.
               </para>
             </listitem>
             <listitem>
@@ -1160,7 +1160,7 @@
                     <mml:mi>V</mml:mi>
                   </mml:msub>
                 </mml:math>
-                is the offset on the variable base units reduction.
+                is the offset on the variable base unit reduction.
               </para>
             </listitem>
             <listitem>
@@ -1171,7 +1171,7 @@
                     <mml:mi>S</mml:mi>
                   </mml:msub>
                 </mml:math>
-                is the multiplier on the source variable base units reduction.
+                is the multiplier on the source variable base unit reduction.
               </para>
             </listitem>
             <listitem>
@@ -1182,7 +1182,7 @@
                     <mml:mi>S</mml:mi>
                   </mml:msub>
                 </mml:math>
-                is the offset on the source variable base units reduction.
+                is the offset on the source variable base unit reduction.
               </para>
             </listitem>
           </orderedlist>
