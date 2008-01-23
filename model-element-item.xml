@@ -19,7 +19,7 @@
           Every model element MUST contain a name attribute in the empty
           namespace. The value of the name attribute MUST be a valid CellML
           identifier, and SHALL be interpreted as a unique identifier for the
-          model.
+          CellML Infoset.
         </para>
       </listitem>
       <listitem>

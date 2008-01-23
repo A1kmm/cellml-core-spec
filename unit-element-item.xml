@@ -17,7 +17,7 @@
           valid units reference, as defined in <xref linkend="units-reference"/>.
           The units element inclusion digraph SHALL be a conceptual digraph
           defined for the purpose of the constraint in this paragraph, and
-          which contains one node for every units element in the model. The
+          which contains one node for every units element in the CellML Model. The
           units element inclusion digraph SHALL contain an arc from
           units element A to units element B if and only if units element A
           contains a unit element with units attribute value that is a

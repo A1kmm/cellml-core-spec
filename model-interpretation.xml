@@ -8,7 +8,7 @@
       <listitem>
         <para>
           A component reference SHALL be the name of a component, and SHALL be
-          interpreted based on the context within the model in which it occurs.
+          interpreted based on the context within the CellML Model in which it occurs.
         </para>
       </listitem>
       <listitem>
@@ -183,7 +183,7 @@
       </listitem>
       <listitem>
         <para>
-          For every map_variables element present in the model, there SHALL
+          For every map_variables element present in the CellML Model, there SHALL
           be an arc in the variable equivalence network.
         </para>
       </listitem>
@@ -299,7 +299,7 @@
       <listitem>
         <para>
           A units reference SHALL be a CellML identifier, and SHALL be
-          interpreted based on the context within the model in which it occurs.
+          interpreted based on the context within the CellML Model in which it occurs.
         </para>
       </listitem>
       <listitem>
