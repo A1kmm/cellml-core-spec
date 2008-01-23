@@ -89,6 +89,14 @@ The namespace http://www.w3.org/1999/02/22-rdf-syntax-ns#
       </glossdef>
     </glossentry>
     <glossentry>
+      <glossterm>CellML Metadata Namespace</glossterm>
+      <glossdef>
+        <para>
+The namespace http://www.cellml.org/metadata/1.0#
+        </para>
+      </glossdef>
+    </glossentry>
+    <glossentry>
       <glossterm>Extension Namespace</glossterm>
       <glossdef>
         <para>
