@@ -19,7 +19,12 @@
           extent that it conflicts, override the ordinary rules for extension
           information items. In the event that the relationship attribute
           is in the empty namespace, it MUST either take the value
-          encapsulation or containment.
+          encapsulation or containment. In addition, there MUST NOT exist
+          a sibling relationship_ref element such that the namespace of the
+          relationship attribute on the sibling element is identical to the
+          namespace of the relationship attribute on this element, and the
+          value of the relationship attribute on the sibling element is
+          identical to the value of the relationship attribute on this element.
         </para>
       </listitem>
       <!-- if I didn't want to get rid of it due to definitional and ideological
