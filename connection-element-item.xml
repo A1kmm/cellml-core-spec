@@ -13,7 +13,7 @@
       <listitem>
         <para>
           Every connection element MUST contain exactly one
-          map_component element (<xref linkend="map-components-element" />).
+          map_components element (<xref linkend="map-components-element" />).
         </para>
       </listitem>
       <listitem>
