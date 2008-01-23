@@ -1052,8 +1052,7 @@
                       information item on the units element (or 1.0 in the
                       absence of such an attribute information item),
                       multiplied by 10.0 raised to the power of the negative of
-                      the product of the prefix term and the value of the
-                      exponent attribute information item.
+                      the product of the prefix term and the exponent term.
                     </para>
                   </listitem>
                   <listitem>
