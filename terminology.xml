@@ -92,7 +92,7 @@ An XML namespace, as defined in <xref linkend="XML-NAMESPACE"/>.
       <glossterm>CellML Metadata Namespace</glossterm>
       <glossdef>
         <para>
-The namespace http://www.cellml.org/metadata/1.0#
+The namespace <uri>http://www.cellml.org/metadata/1.0#</uri>
         </para>
       </glossdef>
     </glossentry>
