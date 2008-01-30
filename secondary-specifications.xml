@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE article SYSTEM "-//OASIS//DTD DocBook XML">
+<section>
+  <title>Secondary specifications</title>
+  <orderedlist>
+    <listitem>
+      <para>
+        A CellML Secondary Specification SHALL be a document which places additional restrictions on the structure and interpretation of CellML Models and CellML Infosets.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        CellML Secondary Specifications MUST NOT conflict with, or override, any of the assertions or requirements in this specification.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        CellML Processing software MUST either:
+        <orderedlist>
+          <listitem>
+            <para>
+              support one or more specific CellML Secondary Specifications, and correctly process all models which comply both with this specification and with one or more of the selected CellML Secondary Specifications, or,
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              correctly process all models which comply with this specification.
+            </para>
+          </listitem>
+        </orderedlist>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Despite the previous paragraph, CellML Secondary Specifications MAY identify particular unambiguously defined subsets of all CellML Models as being optional for implementors, and CellML Processing Software MAY choose to exercise such options.
+      </para>
+    </listitem>
+  </orderedlist>
+</section>

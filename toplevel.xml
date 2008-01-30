@@ -5,6 +5,7 @@
   <xi:include href="abstract.xml"/>
   <xi:include href="terminology.xml"/>
   <xi:include href="general-matters.xml"/>
+  <xi:include href="secondary-specifications.xml"/>
   <xi:include href="data-representation.xml"/>
   <xi:include href="model-element-item.xml"/>
   <xi:include href="component-element-item.xml"/>
