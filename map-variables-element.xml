@@ -17,8 +17,7 @@
           value of the variable_1 attribute MUST be a valid CellML Identifier.
           The value of this attribute MUST be equal to the name attribute on a
           variable element child of the component element referenced by the
-          component_1 attribute on the map_components element which is a
-          sibling of this element.
+          component_1 attribute on the connection element parent.
         </para>
       </listitem>
       <listitem>
@@ -27,8 +26,7 @@
           value of the variable_2 attribute MUST be a valid CellML Identifier.
           The value of this attribute MUST be equal to the name attribute on
           a variable element child of the component element referenced by the
-          component_2 attribute on the map_components element which is a
-          sibling of this element.
+          component_2 attribute on the connection element parent.
         </para>
       </listitem>
     </orderedlist>
