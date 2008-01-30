@@ -162,7 +162,7 @@
       </listitem>
       <listitem>
         <para>
-          CellML models MUST NOT contain map_components elements such that the
+          CellML models MUST NOT contain connection elements such that the
           component referenced by the component_1 attribute is in the hidden set
           of the component referenced by the component_2 attribute.
         </para>
@@ -177,26 +177,26 @@
     <orderedlist>
       <listitem>
         <para>
-          A variable equivalence network SHALL be a directed graph with one
+          A variable equivalence network SHALL be a graph with one
           node for every variable element in the CellML model.
         </para>
       </listitem>
       <listitem>
         <para>
           For every map_variables element present in the CellML Model, there SHALL
-          be an arc in the variable equivalence network.
+          be an edge in the variable equivalence network.
         </para>
       </listitem>
       <listitem>
         <para>
-          One endpoint of the arc in the variable equivalence network SHALL
+          One endpoint of the edge in the variable equivalence network SHALL
           be the node corresponding to the variable (A) referenced by
           the component_1 and variable_1 attributes.
         </para>
       </listitem>
       <listitem>
         <para>
-          One endpoint of the arc in the variable equivalence network SHALL
+          One endpoint of the edge in the variable equivalence network SHALL
           be the node corresponding to the variable (B) referenced by
           the component_2 and variable_2 attributes.
         </para>
@@ -251,23 +251,14 @@
           In any case, if the applicable interface attribute
           is absent, the following rules in this section SHALL still apply as if
           the applicable interface attribute was present, and had the value
-          none.
+          no.
         </para>
       </listitem>
       <listitem>
         <para>
           CellML models MUST NOT contain map_variables elements unless the
           value of the applicable interface attributes on variables A and B are
-          both either in or out, and those two attribute values are different
-          from each other.
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          The direction of the arc SHALL be from the node corresponding to the
-          variable with the applicable interface attribute equal to in, and
-          SHALL be to the node corresponding to the variable with the
-          applicable interface attribute equal to out.
+          both yes.
         </para>
       </listitem>
       <listitem>
@@ -276,19 +267,18 @@
           CellML Model SHALL be treated as belonging to one of several disjoint
           sets of connected variables. Each set of connected variables is a
           set of all variable elements for which the corresponding nodes
-          in the variable equivalence network form a weakly connected subgraph.
+          in the variable equivalence network form a connected set.
           Each set of connected variables represents one variable in the
           mathematical model.
         </para>
       </listitem>
       <listitem>
         <para>
-          In every set of connected variables, there MUST be at exactly one variable
-          element which has neither a public interface of in nor a private
-          interface of in. This variable element is referred to as the source
-          variable element. Within this specification, the variable in the
-          mathematical model is described as if it was in the units specified
-          on the source variable element.
+          For the purposes of this specification, for every set of connected
+          variables, one variable SHALL arbitrarily be selected as the source
+          variable. Within this specification, the variable in the mathematical
+          model is described as if it was in the units specified on the source
+          variable element.
         </para>
       </listitem>
     </orderedlist>

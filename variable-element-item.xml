@@ -4,7 +4,7 @@
   <title>The variable element information item</title>
   <para>
     Variable element information items (referred to in this specification as
-    variable elements) are element information items in the CellML 1.1
+    variable elements) are element information items in the CellML 1.2
     namespace with local name equal to variable, and which appear as a child
     of a component element.
   </para>
@@ -42,14 +42,13 @@
             <listitem>
               <para>
                 The public_interface attribute. If the attribute is present, it
-                MUST have value in, out, or none.
+                MUST have value yes or no.
               </para>
             </listitem>
             <listitem>
               <para>
                 The private_interface attribute. If the attribute is present, it
-                MUST have value in, out, or none. It MUST NOT have value in if
-                the public_interface attribute also has the value in.
+                MUST have value yes or no.
               </para>
             </listitem>
             <listitem>
