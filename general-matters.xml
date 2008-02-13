@@ -152,6 +152,11 @@ Information Items.
       </listitem>
       <listitem>
         <para>
+          Information items in the empty namespace, which appear as children of extension element information items, SHALL also be treated as extension information items.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
 Extension information items MAY contain extension information items as their
 children. In addition, extension elements MAY contain presentation MathML
 children. For the avoidance of doubt, it is noted that extension information
