@@ -86,8 +86,8 @@ according to the above rules in an identical fashion.
     <orderedlist>
       <listitem>
         <para>
-CellML Infosets MUST NOT contain any element or attribute information items in a
-CellML namespace, except as permitted in this specification.
+CellML Infosets MUST NOT contain any element or attribute information items,
+except as permitted in this specification.
         </para>
       </listitem>
       <listitem>
