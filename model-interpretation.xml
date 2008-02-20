@@ -36,7 +36,7 @@
       </listitem>
       <listitem>
         <para>
-          Its is noted for the avoidance of doubt that CellML Models MAY apply
+          It is noted for the avoidance of doubt that CellML Models MAY apply
           the previous rule recursively, to reference an import component element
           which in turn references another import component element.
         </para>
