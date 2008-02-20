@@ -283,7 +283,7 @@
       </listitem>
       <listitem>
         <para>
-          In every set of connected variables, there MUST be at exactly one variable
+          In every set of connected variables, there MUST be exactly one variable
           element which has neither a public interface of in nor a private
           interface of in. This variable element is referred to as the source
           variable element. Within this specification, the variable in the
