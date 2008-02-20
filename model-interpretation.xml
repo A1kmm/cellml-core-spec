@@ -57,7 +57,7 @@
       </listitem>
       <listitem>
         <para>
-          In all other cases, SHALL consist of a component reference and a
+          In all other cases, a variable reference SHALL consist of a component reference and a
           variable name. In this case, the variable reference SHALL be treated
           as if it was present in the component element referenced by the
           component reference.
