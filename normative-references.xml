@@ -2,6 +2,14 @@
 <!DOCTYPE article SYSTEM "-//OASIS//DTD DocBook XML">
 <bibliography>
   <title>Normative References</title>
+  <biblioentry id="RFC2119">
+    <citetitle>
+      <ulink url="http://www.ietf.org/rfc/rfc2119.txt">
+        RFC 2119: Key words for use in RFCs to Indicate Requirement Levels
+      </ulink>
+    </citetitle>
+    <date>March 1997</date>
+  </biblioentry>
   <biblioentry id="XML">
     <citetitle>
       <ulink url="http://www.w3.org/TR/2006/REC-xml-20060816/">
