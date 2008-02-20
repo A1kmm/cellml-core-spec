@@ -75,20 +75,20 @@
           <orderedlist>
             <listitem>
               <para>
-                the attribute information item with local name relationship
+                the attribute information item with local name <literal>relationship</literal>
                 is in an identical namespace on both element information items.
               </para>
             </listitem>
             <listitem>
               <para>
-                the attribute information item with local name relationship
+                the attribute information item with local name <literal>relationship</literal>
                 has identical values on each of the element information items.
               </para>
             </listitem>
             <listitem>
               <para>
                 either the attribute information item in the empty namespace and
-                with local name "name" is absent on both
+                with local name <literal>name</literal> is absent on both
                 element information items, or, it is present on both element
                 information items and has identical value.
               </para>
@@ -1345,7 +1345,7 @@
       <listitem>
         <para>
           Every MathML cn element MUST have an attribute information item in
-          the CellML 1.1 namespace, with local name units. The value of this
+          the CellML 1.1 namespace, with local name <literal>units</literal>. The value of this
           attribute information item MUST be a valid units reference. The
           referenced units SHALL NOT affect the mathematical interpreation of
           the CellML model. However, CellML Processing Software MAY use this
