@@ -51,7 +51,7 @@ items, without changing the namespace that any information item is in.
           <listitem>
             <para>
 The following paragraph applies only to character information items which are
-the direct child of an element information element in a CellML namespace, or in
+the direct child of an element information item in a CellML namespace, or in
 the MathML or RDF namespace.
             </para>
             <para>
