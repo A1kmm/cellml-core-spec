@@ -111,7 +111,7 @@ namespace, unless:
           <orderedlist>
             <listitem>
 the element information item or one of its ancestors is an element information
-item in the RDF namespace, with local name RDF (the RDF element information
+item in the RDF namespace, with local name <literal>RDF</literal> (the RDF element information
 item), and,
             </listitem>
             <listitem>
@@ -128,7 +128,7 @@ namespace, unless:
           <orderedlist>
             <listitem>
 the element information item or one of its ancestors is an element information
-item in the MathML namespace, with local name math (the math element information
+item in the MathML namespace, with local name <literal>math</literal> (the math element information
 item), and,
             </listitem>
             <listitem>
@@ -258,7 +258,7 @@ items.
       <listitem>
         <para>
           An RDF Element Information Item SHALL be an element item in the RDF
-          namespace, with local name RDF (the RDF element information item), and
+          namespace, with local name <literal>RDF</literal> (the RDF element information item), and
           MUST form the top-level of a valid RDF/XML tree, per production
           7.2.9 in <xref linkend="RDF-XML"/>, and SHALL be a child of an
           element information item in the CellML namespace.
