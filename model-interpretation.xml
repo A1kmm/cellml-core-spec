@@ -1063,7 +1063,7 @@
                       The offset term is a conceptual property of unit
                       elements, defined here for later use. If a unit element
                       has no offset attribute information item, the offset
-                      term SHALL have value 0.0. Otherwise, the value of the
+                      term SHALL have value zero. Otherwise, the value of the
                       offset attribute information item MUST be a real number
                       string, and the value of the offset term SHALL be the
                       numerical value of that string.
