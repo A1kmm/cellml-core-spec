@@ -343,7 +343,7 @@
             <para>
               Where the units reference is equal to a cell in the name column
               of <xref linkend='units-table' />, then the units reference SHALL be a
-              reference to the built in unit corresponding to that row of the
+              reference to the built-in unit corresponding to that row of the
               table.
             </para>
           </listitem>
@@ -352,7 +352,7 @@
     </orderedlist>
   </section>
   <table id='units-table' frame='all'>
-    <title>Built in units</title>
+    <title>built-in units</title>
     <tgroup cols='3'>
       <thead>
         <row>
@@ -964,7 +964,7 @@
       <listitem>
         <para>
           The base units SHALL consist of the user defined base units, and the
-          built in base units (those units defined in rows of
+          built-in base units (those units defined in rows of
           <xref linkend='units-table' /> having 'yes' in the 'Is base unit?'
           column).
         </para>
@@ -995,7 +995,7 @@
             </listitem>
             <listitem>
               <para>
-                Where the units reference is to built in units other than a
+                Where the units reference is to built-in units other than a
                 base unit, then the base unit reduction SHALL be derived from
                 the row of <xref linkend='units-table' /> for which the value
                 in the 'Name' column matches the name of the units reference.
@@ -1004,18 +1004,18 @@
                 the multiplier SHALL be equal to the number at the start of
                 the 'Multiplier and dimensions in terms of base units' column
                 of the row.
-                The set of tuples SHALL contain one member for every built in
+                The set of tuples SHALL contain one member for every built-in
                 base unit named in the 'Multiplier and dimensions in terms of
                 base units' column of the row, and each of these tuples SHALL
-                contain the built in unit referenced, and the exponent appearing
+                contain the built-in unit referenced, and the exponent appearing
                 in superscript immediately after the units name in the table
                 cell.
               </para>
             </listitem>
             <listitem>
               <para>
-                Where the units reference is to a unit which is neither built
-                in, nor a base unit, the resultant base unit reduction SHALL be
+                Where the units reference is to a unit which is neither built-in,
+                nor a base unit, the resultant base unit reduction SHALL be
                 defined as a composition of the base unit reductions referenced
                 from the unit element information items (the operand base unit
                 reductions), in accordance with the following rules:
