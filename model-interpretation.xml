@@ -304,8 +304,7 @@
       </listitem>
       <listitem>
         <para>
-          A CellML Infoset MUST NOT contain a units reference to which one of
-          the units scoping rules does not apply.
+          A CellML Infoset MUST NOT contain a units reference to which all scoping rules are inapplicable.
         </para>
       </listitem>
       <listitem>
@@ -328,10 +327,7 @@
           </listitem>
           <listitem>
             <para>
-              Where there is a units element child of the model element ancestor
-              of the information item containing the units reference, such that the
-              units element has a name attribute identical to the units reference,
-              then the units reference SHALL refer to that units element.
+              Where a units reference appears in an information item which is descended from the model element, and there is a units element child of that model element with a name attribute identical to the units reference, then the units reference SHALL refer to that units element.
             </para>
           </listitem>
           <listitem>
