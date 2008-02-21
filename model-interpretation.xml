@@ -988,9 +988,9 @@
               <para>
                 Where the units reference is to a unit which is a base unit,
                 then the base unit reduction of the units reference SHALL have
-                offset 0, multiplier 1, and the set of tuples SHALL have a single
+                offset zero, multiplier 1.0, and the set of tuples SHALL have a single
                 member, which SHALL consist of the base units being referenced
-                and the exponent 1.
+                and the exponent 1.0.
               </para>
             </listitem>
             <listitem>
