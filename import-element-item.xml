@@ -25,8 +25,19 @@
       </listitem>
       <listitem>
         <para>
-          Every import element MAY contain one or more import component
-          elements, and MAY contain one or more import units elements.
+          Every import element MAY contain zero or more specific information children, each of which MUST be of one of the following types:
+          <orderedlist>
+            <listitem>
+              <para>
+                an import component element (<xref linkend="import-component-element"/>).
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                an import units element (<xref linkend="import-units-element"/>).
+              </para>
+            </listitem>
+          </orderedlist>
         </para>
       </listitem>
     </orderedlist>

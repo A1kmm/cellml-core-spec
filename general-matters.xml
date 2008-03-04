@@ -51,7 +51,7 @@ items, without changing the namespace that any information item is in.
           <listitem>
             <para>
 The following paragraph applies only to character information items which are
-the direct child of an element information element in a CellML namespace, or in
+the direct child of an element information item in a CellML namespace, or in
 the MathML or RDF namespace.
             </para>
             <para>
@@ -86,8 +86,8 @@ according to the above rules in an identical fashion.
     <orderedlist>
       <listitem>
         <para>
-CellML Infosets MUST NOT contain any element or attribute information items in a
-CellML namespace, except as permitted in this specification.
+CellML Infosets MUST NOT contain any element or attribute information items,
+except as permitted in this specification.
         </para>
       </listitem>
       <listitem>
@@ -111,7 +111,7 @@ namespace, unless:
           <orderedlist>
             <listitem>
 the element information item or one of its ancestors is an element information
-item in the RDF namespace, with local name RDF (the RDF element information
+item in the RDF namespace, with local name <literal>RDF</literal> (the RDF element information
 item), and,
             </listitem>
             <listitem>
@@ -128,7 +128,7 @@ namespace, unless:
           <orderedlist>
             <listitem>
 the element information item or one of its ancestors is an element information
-item in the MathML namespace, with local name math (the math element information
+item in the MathML namespace, with local name <literal>math</literal> (the math element information
 item), and,
             </listitem>
             <listitem>
@@ -148,6 +148,11 @@ MathML tree, as described in <xref linkend="MathML"/>.
 CellML Infosets MAY contain zero or more element or attribute information items
 in an extension namespace (extension information items), as children of CellML
 Information Items.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Information items in the empty namespace, which appear as children of extension element information items, SHALL also be treated as extension information items.
         </para>
       </listitem>
       <listitem>
@@ -253,7 +258,7 @@ items.
       <listitem>
         <para>
           An RDF Element Information Item SHALL be an element item in the RDF
-          namespace, with local name RDF (the RDF element information item), and
+          namespace, with local name <literal>RDF</literal> (the RDF element information item), and
           MUST form the top-level of a valid RDF/XML tree, per production
           7.2.9 in <xref linkend="RDF-XML"/>, and SHALL be a child of an
           element information item in the CellML namespace.

@@ -36,7 +36,7 @@
       </listitem>
       <listitem>
         <para>
-          Its is noted for the avoidance of doubt that CellML Models MAY apply
+          It is noted for the avoidance of doubt that CellML Models MAY apply
           the previous rule recursively, to reference an import component element
           which in turn references another import component element.
         </para>
@@ -57,7 +57,7 @@
       </listitem>
       <listitem>
         <para>
-          In all other cases, SHALL consist of a component reference and a
+          In all other cases, a variable reference SHALL consist of a component reference and a
           variable name. In this case, the variable reference SHALL be treated
           as if it was present in the component element referenced by the
           component reference.
@@ -75,20 +75,20 @@
           <orderedlist>
             <listitem>
               <para>
-                the attribute information item with local name relationship
+                the attribute information item with local name <literal>relationship</literal>
                 is in an identical namespace on both element information items.
               </para>
             </listitem>
             <listitem>
               <para>
-                the attribute information item with local name relationship
+                the attribute information item with local name <literal>relationship</literal>
                 has identical values on each of the element information items.
               </para>
             </listitem>
             <listitem>
               <para>
                 either the attribute information item in the empty namespace and
-                with local name "name" is absent on both
+                with local name <literal>name</literal> is absent on both
                 element information items, or, it is present on both element
                 information items and has identical value.
               </para>
@@ -294,8 +294,7 @@
       </listitem>
       <listitem>
         <para>
-          A CellML Infoset MUST NOT contain a units reference to which one of
-          the units scoping rules does not apply.
+          A CellML Infoset MUST NOT contain a units reference to which all scoping rules are inapplicable.
         </para>
       </listitem>
       <listitem>
@@ -318,10 +317,7 @@
           </listitem>
           <listitem>
             <para>
-              Where there is a units element child of the model element ancestor
-              of the information item containing the units reference, such that the
-              units element has a name attribute identical to the units reference,
-              then the units reference SHALL refer to that units element.
+              Where a units reference appears in an information item which is descended from the model element, and there is a units element child of that model element with a name attribute identical to the units reference, then the units reference SHALL refer to that units element.
             </para>
           </listitem>
           <listitem>
@@ -337,7 +333,7 @@
             <para>
               Where the units reference is equal to a cell in the name column
               of <xref linkend='units-table' />, then the units reference SHALL be a
-              reference to the built in unit corresponding to that row of the
+              reference to the built-in unit corresponding to that row of the
               table.
             </para>
           </listitem>
@@ -346,7 +342,7 @@
     </orderedlist>
   </section>
   <table id='units-table' frame='all'>
-    <title>Built in units</title>
+    <title>built-in units</title>
     <tgroup cols='3'>
       <thead>
         <row>
@@ -958,7 +954,7 @@
       <listitem>
         <para>
           The base units SHALL consist of the user defined base units, and the
-          built in base units (those units defined in rows of
+          built-in base units (those units defined in rows of
           <xref linkend='units-table' /> having 'yes' in the 'Is base unit?'
           column).
         </para>
@@ -982,14 +978,14 @@
               <para>
                 Where the units reference is to a unit which is a base unit,
                 then the base unit reduction of the units reference SHALL have
-                offset 0, prefix 1, and the set of tuples SHALL have a single
+                offset zero, multiplier 1.0, and the set of tuples SHALL have a single
                 member, which SHALL consist of the base units being referenced
-                and the exponent 1.
+                and the exponent 1.0.
               </para>
             </listitem>
             <listitem>
               <para>
-                Where the units reference is to built in units other than a
+                Where the units reference is to built-in units other than a
                 base unit, then the base unit reduction SHALL be derived from
                 the row of <xref linkend='units-table' /> for which the value
                 in the 'Name' column matches the name of the units reference.
@@ -998,18 +994,18 @@
                 the multiplier SHALL be equal to the number at the start of
                 the 'Multiplier and dimensions in terms of base units' column
                 of the row.
-                The set of tuples SHALL contain one member for every built in
+                The set of tuples SHALL contain one member for every built-in
                 base unit named in the 'Multiplier and dimensions in terms of
                 base units' column of the row, and each of these tuples SHALL
-                contain the built in unit referenced, and the exponent appearing
+                contain the built-in unit referenced, and the exponent appearing
                 in superscript immediately after the units name in the table
                 cell.
               </para>
             </listitem>
             <listitem>
               <para>
-                Where the units reference is to a unit which is neither built
-                in, nor a base unit, the resultant base unit reduction SHALL be
+                Where the units reference is to a unit which is neither built-in,
+                nor a base unit, the resultant base unit reduction SHALL be
                 defined as a composition of the base unit reductions referenced
                 from the unit element information items (the operand base unit
                 reductions), in accordance with the following rules:
@@ -1057,7 +1053,7 @@
                       The offset term is a conceptual property of unit
                       elements, defined here for later use. If a unit element
                       has no offset attribute information item, the offset
-                      term SHALL have value 0.0. Otherwise, the value of the
+                      term SHALL have value zero. Otherwise, the value of the
                       offset attribute information item MUST be a real number
                       string, and the value of the offset term SHALL be the
                       numerical value of that string.
@@ -1335,7 +1331,7 @@
       <listitem>
         <para>
           Every MathML cn element MUST have an attribute information item in
-          the CellML 1.1 namespace, with local name units. The value of this
+          the CellML 1.1 namespace, with local name <literal>units</literal>. The value of this
           attribute information item MUST be a valid units reference. The
           referenced units SHALL NOT affect the mathematical interpreation of
           the CellML model. However, CellML Processing Software MAY use this

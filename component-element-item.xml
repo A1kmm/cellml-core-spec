@@ -5,7 +5,7 @@
   <para>
     Component element information items (referred to in this specification as
     component elements) are element information items in the CellML 1.1
-    namespace with local name equal to component, and which appear as a child
+    namespace with local name <literal>component</literal>, and which appear as a child
     of a model element.
   </para>
   <section>
