@@ -40,7 +40,7 @@
             </listitem>
             <listitem>
               <para>
-                a group element (<xref linkend="group-element" />),
+                an encapsulation element (<xref linkend="encapsulation-element" />),
               </para>
             </listitem>
             <listitem>

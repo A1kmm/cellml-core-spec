@@ -66,61 +66,22 @@
     </orderedlist>
   </section>
   <section>
-    <title>Interpretation of grouping</title>
+    <title>Interpretation of encapsulation</title>
     <orderedlist>
       <listitem>
         <para>
-          Two relationship_ref elements SHALL be considered to refer to the
-          same relationship if and only all of the following conditions hold:
-          <orderedlist>
-            <listitem>
-              <para>
-                the attribute information item with local name <literal>relationship</literal>
-                is in an identical namespace on both element information items.
-              </para>
-            </listitem>
-            <listitem>
-              <para>
-                the attribute information item with local name <literal>relationship</literal>
-                has identical values on each of the element information items.
-              </para>
-            </listitem>
-            <listitem>
-              <para>
-                either the attribute information item in the empty namespace and
-                with local name <literal>name</literal> is absent on both
-                element information items, or, it is present on both element
-                information items and has identical value.
-              </para>
-            </listitem>
-          </orderedlist>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          For every distinct relationship referred to by a relationship_ref
-          element in the CellML model, there SHALL be a conceptual
-          relationship digraph in which there is one node for every
+          For the purposes of this specification, there SHALL be a conceptual
+          encapsulation digraph in which there is one node for every
           component in the CellML model.
         </para>
       </listitem>
       <listitem>
         <para>
           Where a component_ref element appears as a child of another
-          component_ref element, then for all relationship_ref elements which
-          are children of the ancestral group element, there SHALL be an arc in
-          the relationship digraph corresponding to the relationship referenced
-          by the relationship_ref element, and that arc SHALL be from the
-          component referenced by the parent component_ref element and to the
+          component_ref element, then there SHALL be an arc in
+          the encapsulation digraph, and that arc SHALL be from the
+          component referenced by the parent component_ref element, and to the
           component referenced by the child component_ref element.
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          The term encapsulation digraph SHALL refer to the relationship digraph
-          for the relationship corresponding to the relationship_ref attribute
-          in the empty namespace and with value "encapsulation", and with no
-          name attribute.
         </para>
       </listitem>
       <listitem>

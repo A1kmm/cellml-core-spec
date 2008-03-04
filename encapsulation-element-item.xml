@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE article SYSTEM "-//OASIS//DTD DocBook XML">
+<section id="encapsulation-element">
+  <title>The encapsulation element information item</title>
+  <para>
+    Encapsulation element information items (referred to in this specification as
+    encapsulation elements) are element information items in the CellML 1.2
+    namespace with local name equal to encapsulation.
+  </para>
+  <section>
+    <title>Specific information items</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          Every encapsulation element MUST contain one or more component_ref elements
+          (<xref linkend="component-ref-element" />).
+        </para>
+      </listitem>
+    </orderedlist>
+  </section>
+</section>
