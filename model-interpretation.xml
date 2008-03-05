@@ -86,9 +86,9 @@
       </listitem>
       <listitem>
         <para>
-          The encapsulation digraph MUST NOT contain any loops, and MUST NOT
-          contain any cycles in the underlying graph (that is, it must be a
-          tree).
+          The encapsulation digraph MUST NOT contain any loops or cycles,
+          and the in-degree of a node MUST NOT exceed one (that is, it must be
+          a forest).
         </para>
       </listitem>
       <listitem>
