@@ -48,6 +48,16 @@
     <orderedlist>
       <listitem>
         <para>
+          For any given variable reference, only the first applicable rule from the following three rules SHALL be used to interpret a variable reference.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Where a variable reference is equal to a value in the name column of of a row in the table <xref linkend="variables-table" />, then the variable reference SHALL be a reference to the built in variable defined in that row of the table. When such a reference to a built-in unit also includes a component reference, the component being referenced SHALL be immaterial to the interpretation of the model.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
           When present in an information item which is a descendant of a
           component element, a variable reference SHALL be the name of a
           variable, and SHALL refer to the variable element in the same
@@ -65,6 +75,520 @@
       </listitem>
     </orderedlist>
   </section>
+  <table id='variables-table' frame='all'>
+    <title>Built-in variables</title>
+    <tgroup cols='3'>
+      <thead>
+        <row>
+          <entry>Name</entry>
+          <entry>Type</entry>
+          <entry>Interpretation</entry>
+        </row>
+      </thead>
+      <tbody>
+        <row>
+          <entry>boolean</entry>
+          <entry>type</entry>
+          <entry>As a built in type for objects which can be either true or false.</entry>
+        </row>
+        <row>
+          <entry>identifier</entry>
+          <entry>type</entry>
+          <entry>A built in type for representing objects which act as unique identifiers, but which do not necessarily have any representation as another type.</entry>
+        </row>
+        <row>
+          <entry>real_ampere</entry>
+          <entry>type</entry>
+          <entry>A built in type for real numbers in the SI base units ampere.</entry>
+        </row>
+        <row>
+          <entry>real_becquerel</entry>
+          <entry>type</entry>
+          <entry>
+            A built in type for real numbers in derived units becquerel, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup>
+                  <mml:mi>real_second</mml:mi>
+                  <mml:mn>-1</mml:mn>
+                </mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>real_candela</entry>
+          <entry>type</entry>
+          <entry>A built in type for real numbers in the SI base units candela.</entry>
+        </row>
+        <row>
+          <entry>real_celsius</entry>
+          <entry>type</entry>
+          <entry>A built in type for real numbers in derived units Celsius, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>real_kelvin</mml:mi>
+              </mml:mrow>
+            </mml:math>
+            and with offset 273.15</entry>
+        </row>
+        <row>
+          <entry>real_coulomb</entry>
+          <entry>type</entry>
+          <entry>A built in type for real numbers in derived units coulomb, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>real_second</mml:mi>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>real_ampere</mml:mi>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>real_dimensionless</entry>
+          <entry>type</entry>
+          <entry>A built in type for dimensionless real numbers</entry>
+        </row>
+        <row>
+          <entry>real_farad</entry>
+          <entry>type</entry>
+          <entry>
+            A built in type for real numbers in derived units farad, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_metre</mml:mi><mml:mn>-2</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_kilogram</mml:mi><mml:mn>-1</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_second</mml:mi><mml:mn>4</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_ampere</mml:mi><mml:mn>2</mml:mn></mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>real_gram</entry>
+          <entry>type</entry>
+          <entry>
+            A built in type for real numbers in derived units gram, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:msup>
+                  <mml:mn>10</mml:mn>
+                  <mml:mn>-3</mml:mn>
+                </mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>real_kilogram</mml:mi>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>real_gray</entry>
+          <entry>type</entry>
+          <entry>
+            A built in type for real numbers in derived units gray, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_metre</mml:mi><mml:mn>2</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_second</mml:mi><mml:mn>-2</mml:mn></mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>real_henry</entry>
+          <entry>type</entry>
+          <entry>
+            A built in type for real numbers in derived units henry, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_metre</mml:mi><mml:mn>2</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>real_kilogram</mml:mi>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_second</mml:mi><mml:mn>-2</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_ampere</mml:mi><mml:mn>-2</mml:mn></mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>real_hertz</entry>
+          <entry>type</entry>
+          <entry>
+            A built in type for real numbers in derived units hertz, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_second</mml:mi><mml:mn>-1</mml:mn></mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>real_joule</entry>
+          <entry>type</entry>
+          <entry>
+            A built in type for real numbers in derived units joule, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_metre</mml:mi><mml:mn>2</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>real_kilogram</mml:mi>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_second</mml:mi><mml:mn>-2</mml:mn></mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>real_katal</entry>
+          <entry>type</entry>
+          <entry>
+            A built in type for real numbers in derived units katal, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_second</mml:mi><mml:mn>-1</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>real_mole</mml:mi>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>real_kelvin</entry>
+          <entry>type</entry>
+          <entry>A built in type for real numbers in the SI base units kelvin.</entry>
+        </row>
+        <row>
+          <entry>real_kilogram</entry>
+          <entry>type</entry>
+          <entry>A built in type for real numbers in the SI base units kilogram.</entry>
+        </row>
+        <row>
+          <entry>real_liter</entry>
+          <entry>type</entry>
+          <entry>
+            A built in type for real numbers in derived units liter, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:msup>
+                  <mml:mn>10</mml:mn>
+                  <mml:mn>-3</mml:mn>
+                </mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup>
+                  <mml:mi>real_metre</mml:mi>
+                  <mml:mn>3</mml:mn>
+                </mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>real_litre</entry>
+          <entry>type</entry>
+          <entry>
+            A built in type for real numbers in derived units litre, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:msup>
+                  <mml:mn>10</mml:mn>
+                  <mml:mn>-3</mml:mn>
+                </mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup>
+                  <mml:mi>real_metre</mml:mi>
+                  <mml:mn>3</mml:mn>
+                </mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>real_lumen</entry>
+          <entry>type</entry>
+          <entry>
+            A built in type for real numbers in derived units lumen, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>real_candela</mml:mi>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>real_lux</entry>
+          <entry>type</entry>
+          <entry>
+            A built in type for real numbers in derived units lux, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup>
+                  <mml:mi>real_metre</mml:mi>
+                  <mml:mn>-2</mml:mn>
+                </mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>real_candela</mml:mi>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>real_meter</entry>
+          <entry>type</entry>
+          <entry>
+            A built in type for real numbers in derived units meter, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>real_metre</mml:mi>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>real_metre</entry>
+          <entry>type</entry>
+          <entry>A built in type for real numbers in the SI base units metre.</entry>
+        </row>
+        <row>
+          <entry>real_mole</entry>
+          <entry>type</entry>
+          <entry>A built in type for real numbers in the SI base units mole.</entry>
+        </row>
+        <row>
+          <entry>real_newton</entry>
+          <entry>type</entry>
+          <entry>
+            A built in type for real numbers in derived units newton, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>real_metre</mml:mi>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>real_kilogram</mml:mi>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_second</mml:mi><mml:mn>-2</mml:mn></mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>real_ohm</entry>
+          <entry>type</entry>
+          <entry>
+            A built in type for real numbers in derived units ohm, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_metre</mml:mi><mml:mn>2</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>real_kilogram</mml:mi>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_second</mml:mi><mml:mn>-3</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_ampere</mml:mi><mml:mn>-2</mml:mn></mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>real_pascal</entry>
+          <entry>type</entry>
+          <entry>
+            A built in type for real numbers in derived units pascal, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_metre</mml:mi><mml:mn>-1</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>real_kilogram</mml:mi>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_second</mml:mi><mml:mn>-2</mml:mn></mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>real_radian</entry>
+          <entry>type</entry>
+          <entry>
+            A built in type for real numbers in derived units radian, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>real_second</entry>
+          <entry>type</entry>
+          <entry>A built in type for real numbers in the SI base units second.</entry>
+        </row>
+        <row>
+          <entry>real_siemens</entry>
+          <entry>type</entry>
+          <entry>
+            A built in type for real numbers in derived units siemens, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_metre</mml:mi><mml:mn>-2</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_kilogram</mml:mi><mml:mn>-1</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_second</mml:mi><mml:mn>3</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_ampere</mml:mi><mml:mn>2</mml:mn></mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>real_sievert</entry>
+          <entry>type</entry>
+          <entry>
+            A built in type for real numbers in derived units sievert, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_metre</mml:mi><mml:mn>2</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_second</mml:mi><mml:mn>-2</mml:mn></mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>real_steradian</entry>
+          <entry>type</entry>
+          <entry>
+            A built in type for real numbers in derived units steradian, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>real_tesla</entry>
+          <entry>type</entry>
+          <entry>
+            A built in type for real numbers in derived units tesla, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>real_kilogram</mml:mi>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_second</mml:mi><mml:mn>-2</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_ampere</mml:mi><mml:mn>-1</mml:mn></mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>real_volt</entry>
+          <entry>type</entry>
+          <entry>
+            A built in type for real numbers in derived units volt, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_metre</mml:mi><mml:mn>2</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>real_kilogram</mml:mi>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_second</mml:mi><mml:mn>-3</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_ampere</mml:mi><mml:mn>-1</mml:mn></mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>real_watt</entry>
+          <entry>type</entry>
+          <entry>
+            A built in type for real numbers in derived units watt, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_metre</mml:mi><mml:mn>2</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>real_kilogram</mml:mi>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_second</mml:mi><mml:mn>-3</mml:mn></mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>real_weber</entry>
+          <entry>type</entry>
+          <entry>
+            A built in type for real numbers in derived units weber, derived as
+            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+              <mml:mrow>
+                <mml:mn>1</mml:mn>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_metre</mml:mi><mml:mn>2</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:mi>real_kilogram</mml:mi>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_second</mml:mi><mml:mn>-2</mml:mn></mml:msup>
+                <mml:mo>&#xB7;</mml:mo>
+                <mml:msup><mml:mi>real_ampere</mml:mi><mml:mn>-1</mml:mn></mml:msup>
+              </mml:mrow>
+            </mml:math>
+          </entry>
+        </row>
+        <row>
+          <entry>type</entry>
+          <entry>type</entry>
+          <entry>A built in type for all types.</entry>
+        </row>
+      </tbody>
+    </tgroup>
+  </table>
   <section>
     <title>Interpretation of encapsulation</title>
     <orderedlist>
@@ -139,13 +663,19 @@
       <listitem>
         <para>
           A variable equivalence network SHALL be a graph with one
-          node for every variable element in the CellML model.
+          node for every variable element in the CellML model, and in addition,
+          with one node for every built in variable.
         </para>
       </listitem>
       <listitem>
         <para>
           For every map_variables element present in the CellML Model, there SHALL
           be an edge in the variable equivalence network.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Two different built in variables MUST NOT form part of the same connected component, 
         </para>
       </listitem>
       <listitem>
@@ -217,6 +747,11 @@
       </listitem>
       <listitem>
         <para>
+          Despite the above rules in this section, built in variables SHALL be treated, for the purpose of computing the variable equivalence network, as if the applicable interface attribute was present and equal to yes.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
           CellML models MUST NOT contain map_variables elements unless the
           value of the applicable interface attributes on variables A and B are
           both yes.
@@ -238,584 +773,42 @@
           For the purposes of this specification, for every set of connected
           variables, one variable SHALL arbitrarily be selected as the source
           variable. Within this specification, the variable in the mathematical
-          model is described as if it was in the units specified on the source
+          model is described as if it was of the type specified on the source
           variable element.
         </para>
       </listitem>
     </orderedlist>
   </section>
-  <section id="units-reference">
-    <title>Units reference</title>
+  <section id="types-on-variables">
+    <title>Interpretation of types and units</title>
     <orderedlist>
       <listitem>
         <para>
-          A units reference SHALL be a CellML identifier, and SHALL be
-          interpreted based on the context within the CellML Model in which it occurs.
+          The word <em>type</em> SHALL, as the context allows, refer to a connected subgraph of the variable equivalence graph which meets the following constraints.
         </para>
       </listitem>
       <listitem>
         <para>
-          A CellML Infoset MUST NOT contain a units reference to which all scoping rules are inapplicable.
+          Every variable MUST have a type associated with it through use of the type attribute information item. The value of the type attribute information item MUST be a valid variable reference to a member of the connected subgraph for the corresponding type.
         </para>
       </listitem>
       <listitem>
         <para>
-          Where more than one of the units scoping rules apply, the applicable rule
-          which appears first in this specification SHALL be used.
+          Variable A SHALL be said to have type B (where B is also a variable) if and only if the type attribute on variable A is a variable reference to a variable which is, in the variable equivalence network, reachable from variable B.
         </para>
       </listitem>
       <listitem>
-        <para>The units scoping rules are as follows:</para>
-        <orderedlist>
-          <listitem>
-            <para>
-              Where a units reference appears in an information item which is
-              descended from a component element, and there is a units element
-              child of that component element with a name attribute identical to
-              the units reference, then the units reference SHALL refer to that
-              units element.
-            </para>
-          </listitem>
-          <listitem>
-            <para>
-              Where a units reference appears in an information item which is descended from the model element, and there is a units element child of that model element with a name attribute identical to the units reference, then the units reference SHALL refer to that units element.
-            </para>
-          </listitem>
-          <listitem>
-            <para>
-              Where there is an import units element in the CellML Infoset, such that
-              the import units element has a name attribute identical to the units
-              reference, then the units reference SHALL be treated as if the
-              units reference appeared in the imported model, and referred to the
-              name specified in the units_ref attribute of the import units element.
-            </para>
-          </listitem>
-          <listitem>
-            <para>
-              Where the units reference is equal to a cell in the name column
-              of <xref linkend='units-table' />, then the units reference SHALL be a
-              reference to the built-in unit corresponding to that row of the
-              table.
-            </para>
-          </listitem>
-        </orderedlist>
+        <para>
+          All variables which are members of the connected subgraph corresponding to a type (referred to as type variables)  MUST have type <em>type</em>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          .
+        </para>
       </listitem>
     </orderedlist>
   </section>
-  <table id='units-table' frame='all'>
-    <title>built-in units</title>
-    <tgroup cols='3'>
-      <thead>
-        <row>
-          <entry>Name</entry>
-          <entry>Is base unit?</entry>
-          <entry>Multiplier and dimensions in terms of base units</entry>
-          <entry>Offset from base units</entry>
-        </row>
-      </thead>
-      <tbody>
-        <row>
-          <entry>ampere</entry>
-          <entry>yes</entry>
-          <entry>-</entry>
-          <entry>-</entry>
-        </row>
-        <row>
-          <entry>becquerel</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:mn>1</mml:mn>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup>
-                  <mml:mi>second</mml:mi>
-                  <mml:mn>-1</mml:mn>
-                </mml:msup>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>candela</entry>
-          <entry>yes</entry>
-          <entry>-</entry>
-          <entry>-</entry>
-        </row>
-        <row>
-          <entry>celsius</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:mn>1</mml:mn>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:mi>kelvin</mml:mi>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>273.15</entry>
-        </row>
-        <row>
-          <entry>coulomb</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:mn>1</mml:mn>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:mi>second</mml:mi>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:mi>ampere</mml:mi>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>dimensionless</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mn>1</mml:mn>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>farad</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:mn>1</mml:mn>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>metre</mml:mi><mml:mn>-2</mml:mn></mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>kilogram</mml:mi><mml:mn>-1</mml:mn></mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>second</mml:mi><mml:mn>4</mml:mn></mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>ampere</mml:mi><mml:mn>2</mml:mn></mml:msup>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>gram</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:msup>
-                  <mml:mn>10</mml:mn>
-                  <mml:mn>-3</mml:mn>
-                </mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:mi>kilogram</mml:mi>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>gray</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:mn>1</mml:mn>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>metre</mml:mi><mml:mn>2</mml:mn></mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>second</mml:mi><mml:mn>-2</mml:mn></mml:msup>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>henry</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:mn>1</mml:mn>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>metre</mml:mi><mml:mn>2</mml:mn></mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:mi>kilogram</mml:mi>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>second</mml:mi><mml:mn>-2</mml:mn></mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>ampere</mml:mi><mml:mn>-2</mml:mn></mml:msup>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>hertz</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:mn>1</mml:mn>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>second</mml:mi><mml:mn>-1</mml:mn></mml:msup>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>joule</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:mn>1</mml:mn>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>metre</mml:mi><mml:mn>2</mml:mn></mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:mi>kilogram</mml:mi>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>second</mml:mi><mml:mn>-2</mml:mn></mml:msup>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>katal</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:mn>1</mml:mn>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>second</mml:mi><mml:mn>-1</mml:mn></mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:mi>mole</mml:mi>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>kelvin</entry>
-          <entry>yes</entry>
-          <entry>-</entry>
-          <entry>-</entry>
-        </row>
-        <row>
-          <entry>kilogram</entry>
-          <entry>yes</entry>
-          <entry>-</entry>
-          <entry>-</entry>
-        </row>
-        <row>
-          <entry>liter</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:msup>
-                  <mml:mn>10</mml:mn>
-                  <mml:mn>-3</mml:mn>
-                </mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup>
-                  <mml:mi>metre</mml:mi>
-                  <mml:mn>3</mml:mn>
-                </mml:msup>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>litre</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:msup>
-                  <mml:mn>10</mml:mn>
-                  <mml:mn>-3</mml:mn>
-                </mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup>
-                  <mml:mi>metre</mml:mi>
-                  <mml:mn>3</mml:mn>
-                </mml:msup>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>lumen</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:mn>1</mml:mn>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:mi>candela</mml:mi>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>lux</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:mn>1</mml:mn>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup>
-                  <mml:mi>metre</mml:mi>
-                  <mml:mn>-2</mml:mn>
-                </mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:mi>candela</mml:mi>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>meter</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:mn>1</mml:mn>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:mi>metre</mml:mi>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>metre</entry>
-          <entry>yes</entry>
-          <entry>-</entry>
-          <entry>-</entry>
-        </row>
-        <row>
-          <entry>mole</entry>
-          <entry>yes</entry>
-          <entry>-</entry>
-          <entry>-</entry>
-        </row>
-        <row>
-          <entry>newton</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:mn>1</mml:mn>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:mi>metre</mml:mi>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:mi>kilogram</mml:mi>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>second</mml:mi><mml:mn>-2</mml:mn></mml:msup>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>ohm</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:mn>1</mml:mn>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>metre</mml:mi><mml:mn>2</mml:mn></mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:mi>kilogram</mml:mi>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>second</mml:mi><mml:mn>-3</mml:mn></mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>ampere</mml:mi><mml:mn>-2</mml:mn></mml:msup>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>pascal</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:mn>1</mml:mn>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>metre</mml:mi><mml:mn>-1</mml:mn></mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:mi>kilogram</mml:mi>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>second</mml:mi><mml:mn>-2</mml:mn></mml:msup>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>radian</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:mn>1</mml:mn>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>second</entry>
-          <entry>yes</entry>
-          <entry>-</entry>
-          <entry>-</entry>
-        </row>
-        <row>
-          <entry>siemens</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:mn>1</mml:mn>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>metre</mml:mi><mml:mn>-2</mml:mn></mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>kilogram</mml:mi><mml:mn>-1</mml:mn></mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>second</mml:mi><mml:mn>3</mml:mn></mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>ampere</mml:mi><mml:mn>2</mml:mn></mml:msup>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>sievert</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:mn>1</mml:mn>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>metre</mml:mi><mml:mn>2</mml:mn></mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>second</mml:mi><mml:mn>-2</mml:mn></mml:msup>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>steradian</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:mn>1</mml:mn>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>tesla</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:mn>1</mml:mn>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:mi>kilogram</mml:mi>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>second</mml:mi><mml:mn>-2</mml:mn></mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>ampere</mml:mi><mml:mn>-1</mml:mn></mml:msup>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>volt</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:mn>1</mml:mn>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>metre</mml:mi><mml:mn>2</mml:mn></mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:mi>kilogram</mml:mi>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>second</mml:mi><mml:mn>-3</mml:mn></mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>ampere</mml:mi><mml:mn>-1</mml:mn></mml:msup>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>watt</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:mn>1</mml:mn>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>metre</mml:mi><mml:mn>2</mml:mn></mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:mi>kilogram</mml:mi>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>second</mml:mi><mml:mn>-3</mml:mn></mml:msup>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-        <row>
-          <entry>weber</entry>
-          <entry>no</entry>
-          <entry>
-            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
-              <mml:mrow>
-                <mml:mn>1</mml:mn>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>metre</mml:mi><mml:mn>2</mml:mn></mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:mi>kilogram</mml:mi>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>second</mml:mi><mml:mn>-2</mml:mn></mml:msup>
-                <mml:mo>&#xB7;</mml:mo>
-                <mml:msup><mml:mi>ampere</mml:mi><mml:mn>-1</mml:mn></mml:msup>
-              </mml:mrow>
-            </mml:math>
-          </entry>
-          <entry>0</entry>
-        </row>
-      </tbody>
-    </tgroup>
-  </table>
   <table id='prefix-table' frame='all'>
     <title>Prefix values</title>
     <tgroup cols='2'>

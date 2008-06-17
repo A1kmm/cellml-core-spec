@@ -26,9 +26,9 @@
             </listitem>
             <listitem>
               <para>
-                The units attribute. The value of the units attribute MUST be a
+                The type attribute. The value of the type attribute MUST be a
                 valid CellML Identifier, and MUST meet the constraints described
-                in <xref linkend="units-on-variables" />.
+                in <xref linkend="types-on-variables" />.
               </para>
             </listitem>
           </orderedlist>
@@ -53,7 +53,16 @@
             </listitem>
             <listitem>
               <para>
-                The initial_value attribute. If the attribute is present, it MUST
+                The implicit_function attribute. If the attribute is present,
+                the value of the attribute MUST be a valid CellML Identifier, and MUST meet the
+                constraints described in <xref linkend="implicit-functions" />.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                The initial_value attribute. This attribute MUST NOT be present
+                unless the implicit_function attribute is also present on the same
+                variable element. If the attribute is present, it MUST
                 meet the requirements described in
                 <xref linkend="initial-value-interpretation"/>.
               </para>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE article SYSTEM "-//OASIS//DTD DocBook XML">
+<section id="built-in-operators">
+  <title>Built in mathematical operators</title>
+  <section>
+    <title>Operators defined in MathML</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          This specification places no restriction on the use of operators defined in <xref linkend="MathML"/>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          CellML Secondary Specifications MAY impose additional restrictions on which operators from <xref linkend="MathML"/> may be used, and upon the form and context in which they can be used.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          CellML Secondary Specifications MAY define additional mathematical operators, but MUST NOT define additional mathematical operators in a CellML namespace or in the MathML namespace.
+        </para>
+      </listitem>
+    </orderedlist>
+  </section>
+
+  <section>
+    <title>Operators for manipulating units on real numbers</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          Element information items in the CellML 1.2 namespace, with local name equal to offsetby, MAY be used as a mathematical operator, subject to the constraints defined in section <xref linkend="type-semantics" />.
+        </para>
+      </listitem>
+    </orderedlist>
+  </section>
+
+</section>
