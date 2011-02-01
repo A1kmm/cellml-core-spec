@@ -28,7 +28,7 @@
     <orderedlist>
       <listitem>
         <para>
-          Element information items in the CellML 1.2 namespace, with local name equal to offsetby, MAY be used as a mathematical operator, subject to the constraints defined in section <xref linkend="type-semantics" />.
+          Element information items in the CellML 1.2 namespace, with local name equal to offsetby, MAY be used as a mathematical operator, subject to the constraints defined in section <xref linkend="types-on-variables" />.
         </para>
       </listitem>
     </orderedlist>

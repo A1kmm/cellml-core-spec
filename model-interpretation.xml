@@ -804,7 +804,12 @@
       </listitem>
       <listitem>
         <para>
-          .
+          The type of two variables SHALL be said to be identical if and only if the type attributes on the variables are variable references to type variables which are the same, or belong to the same connected subgraph of the variable equivalence network.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The type of two variables SHALL be said to be compatible if
         </para>
       </listitem>
     </orderedlist>
