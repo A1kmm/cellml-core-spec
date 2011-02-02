@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ./genspec.sh
 
 BRANCH=`git branch | grep "*" | cut -d" " -f2`
