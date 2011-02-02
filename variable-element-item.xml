@@ -24,13 +24,6 @@
                 element.
               </para>
             </listitem>
-            <listitem>
-              <para>
-                The units attribute. The value of the units attribute MUST be a
-                valid CellML Identifier, and MUST meet the constraints described
-                in <xref linkend="units-on-variables" />.
-              </para>
-            </listitem>
           </orderedlist>
         </para>
       </listitem>
@@ -56,6 +49,23 @@
                 The initial_value attribute. If the attribute is present, it MUST
                 meet the requirements described in
                 <xref linkend="initial-value-interpretation"/>.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                The type attribute. If the attribute is present, the value MUST
+                be a URI. The URI MAY be <uri>http://www.cellml.org/cellml/1.2#real</uri>,
+                which SHALL be interpreted as indicating that the variable is real valued.
+                If the attribute is absent, this should be treated as if the URI was
+                <uri>http://www.cellml.org/cellml/1.2#real</uri>. In either of these two
+                cases, the units attribute MUST be present.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                The units attribute. If the attribute is present, the value MUST be a
+                valid CellML Identifier, and MUST meet the constraints described
+                in <xref linkend="units-on-variables" />.
               </para>
             </listitem>
           </orderedlist>
