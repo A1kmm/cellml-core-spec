@@ -45,6 +45,11 @@
             </listitem>
             <listitem>
               <para>
+                a group element (<xref linkend="group-element" />),
+              </para>
+            </listitem>
+            <listitem>
+              <para>
                 an import element (<xref linkend="import-element" />),
               </para>
             </listitem>

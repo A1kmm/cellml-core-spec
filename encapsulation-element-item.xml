@@ -18,4 +18,52 @@
       </listitem>
     </orderedlist>
   </section>
+  <section id="group-element">
+    <title>Forwards and backwards compatibility</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          Group element information items (referred to in this specification as
+          group elements) are element information items in the CellML 1.1
+          namespace with local name equal to group. CellML 1.2 processing software
+          MUST accept both group elements in accordance with the rules below and
+          encapsulation components, but SHOULD generate only the CellML 1.1
+          group element form.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Relationship reference element information items (referred to in this
+          specification as relationship_ref elements) are element information
+          items in the CellML 1.1 namespace with local name equal to relationship_ref.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Every group element MUST contain one or more relationship_ref elements.
+          A group element SHOULD be silently ignored unless it contains one or more
+          relationship ref_elements which meet the following criteria:
+          <orderedlist>
+            <listitem>
+              <para>
+                It contains an attribute in the empty namespace with local name
+                relationship and value "encapsulation".
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                It does not contain a name attribute in the empty namespace.
+              </para>
+            </listitem>
+          </orderedlist>
+        </para>
+        <para>
+          A group element MAY contain one or more component_ref elements. In
+          the case where the group element is not silently ignored according
+          to the rules above, these component_ref elements SHALL be treated as
+          if they appeared inside an encapsulation element.
+        </para>
+      </listitem>
+    </orderedlist>
+  </section>
 </section>
