@@ -28,6 +28,17 @@
                 element.
               </para>
             </listitem>
+            <listitem>
+              <para>
+                The type attribute. The primary specification does not place any restrictions
+                on the value of the type attribute, but secondary specifications SHOULD
+                define the types supported in that secondary specification.
+              </para>
+              <para>
+                A type attribute value of real SHALL be interpreted as indicating that the
+                variable is real valued.
+              </para>
+            </listitem>
           </orderedlist>
         </para>
       </listitem>
@@ -57,19 +68,10 @@
             </listitem>
             <listitem>
               <para>
-                The type attribute. If the attribute is present, the value MUST
-                be a URI. The URI MAY be <uri>http://www.cellml.org/cellml/1.2#real</uri>,
-                which SHALL be interpreted as indicating that the variable is real valued.
-                If the attribute is absent, this should be treated as if the URI was
-                <uri>http://www.cellml.org/cellml/1.2#real</uri>. In either of these two
-                cases, the units attribute MUST be present.
-              </para>
-            </listitem>
-            <listitem>
-              <para>
                 The units attribute. If the attribute is present, the value MUST be a
                 valid CellML Identifier, and MUST meet the constraints described
-                in <xref linkend="units-on-variables" />.
+                in <xref linkend="units-on-variables" />. This attribute MUST be present
+                if the type attribute has the value real.
               </para>
             </listitem>
           </orderedlist>
