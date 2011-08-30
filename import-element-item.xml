@@ -25,6 +25,11 @@
       </listitem>
       <listitem>
         <para>
+          Imported CellML Infosets make up part of the model, so for the entire model to be valid, all imported CellML Infosets MUST also be valid under this specification.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
           Every import element MAY contain zero or more specific information children, each of which MUST be of one of the following types:
           <orderedlist>
             <listitem>
