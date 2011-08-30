@@ -50,9 +50,9 @@ items, without changing the namespace that any information item is in.
           </listitem>
           <listitem>
             <para>
-The following paragraph applies only to character information items which are
-the direct child of an element information item in a CellML namespace, or in
-the MathML or RDF namespace.
+The following paragraph applies only to character information items for which all
+ancestor element information items are in the CellML, the MathML or the
+RDF namespace.
             </para>
             <para>
 Inserting or removing character information items that consist entirely of
