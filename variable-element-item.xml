@@ -4,13 +4,9 @@
   <title>The variable element information item</title>
   <para>
     Variable element information items (referred to in this specification as
-    variable elements) are element information items in the CellML 1.1 or CellML 1.2
+    variable elements) are element information items in the CellML 1.2
     namespace with local name equal to variable, and which appear as a child
     of a component element.
-  </para>
-  <para>
-    Software that generates CellML SHOULD use the CellML 1.1 namespace except when
-    the type attribute is required.
   </para>
   <section>
     <title>Specific information items when element in the CellML 1.2 namespace</title>
@@ -36,7 +32,8 @@
               </para>
               <para>
                 A type attribute value of real SHALL be interpreted as indicating that the
-                variable is real valued.
+                variable is real valued. A type attribute value of boolean SHALL be interpretated
+                as indicating that there are two possible values, true and false.
               </para>
             </listitem>
           </orderedlist>

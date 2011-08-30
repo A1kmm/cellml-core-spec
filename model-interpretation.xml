@@ -242,6 +242,27 @@
           variable element.
         </para>
       </listitem>
+      <listitem>
+        <para>
+          All variables in a variable equivalence network MUST have the same
+          type.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          If any of the variables in a variable equivalence network have a
+          units attribute, all variables in the variable equivalence network
+          MUST contain units which are dimensionally compatible with each other.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Two units are dimensionally compatible with each other if their canoncial
+          forms are made up of the same base units with the same exponents. The canonical
+          form of a unit is the form obtained by repeated expansion of units into their
+          component units, and simplification to add exponents of identical base units.
+        </para>
+      </listitem>
     </orderedlist>
   </section>
   <section id="units-reference">
@@ -1067,7 +1088,7 @@
     <orderedlist>
       <listitem>
         <para>
-          The units attribute on a variable element MUST be a valid units
+          If present, the units attribute on a variable element MUST be a valid units
           reference. The target of this units reference is referred to in
           as the variable units, and the corresponding base
           units reduction is referred to as the variable base unit reduction.
@@ -1133,6 +1154,25 @@
               </para>
             </listitem>
           </orderedlist>
+        </para>
+      </listitem>
+    </orderedlist>
+  </section>
+  <section id="type-interpretation">
+    <title>Interpretation of the type attribute</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          This section applies to the interpretation of the type attribute,
+          a mandatory attribute information item on a variable element.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The type attribute specifies the type that a variable should take.
+          A type SHALL define the type of variables that a variable may take,
+          but SHOULD NOT be used to describe the precise implementation-specific
+          details of how data is represented.
         </para>
       </listitem>
     </orderedlist>
@@ -1292,12 +1332,79 @@
       <listitem>
         <para>
           Every MathML cn element MUST have an attribute information item in
-          the CellML 1.1 namespace, with local name <literal>units</literal>. The value of this
+          the CellML 1.2 namespace, with local name <literal>type</literal>. The value of this
+          attribute information item MUST be a valid type name.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          A MathML cn element MAY have an attribute information item in
+          the CellML 1.1 namespace, with local name <literal>units</literal>.
+          Where the <literal>type</literal> attribute takes the value
+          <literal>real</literal>, the <literal>units</literal> attribute
+          MUST be present.
+          The value of this
           attribute information item MUST be a valid units reference. The
           referenced units SHALL NOT affect the mathematical interpreation of
           the CellML model. However, CellML Processing Software MAY use this
           information to assist the user in the detection and correction of
           units errors in the CellML Model.
+        </para>
+      </listitem>
+    </orderedlist>
+  </section>
+  <section>
+    <title>Type inference requirement</title>
+    <orderedlist>
+      <listitem>
+        <para>
+          In a valid model, it SHALL be possible to identify a single type for every mathematical expression or sub-expression.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The type identified for a MathML ci element for the purposes of this section
+          SHALL be the same type specified by the type attribute of the corresponding variable.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The type identified for a MathML cn element for the purposes of this section
+          SHALL be the same type specified by the type attribute in the CellML 1.2 namespace
+          on the cn element.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The MathML element information items true and false SHALL be identified as having type boolean.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The MathML element information items exponentiale, pi, and eulergamma SHALL be identified as
+          having type real.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The MathML piecewise element SHALL be identified as having the type of the first case value.
+          All case values in the piecewise element, and if present, the otherwise expression MUST
+          also be identified as having the same type. The case conditions MUST be identified as having
+          type boolean.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The type identification for all remaining MathML element information items, including for
+          the apply element information item with different operators, are left up to the secondary
+          specifications.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Secondary specifications MUST be written so that the type of any valid
+          mathematical expression can be uniquely inferred from the types
+          of the arguments.
         </para>
       </listitem>
     </orderedlist>
