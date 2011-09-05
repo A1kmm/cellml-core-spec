@@ -1184,47 +1184,6 @@
       </listitem>
     </orderedlist>
   </section>
-  <section id="initial-value-interpretation">
-    <title>Interpretation of initial values</title>
-    <orderedlist>
-      <listitem>
-        <para>
-          This section applies to the interpretation of the initial_value
-          attribute, when it appears as an attribute information item on
-          a variable element.
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          The initial_value attribute MUST either be a real number string, or
-          a variable reference.
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          TO DO: Need a reasonable definition of the conditions when the
-          initial_value holds, because we can't really
-          use the 1.1 version because it is problematic for a number of reasons.
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Where the initial_value attribute has a real number value, it SHALL be
-          interpreted as a statement that the variable on which the attribute
-          appears is equal to that real number value, under the conditions that
-          the initial value holds.
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Where the initial_value attribute is a variable reference, it SHALL
-          be interpreted as a statement that the variable on which the attribute
-          appears is equal to the referenced variable under the conditions the
-          initial value holds.
-        </para>
-      </listitem>
-    </orderedlist>
-  </section>
   <section>
     <title>Interpretation of imports</title>
     <orderedlist>

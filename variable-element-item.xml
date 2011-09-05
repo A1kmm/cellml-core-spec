@@ -58,13 +58,6 @@
             </listitem>
             <listitem>
               <para>
-                The initial_value attribute. If the attribute is present, it MUST
-                meet the requirements described in
-                <xref linkend="initial-value-interpretation"/>.
-              </para>
-            </listitem>
-            <listitem>
-              <para>
                 The units attribute. If the attribute is present, the value MUST be a
                 valid CellML Identifier, and MUST meet the constraints described
                 in <xref linkend="units-on-variables" />. This attribute MUST be present
