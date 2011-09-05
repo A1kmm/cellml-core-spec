@@ -1300,7 +1300,7 @@
       <listitem>
         <para>
           The MathML csymbol element information item with definitionURL attribute information
-          item equal to "http://www.cellml.org/cellml/1.2#open-closure" shall refer to a
+          item equal to "http://www.cellml.org/cellml/1.2#evaluatedAt" shall refer to a
           function of three operands. The first operand MUST be a MathML ci element referring
           to a variable that is in independent variable set. The application of this csymbol
           element shall be interpreted as meaning the value of the third operand, modified so
