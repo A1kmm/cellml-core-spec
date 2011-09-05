@@ -1290,6 +1290,26 @@
       </listitem>
       <listitem>
         <para>
+          Where a MathML ci element refers to a variable that is not in the independent
+          variable set, the variable SHALL be treated as if it was a lexical closure
+          over the independent variables of the application of each independent
+          variable to the function giving the value of the variable
+          in terms of each value of each independent variable.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The MathML csymbol element information item with definitionURL attribute information
+          item equal to "http://www.cellml.org/cellml/1.2#open-closure" shall refer to a
+          function of three operands. The first operand MUST be a MathML ci element referring
+          to a variable that is in independent variable set. The application of this csymbol
+          element shall be interpreted as meaning the value of the third operand, modified so
+          that all lexical closures of the independent variable given as the first operand are
+          removed and substituted for the value of the second operand.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
           Every such variable reference SHALL be treated as a linear
           expression
           <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">

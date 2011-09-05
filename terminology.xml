@@ -144,5 +144,13 @@ As defined in <xref linkend="RDF-CONCEPTS"/>.
         </para>
       </glossdef>
     </glossentry>
+    <glossentry>
+      <glossterm>Independent variable set</glossterm>
+      <glossdef>
+        <para>
+A set of zero variables in the model (each represented by a set of one or more connected CellML variables) that are defined externally to the model.
+        </para>
+      </glossdef>
+    </glossentry>
   </glosslist>
 </section>

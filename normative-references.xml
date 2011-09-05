@@ -52,8 +52,8 @@ RDF/XML Syntax Specification (revised)
   </biblioentry>
   <biblioentry id="MathML">
     <citetitle>
-      <ulink url="http://www.w3.org/TR/2003/REC-MathML2-20031021/">
-Mathematical Markup Language (MathML) Version 2.0 (Second Edition)
+      <ulink url="http://www.w3.org/TR/2010/REC-MathML3-20101021/">
+Mathematical Markup Language (MathML) Version 3.0
       </ulink>
     </citetitle>
     <date>21 October 2003</date>
