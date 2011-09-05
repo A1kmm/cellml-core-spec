@@ -1339,7 +1339,7 @@
       <listitem>
         <para>
           A MathML cn element MAY have an attribute information item in
-          the CellML 1.1 namespace, with local name <literal>units</literal>.
+          the CellML 1.2 namespace, with local name <literal>units</literal>.
           Where the <literal>type</literal> attribute takes the value
           <literal>real</literal>, the <literal>units</literal> attribute
           MUST be present.

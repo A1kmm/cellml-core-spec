@@ -100,8 +100,9 @@ permitted in this specification.
       <listitem>
         <para>
 CellML Processing Software SHOULD NOT attempt to process CellML Infosets which
-contain information items in a CellML namespace other than the CellML 1.1
-or CellML 1.2 namespaces.
+contain information items in a CellML namespace other than the CellML 1.2 namespaces,
+unless they have been designed to support the version of CellML corresponding to the
+namespace.
         </para>
       </listitem>
       <listitem>

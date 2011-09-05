@@ -4,7 +4,7 @@
   <title>The import element information item</title>
   <para>
     Import element information items (referred to in this specification as
-    import elements) are element information items in the CellML 1.1
+    import elements) are element information items in the CellML 1.2
     namespace with local name equal to import.
   </para>
   <section>

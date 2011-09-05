@@ -4,7 +4,7 @@
   <title>The map_variables element information item</title>
   <para>
     map_variables element information items (referred to in this specification
-    as map_variables elements) are element information items in the CellML 1.1
+    as map_variables elements) are element information items in the CellML 1.2
     namespace with local name equal to map_variables, and which appear as a child
     of a connection element.
   </para>

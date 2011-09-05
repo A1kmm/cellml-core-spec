@@ -4,10 +4,8 @@
   <title>The connection element information item</title>
   <para>
     Connection element information items (referred to in this specification as
-    connection elements) are element information items in the CellML 1.1 or CellML
-    1.2 namespaces with local name equal to connection. CellML Processing software
-    MUST support both forms, but SHOULD generate connection elements in the CellML 1.1
-    namespace.
+    connection elements) are element information items in the CellML
+    1.2 namespace with local name equal to connection.
   </para>
   <section>
     <title>Specific information items when in CellML 1.2 namespace</title>
@@ -34,46 +32,6 @@
         <para>
           Every connection element MUST contain one or more map_variables
           element (<xref linkend="map-variables-element" />).
-        </para>
-      </listitem>
-    </orderedlist>
-  </section>
-  <section>
-    <title>Specific information items when in CellML 1.1 namespace</title>
-    <orderedlist>
-      <listitem>
-        <para>
-          Every connection element MUST contain exactly one element with local
-          name map_variables in the CellML 1.1 namespace, and that element shall
-          in turn have two attributes:
-          <orderedlist>
-            <listitem>
-              <para>
-                The component_1 attribute in the empty namespace. The value of
-                the component_1 attribute MUST be a valid CellML Identifier. The
-                value of this attribute MUST be equal to the name attribute on a
-                component or import component element in the CellML Infoset.
-                Component_1 attributes SHALL be treated in the same way as if they
-                appeared on the connection element in the CellML 1.2 namespace.
-              </para>
-            </listitem>
-            <listitem>
-              <para>
-                The component_2 attribute in the empty namespace. The value of
-                the component_2 attribute MUST be a valid CellML Identifier.
-                The value of this attribute MUST be equal to the name attribute
-                on a component or import component element in the CellML Infoset.
-                Component_2 attributes SHALL be treated in the same way as if they
-                appeared on the connection element in the CellML 1.2 namespace.
-              </para>
-            </listitem>
-          </orderedlist>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Every connection element MUST contain one or more map_variables
-          elements (<xref linkend="map-variables-element" />).
         </para>
       </listitem>
     </orderedlist>

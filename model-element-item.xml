@@ -6,7 +6,7 @@
     <title>Top-level of CellML Infosets</title>
     <para>
       The top-level element information item in a CellML Infoset MUST be an
-      element information item in the CellML 1.1 namespace, with local name
+      element information item in the CellML 1.2 namespace, with local name
       model. This element information item is referred to in this specification
       as the model element.
     </para>
