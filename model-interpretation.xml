@@ -224,6 +224,13 @@
       </listitem>
       <listitem>
         <para>
+          The variable equivalence network MUST NOT 
+          contain any cycles in the underlying graph (that is, it must be a
+          tree).
+        </para>
+      </listitem>
+      <listitem>
+        <para>
           For the purposes of this specification, the variable elements in a
           CellML Model SHALL be treated as belonging to one of several disjoint
           sets of connected variables. Each set of connected variables is a
