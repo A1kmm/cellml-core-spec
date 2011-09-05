@@ -128,9 +128,6 @@
           of the component referenced by the component_2 attribute.
         </para>
       </listitem>
-      <!-- To do: Add in something about containment, or get community
-           consensus to drop containment from the core specification and move
-           it into the metadata. See tracker item 316. -->
     </orderedlist>
   </section>
   <section>
@@ -1226,6 +1223,11 @@
     <orderedlist>
       <listitem>
         <para>
+          Where full content MathML can be translated into strict content MathML using a rule in the MathML specification, then the rules in this specification SHALL be applied as if the equivalent strict content MathML form had been used.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
           Every MathML element in the CellML Model, which appears as a direct
           child information item of the MathML math element information item,
           which in turn appears as a child information item of a pertinent component
@@ -1242,9 +1244,26 @@
       </listitem>
       <listitem>
         <para>
-          Every variable name given using the MathML ci element SHALL be treated
-          as a variable reference within the component element ancestor the
-          MathML is contained within.
+          Every variable name given using the MathML ci element MUST either be:
+          <orderedlist>
+            <listitem>
+              <para>
+                a reference a variable name bound by a bind element ancestor of the
+                ci element.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                a reference a variable within the component element ancestor the
+                MathML is contained within.
+              </para>
+            </listitem>
+          </orderedlist>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Where the same variable name is bound by more than one bind element ancestor of a ci element, the ci element SHALL refer only to the bound variable from the bind element that is the descendant of all those other bind elements. Where the same variable name is defined by a bind element ancestor of a ci element and a model variable, the variable SHALL be treated as a bound variable, and SHALL NOT be treated as a model variable.
         </para>
       </listitem>
       <listitem>
@@ -1317,14 +1336,28 @@
       </listitem>
       <listitem>
         <para>
-          Every MathML cn element MUST have an attribute information item in
+          The MathML elements requiring additional type information are:
+          <orderedlist>
+            <listitem>
+              <para>Every MathML cn element</para>
+            </listitem>
+            <listitem>
+              <para>Every MathML ci element that appears within a bvar element
+                    information item under a bind element information item.</para>
+            </listitem>
+          </orderedlist>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Every MathML element requiring additional type information (as defined above) MUST have an attribute information item in
           the CellML 1.2 namespace, with local name <literal>type</literal>. The value of this
           attribute information item MUST be a valid type name.
         </para>
       </listitem>
       <listitem>
         <para>
-          A MathML cn element MAY have an attribute information item in
+          A MathML element requiring additional type information (as defined above) MAY have an attribute information item in
           the CellML 1.2 namespace, with local name <literal>units</literal>.
           Where the <literal>type</literal> attribute takes the value
           <literal>real</literal>, the <literal>units</literal> attribute
@@ -1350,7 +1383,7 @@
       <listitem>
         <para>
           The type identified for a MathML ci element for the purposes of this section
-          SHALL be the same type specified by the type attribute of the corresponding variable.
+          SHALL be the same type specified by the type attribute of the corresponding variable, or where the ci element refers to a bound variable, the type specified on ci child of the corresponding bvar element.
         </para>
       </listitem>
       <listitem>
