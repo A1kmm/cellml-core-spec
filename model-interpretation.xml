@@ -13,32 +13,32 @@
       </listitem>
       <listitem>
         <para>
-          A component reference present in an information item which is a
-          descendant of a model element SHALL be identical to either the name
-          attribute on a component element or to the name attribute on an import
+          A component reference present in an information item that is a
+          descendant of a <literal>model</literal> element SHALL be identical to either the <literal>name</literal>
+          attribute on a <literal>component</literal> element or to the <literal>name</literal> attribute on an import
           component element.
         </para>
       </listitem>
       <listitem>
         <para>
-          A component reference which is identical to the name attribute on a
-          component element SHALL be treated as a reference to that component
+          A component reference that is identical to the <literal>name</literal> attribute on a
+          <literal>component</literal> element SHALL be treated as a reference to that <literal>component</literal>
           element.
         </para>
       </listitem>
       <listitem>
         <para>
-          A component reference which is identical to the name attribute on an
+          A component reference that is identical to the <literal>name</literal> attribute on an
           import component element SHALL be treated as if the component reference
           appeared in the imported model, and referred to the name specified in
-          the component_ref attribute of the import component element.
+          the <literal>component_ref</literal> attribute of the import component element.
         </para>
       </listitem>
       <listitem>
         <para>
           It is noted for the avoidance of doubt that CellML Models MAY apply
           the previous rule recursively, to reference an import component element
-          which in turn references another import component element.
+          that in turn references another import component element.
         </para>
       </listitem>
     </orderedlist>
@@ -48,10 +48,10 @@
     <orderedlist>
       <listitem>
         <para>
-          When present in an information item which is a descendant of a
-          component element, a variable reference SHALL be the name of a
-          variable, and SHALL refer to the variable element in the same
-          component with a name attribute identical to the variable
+          When present in an information item that is a descendant of a
+          <literal>component</literal> element, a variable reference SHALL be the
+          name of a variable, and SHALL refer to the <literal>variable</literal> element in the same
+          component with a <literal>name</literal> attribute identical to the variable
           reference.
         </para>
       </listitem>
@@ -59,7 +59,7 @@
         <para>
           In all other cases, a variable reference SHALL consist of a component reference and a
           variable name. In this case, the variable reference SHALL be treated
-          as if it was present in the component element referenced by the
+          as if it was present in the <literal>component</literal> element referenced by the
           component reference.
         </para>
       </listitem>
@@ -77,11 +77,11 @@
       </listitem>
       <listitem>
         <para>
-          Where a component_ref element appears as a child of another
-          component_ref element, then there SHALL be an arc in
+          Where a <literal>component_ref</literal> element appears as a child of another
+          <literal>component_ref</literal> element, then there SHALL be an arc in
           the encapsulation digraph, and that arc SHALL be from the
-          component referenced by the parent component_ref element, and to the
-          component referenced by the child component_ref element.
+          component referenced by the parent <literal>component_ref</literal> element, and to the
+          component referenced by the child <literal>component_ref</literal> element.
         </para>
       </listitem>
       <listitem>
@@ -101,15 +101,15 @@
       <listitem>
         <para>
           The encapsulation parent for a component A SHALL be the component
-          corresponding to the node which is the parent node in the
+          corresponding to the node that is the parent node in the
           encapsulation digraph of the node corresponding to A.
         </para>
       </listitem>
       <listitem>
         <para>
           The sibling set for a component A SHALL be the set of all components
-          which have the same encapsulation parent as A, or in the case that A
-          has no encapsulation parent, SHALL be the set of all components which
+          that have the same encapsulation parent as A, or in the case that A
+          has no encapsulation parent, SHALL be the set of all components that
           do not have an encapsulation parent.
         </para>
       </listitem>
@@ -123,9 +123,9 @@
       </listitem>
       <listitem>
         <para>
-          CellML models MUST NOT contain connection elements such that the
-          component referenced by the component_1 attribute is in the hidden set
-          of the component referenced by the component_2 attribute.
+          CellML models MUST NOT contain <literal>connection</literal> elements such that the
+          component referenced by the <literal>component_1</literal> attribute is in the hidden set
+          of the component referenced by the <literal>component_2</literal> attribute.
         </para>
       </listitem>
     </orderedlist>
@@ -136,12 +136,12 @@
       <listitem>
         <para>
           A variable equivalence network SHALL be a graph with one
-          node for every variable element in the CellML model.
+          node for every <literal>variable</literal> element in the CellML model.
         </para>
       </listitem>
       <listitem>
         <para>
-          For every map_variables element present in the CellML Model, there SHALL
+          For every <literal>map_variables</literal> element present in the CellML Model, there SHALL
           be an edge in the variable equivalence network.
         </para>
       </listitem>
@@ -149,36 +149,36 @@
         <para>
           One endpoint of the edge in the variable equivalence network SHALL
           be the node corresponding to the variable (A) referenced by
-          the component_1 and variable_1 attributes.
+          the <literal>component_1</literal> and <literal>variable_1</literal> attributes.
         </para>
       </listitem>
       <listitem>
         <para>
           One endpoint of the edge in the variable equivalence network SHALL
           be the node corresponding to the variable (B) referenced by
-          the component_2 and variable_2 attributes.
+          the <literal>component_2</literal> and <literal>variable_2</literal> attributes.
         </para>
       </listitem>
       <listitem>
         <para>
-          CellML models MUST NOT contain any pair of map_variables elements which
+          CellML models MUST NOT contain any pair of <literal>map_variables</literal> elements that
           each make reference to the same sets of variables (without regard to
-          whether the variable_1 attribute of one map_variables element references
-          the variable referenced by the variable_1 or variable_2 attribute of
+          whether the <literal>variable_1</literal> attribute of one <literal>map_variables</literal> element references
+          the variable referenced by the <literal>variable_1</literal> or <literal>variable_2</literal> attribute of
           the other).
         </para>
       </listitem>
       <listitem>
         <para>
-          When the component parent element of variable A is in the sibling set of
-          the component parent element of variable B, the applicable
+          When the <literal>component</literal> parent element of variable A is in the sibling set of
+          the <literal>component</literal> parent element of variable B, the applicable
           interface for variables A and B SHALL be the public interface.
         </para>
       </listitem>
       <listitem>
         <para>
-          Where the component parent element of variable A is in the
-          encapsulated set of the component parent element of variable B,
+          Where the <literal>component</literal> parent element of variable A is in the
+          encapsulated set of the <literal>component</literal> parent element of variable B,
           the applicable interface for variable A SHALL be the public interface,
           and the applicable interface for variable B SHALL be the private
           interface.
@@ -186,8 +186,8 @@
       </listitem>
       <listitem>
         <para>
-          Where the component parent element of variable B is in the
-          encapsulated set of the component parent element of variable A,
+          Where the <literal>component</literal> parent element of variable B is in the
+          encapsulated set of the <literal>component</literal> parent element of variable A,
           the applicable interface for variable A SHALL be the private
           interface, and the applicable interface for variable B SHALL be the
           public interface.
@@ -197,10 +197,10 @@
         <para>
           For a given variable, if the applicable interface is the public
           interface, the applicable interface attribute SHALL be the
-          public_interface attribute information item on the corresponding
-          variable element. If the applicable interface is the private
+          <literal>public_interface</literal> attribute information item on the corresponding
+          <literal>variable</literal> element. If the applicable interface is the private
           interface, the applicable interface attribute SHALL be the
-          private_interface attribute information item on the corresponding
+          <literal>private_interface</literal> attribute information item on the corresponding
           variable element.
         </para>
       </listitem>
@@ -209,12 +209,12 @@
           In any case, if the applicable interface attribute
           is absent, the following rules in this section SHALL still apply as if
           the applicable interface attribute was present, and had the value
-          no.
+          <literal>no</literal>.
         </para>
       </listitem>
       <listitem>
         <para>
-          CellML models MUST NOT contain map_variables elements unless the
+          CellML models MUST NOT contain <literal>map_variables</literal> elements unless the
           value of the applicable interface attributes on variables A and B are
           both yes.
         </para>
@@ -228,7 +228,7 @@
       </listitem>
       <listitem>
         <para>
-          For the purposes of this specification, the variable elements in a
+          For the purposes of this specification, the <literal>variable</literal> elements in a
           CellML Model SHALL be treated as belonging to one of several disjoint
           sets of connected variables. Each set of connected variables is a
           set of all variable elements for which the corresponding nodes
@@ -243,7 +243,7 @@
           variables, one variable SHALL arbitrarily be selected as the source
           variable. Within this specification, the variable in the mathematical
           model is described as if it was in the units specified on the source
-          variable element.
+          <literal>variable</literal> element.
         </para>
       </listitem>
       <listitem>
@@ -255,8 +255,8 @@
       <listitem>
         <para>
           If any of the variables in a variable equivalence network have a
-          units attribute, all variables in the variable equivalence network
-          MUST contain units which are dimensionally compatible with each other.
+          <literal>units</literal> attribute, all variables in the variable equivalence network
+          MUST contain units that are dimensionally compatible with each other.
         </para>
       </listitem>
       <listitem>
@@ -286,7 +286,7 @@
       <listitem>
         <para>
           Where more than one of the units scoping rules apply, the applicable rule
-          which appears first in this specification SHALL be used.
+          that appears first in this specification SHALL be used.
         </para>
       </listitem>
       <listitem>
@@ -294,16 +294,16 @@
         <orderedlist>
           <listitem>
             <para>
-              Where a units reference appears in an information item which is
-              descended from a component element, and there is a units element
-              child of that component element with a name attribute identical to
+              Where a units reference appears in an information item that is
+              descended from a <literal>component</literal> element, and there is a <literal>units</literal> element
+              child of that <literal>component</literal> element with a <literal>name</literal> attribute identical to
               the units reference, then the units reference SHALL refer to that
-              units element.
+              <literal>units</literal> element.
             </para>
           </listitem>
           <listitem>
             <para>
-              Where a units reference appears in an information item which is descended from the model element, and there is a units element child of that model element with a name attribute identical to the units reference, then the units reference SHALL refer to that units element.
+              Where a units reference appears in an information item that is descended from the <literal>model</literal> element, and there is a <literal>units</literal> element child of that <literal>model</literal> element with a <literal>name</literal> attribute identical to the units reference, then the units reference SHALL refer to that <literal>units</literal> element.
             </para>
           </listitem>
           <listitem>
@@ -312,7 +312,7 @@
               the import units element has a name attribute identical to the units
               reference, then the units reference SHALL be treated as if the
               units reference appeared in the imported model, and referred to the
-              name specified in the units_ref attribute of the import units element.
+              name specified in the <literal>units_ref</literal> attribute of the import units element.
             </para>
           </listitem>
           <listitem>
@@ -947,8 +947,8 @@
       </listitem>
       <listitem>
         <para>
-          There SHALL be one user defined base unit for every units element
-          which has a base_units attribute in the empty namespace, having value
+          There SHALL be one user defined base unit for every <literal>units</literal> element
+          that has a <literal>base_units</literal> attribute in the empty namespace, having value
           yes.
         </para>
       </listitem>
@@ -962,7 +962,7 @@
           <orderedlist>
             <listitem>
               <para>
-                Where the units reference is to a unit which is a base unit,
+                Where the units reference is to a unit that is a base unit,
                 then the base unit reduction of the units reference SHALL have
                 offset zero, multiplier 1.0, and the set of tuples SHALL have a single
                 member, which SHALL consist of the base units being referenced
@@ -990,7 +990,7 @@
             </listitem>
             <listitem>
               <para>
-                Where the units reference is to a unit which is neither built-in,
+                Where the units reference is to a unit that is neither built-in,
                 nor a base unit, the resultant base unit reduction SHALL be
                 defined as a composition of the base unit reductions referenced
                 from the unit element information items (the operand base unit
@@ -999,13 +999,13 @@
                   <listitem>
                     <para>
                       The prefix term is a conceptual property of unit
-                      elements, defined here for later use. If the unit element
-                      does not have a prefix information item, the prefix term
-                      SHALL have value zero. If the prefix
-                      attribute information item has a value which is a real
+                      elements, defined here for later use. If the <literal>unit</literal> element
+                      does not have a <literal>prefix</literal> information item, the prefix term
+                      SHALL have value zero. If the <literal>prefix</literal>
+                      attribute information item has a value that is a real
                       number string, then the prefix term SHALL have the
                       corresponding numerical value. Otherwise, the
-                      prefix attribute information item MUST have a value taken
+                      <literal>prefix</literal> attribute information item MUST have a value taken
                       from the 'Prefix Name' column of
                       <xref linkend='prefix-table' />, and the prefix term
                       SHALL have the value taken from the 'Prefix Term' column
@@ -1014,21 +1014,21 @@
                   </listitem>
                   <listitem>
                     <para>
-                      The exponent term is a conceptual property of unit
-                      elements, defined here for later use. If a unit element
-                      has no exponent attribute information item, the exponent
+                      The exponent term is a conceptual property of <literal>unit</literal>
+                      elements, defined here for later use. If a <literal>unit</literal> element
+                      has no <literal>exponent</literal> attribute information item, the exponent
                       term SHALL have value 1.0. Otherwise, the value of the
-                      exponent attribute information item MUST be a real number
+                      <literal>exponent</literal> attribute information item MUST be a real number
                       string, and the value of the exponent term SHALL be the
                       numerical value of that string.
                     </para>
                   </listitem>
                   <listitem>
                     <para>
-                      The multiplier term is a conceptual property of unit
+                      The multiplier term is a conceptual property of <literal>unit</literal>
                       elements, defined here for later use. The multiplier term
-                      SHALL be the real number value of the multiplier attribute
-                      information item on the units element (or 1.0 in the
+                      SHALL be the real number value of the <literal>multiplier</literal> attribute
+                      information item on the <literal>units</literal> element (or 1.0 in the
                       absence of such an attribute information item),
                       multiplied by 10.0 raised to the power of the negative of
                       the product of the prefix term and the exponent term.
@@ -1047,8 +1047,8 @@
                   </listitem>
                   <listitem>
                     <para>
-                      Where the units reference is to a units element with a
-                      single unit child element, then the resultant base unit
+                      Where the units reference is to a <literal>units</literal> element with a
+                      single <literal>unit</literal> child element, then the resultant base unit
                       reduction SHALL have multiplier equal to the product of
                       the multiplier of the operand base unit reduction and the
                       multiplier term of the unit element. It SHALL have offset
@@ -1058,8 +1058,8 @@
                   </listitem>
                   <listitem>
                     <para>
-                      Where the units reference is to a units element with a
-                      number of unit child elements not equal to one, then the
+                      Where the units reference is to a <literal>units</literal> element with a
+                      number of <literal>unit</literal> child elements not equal to one, then the
                       resultant base unit reduction SHALL have multiplier equal
                       to the product of the multipliers of each operand base
                       unit reduction, and the multiplier term of each unit
@@ -1092,17 +1092,17 @@
     <orderedlist>
       <listitem>
         <para>
-          If present, the units attribute on a variable element MUST be a valid units
-          reference. The target of this units reference is referred to in
+          If present, the <literal>units</literal> attribute on a <literal>variable</literal> element MUST be a valid units
+          reference. The target of this units reference is referred to
           as the variable units, and the corresponding base
           units reduction is referred to as the variable base unit reduction.
         </para>
       </listitem>
       <listitem>
         <para>
-          The variable base unit reduction of a variable element MUST have an
+          The variable base unit reduction of a <literal>variable</literal> element MUST have an
           identical set of tuples to the set of tuples on the source variable
-          base element units reduction. Two sets of tuples SHALL be
+          base units reduction. Two sets of tuples SHALL be
           considered identical if and only if neither set contains any tuple
           not present in the other. Two tuples are considered identical if both
           the base units and exponent on the tuple are the same.
@@ -1163,17 +1163,17 @@
     </orderedlist>
   </section>
   <section id="type-interpretation">
-    <title>Interpretation of the type attribute</title>
+    <title>Interpretation of the <literal>type</literal> attribute</title>
     <orderedlist>
       <listitem>
         <para>
-          This section applies to the interpretation of the type attribute,
-          a mandatory attribute information item on a variable element.
+          This section applies to the interpretation of the <literal>type</literal> attribute,
+          a mandatory attribute information item on a <literal>variable</literal> element.
         </para>
       </listitem>
       <listitem>
         <para>
-          The type attribute specifies the type that a variable should take.
+          The <literal>type</literal> attribute specifies the type that a variable should take.
           A type SHALL define the type of variables that a variable may take,
           but SHOULD NOT be used to describe the precise implementation-specific
           details of how data is represented.
@@ -1186,30 +1186,30 @@
     <orderedlist>
       <listitem>
         <para>
-          Each import element present in a CellML Infoset (the importing infoset)
+          Each <literal>import</literal> element present in a CellML Infoset (the importing infoset)
           SHALL define a new and separate instance of the CellML Infoset referenced
           by the href attribute (the imported infoset).
         </para>
       </listitem>
       <listitem>
         <para>
-          The following component elements SHALL be "pertinent component elements":
+          The following <literal>component</literal> elements SHALL be "pertinent <literal>component</literal> elements":
           <orderedlist>
             <listitem>
               <para>
-                all component elements in the top-level CellML
+                all <literal>component</literal> elements in the top-level CellML
                 Infoset for the CellML Model, and,
               </para>
             </listitem>
             <listitem>
               <para>
-                all component elements referenced by import components in the top-level
+                all <literal>component</literal> elements referenced by import components in the top-level
                 CellML Infoset, and,
               </para>
             </listitem>
             <listitem>
               <para>
-                all component elements which are descendants in the encapsulation
+                all <literal>component</literal> elements that are descendants in the encapsulation
                 digraph of a pertinent component element.
               </para>
             </listitem>
@@ -1228,8 +1228,8 @@
       </listitem>
       <listitem>
         <para>
-          Every MathML element in the CellML Model, which appears as a direct
-          child information item of the MathML math element information item,
+          Every MathML element in the CellML Model which appears as a direct
+          child information item of the MathML <literal>math</literal> element information item,
           which in turn appears as a child information item of a pertinent component
           element, SHALL be treated as a statement which holds true
           unconditionally.
@@ -1237,24 +1237,24 @@
       </listitem>
       <listitem>
         <para>
-          Every MathML element which appears as a direct child information
-          item of the MathML math element information item SHALL be treated
-          as a statement which holds true unconditionally.
+          Every MathML element that appears as a direct child information
+          item of the MathML <literal>math</literal> element information item SHALL be treated
+          as a statement that holds true unconditionally.
         </para>
       </listitem>
       <listitem>
         <para>
-          Every variable name given using the MathML ci element MUST either be:
+          Every variable name given using the MathML <literal>ci</literal> element MUST either be:
           <orderedlist>
             <listitem>
               <para>
-                a reference a variable name bound by a bind element ancestor of the
-                ci element.
+                a reference to a variable name bound by a bind element ancestor of the
+                <literal>ci</literal> element.
               </para>
             </listitem>
             <listitem>
               <para>
-                a reference a variable within the component element ancestor the
+                a reference to a variable within the <literal>component</literal> element ancestor the
                 MathML is contained within.
               </para>
             </listitem>
@@ -1263,12 +1263,12 @@
       </listitem>
       <listitem>
         <para>
-          Where the same variable name is bound by more than one bind element ancestor of a ci element, the ci element SHALL refer only to the bound variable from the bind element that is the descendant of all those other bind elements. Where the same variable name is defined by a bind element ancestor of a ci element and a model variable, the variable SHALL be treated as a bound variable, and SHALL NOT be treated as a model variable.
+          Where the same variable name is bound by more than one <literal>bind</literal> element ancestor of a <literal>ci</literal> element, the <literal>ci</literal> element SHALL refer only to the bound variable from the <literal>bind</literal> element that is the descendant of all those other <literal>bind</literal> elements. Where the same variable name is defined by a <literal>bind</literal> element ancestor of a <literal>ci</literal> element and a model variable, the variable SHALL be treated as a bound variable, and SHALL NOT be treated as a model variable.
         </para>
       </listitem>
       <listitem>
         <para>
-          Where a MathML ci element refers to a variable that is not in the independent
+          Where a MathML <literal>ci</literal> element refers to a variable that is not in the independent
           variable set, the variable SHALL be treated as if it was a lexical closure
           over the independent variables of the application of each independent
           variable to the function giving the value of the variable
@@ -1279,8 +1279,8 @@
         <para>
           The MathML csymbol element information item with definitionURL attribute information
           item equal to "http://www.cellml.org/cellml/1.2#evaluatedAt" shall refer to a
-          function of three operands. The first operand MUST be a MathML ci element referring
-          to a variable that is in independent variable set. The application of this csymbol
+          function of three operands. The first operand MUST be a MathML <literal>ci</literal> element referring
+          to a variable that is in independent variable set. The application of this <literal>csymbol</literal>
           element shall be interpreted as meaning the value of the third operand, modified so
           that all lexical closures of the independent variable given as the first operand are
           removed and substituted for the value of the second operand.
@@ -1288,38 +1288,38 @@
       </listitem>
       <listitem>
         <para>
-          Every such variable reference SHALL be treated as a linear
-          expression
+          Every variable reference to a variable of type <literal>real</literal> SHALL be treated as a
+          linear expression
           <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
             <mml:mrow>
               <mml:mrow>
                 <mml:mfrac>
                   <mml:msub>
                     <mml:mi>m</mml:mi>
-                    <mml:mi>V</mml:mi>
+                    <mml:mi>S</mml:mi>
                   </mml:msub>
                   <mml:msub>
                     <mml:mi>m</mml:mi>
-                    <mml:mi>S</mml:mi>
+                    <mml:mi>V</mml:mi>
                   </mml:msub>
                 </mml:mfrac>
                 <mml:mo>&#x00D7;<!--times--></mml:mo>
                 <mml:mi>x</mml:mi>
               </mml:mrow>
-              <mml:mo>+</mml:mo>
+              <mml:mo>-</mml:mo>
               <mml:msub>
                 <mml:mi>o</mml:mi>
                 <mml:mi>V</mml:mi>
               </mml:msub>
-              <mml:mo>-</mml:mo>
+              <mml:mo>+</mml:mo>
               <mml:mfrac>
                 <mml:msub>
                   <mml:mi>m</mml:mi>
-                  <mml:mi>V</mml:mi>
+                  <mml:mi>S</mml:mi>
                 </mml:msub>
                 <mml:msub>
                   <mml:mi>m</mml:mi>
-                  <mml:mi>S</mml:mi>
+                  <mml:mi>V</mml:mi>
                 </mml:msub>
               </mml:mfrac>
               <mml:mo>&#x00D7;<!--times--></mml:mo>
@@ -1339,11 +1339,11 @@
           The MathML elements requiring additional type information are:
           <orderedlist>
             <listitem>
-              <para>Every MathML cn element</para>
+              <para>Every MathML <literal>cn</literal> element</para>
             </listitem>
             <listitem>
-              <para>Every MathML ci element that appears within a bvar element
-                    information item under a bind element information item.</para>
+              <para>Every MathML <literal>ci</literal> element that appears within a bvar element
+                    information item under a <literal>bind</literal> element information item.</para>
             </listitem>
           </orderedlist>
         </para>
@@ -1382,40 +1382,40 @@
       </listitem>
       <listitem>
         <para>
-          The type identified for a MathML ci element for the purposes of this section
-          SHALL be the same type specified by the type attribute of the corresponding variable, or where the ci element refers to a bound variable, the type specified on ci child of the corresponding bvar element.
+          The type identified for a MathML <literal>ci</literal> element for the purposes of this section
+          SHALL be the same type specified by the type attribute of the corresponding variable, or where the <literal>ci</literal> element refers to a bound variable, the type specified on <literal>ci</literal> child of the corresponding <literal>bvar</literal> element.
         </para>
       </listitem>
       <listitem>
         <para>
-          The type identified for a MathML cn element for the purposes of this section
+          The type identified for a MathML <literal>cn</literal> element for the purposes of this section
           SHALL be the same type specified by the type attribute in the CellML 1.2 namespace
-          on the cn element.
+          on the <literal>cn</literal> element.
         </para>
       </listitem>
       <listitem>
         <para>
-          The MathML element information items true and false SHALL be identified as having type boolean.
+          The MathML element information items <literal>true</literal> and <literal>false</literal> SHALL be identified as having type <literal>boolean</literal>.
         </para>
       </listitem>
       <listitem>
         <para>
-          The MathML element information items exponentiale, pi, and eulergamma SHALL be identified as
-          having type real.
+          The MathML element information items <literal>exponentiale</literal>, <literal>pi</literal>, and <literal>eulergamma</literal> SHALL be identified as
+          having type <literal>real</literal>.
         </para>
       </listitem>
       <listitem>
         <para>
-          The MathML piecewise element SHALL be identified as having the type of the first case value.
-          All case values in the piecewise element, and if present, the otherwise expression MUST
+          The MathML <literal>piecewise</literal> element SHALL be identified as having the type of the first case value.
+          All case values in the <literal>piecewise</literal> element, and if present, the <literal>otherwise</literal> expression MUST
           also be identified as having the same type. The case conditions MUST be identified as having
-          type boolean.
+          type <literal>boolean</literal>.
         </para>
       </listitem>
       <listitem>
         <para>
           The type identification for all remaining MathML element information items, including for
-          the apply element information item with different operators, are left up to the secondary
+          the <literal>apply</literal> element information item with different operators, are left up to the secondary
           specifications.
         </para>
       </listitem>

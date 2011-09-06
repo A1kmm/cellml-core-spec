@@ -7,7 +7,7 @@
     <orderedlist>
       <listitem>
         <para>
-Every CellML Infoset SHALL be represented in an XML document which conforms with
+Every CellML Infoset SHALL be represented in an XML document that conforms with
 the well-formedness requirements of the XML 1.0 specification <xref linkend="XML"/>.
         </para>
       </listitem>
@@ -32,7 +32,7 @@ making zero or more of the following changes:
         <orderedlist>
           <listitem>
             <para>
-Changing the representation the XML file in ways which
+Changing the representation the XML file in ways that
 do not change the XML Information Set represented
             </para>
           </listitem>
@@ -65,7 +65,7 @@ beginning or end of a character information item.
       </listitem>
       <listitem>
         <para>
-CellML Processing Software MUST treat CellML Infosets which are equivalent
+CellML Processing Software MUST treat CellML Infosets that are equivalent
 according to the above rules in an identical fashion.
         </para>
       </listitem>
@@ -76,7 +76,7 @@ according to the above rules in an identical fashion.
     <title>Character information items</title>
     <para>
       An element information item in the CellML namespace MUST NOT contain any
-      character information items, except for character information items which
+      character information items, except for character information items that
       consist entirely of whitespace characters.
     </para>
   </section>
@@ -92,14 +92,14 @@ except as permitted in this specification.
       </listitem>
       <listitem>
         <para>
-CellML Infosets MUST NOT contain any character information items which are
+CellML Infosets MUST NOT contain any character information items that are
 children of element information items in a CellML namespace, except as
 permitted in this specification.
         </para>
       </listitem>
       <listitem>
         <para>
-CellML Processing Software SHOULD NOT attempt to process CellML Infosets which
+CellML Processing Software SHOULD NOT attempt to process CellML Infosets that
 contain information items in a CellML namespace other than the CellML 1.2 namespaces,
 unless they have been designed to support the version of CellML corresponding to the
 namespace.
@@ -153,7 +153,7 @@ Information Items.
       </listitem>
       <listitem>
         <para>
-          Information items in the empty namespace, which appear as children of extension element information items, SHALL also be treated as extension information items.
+          Information items in the empty namespace, that appear as children of extension element information items, SHALL also be treated as extension information items.
         </para>
       </listitem>
       <listitem>
@@ -173,7 +173,7 @@ an unrecognised extension element.
       </listitem>
       <listitem>
         <para>
-CellML Processing Software which reads CellML and then writes a modified
+CellML Processing Software that reads CellML and then writes a modified
 version back out SHOULD preserve unrecognised extension information items when
 the parent information item is not modified.
         </para>
@@ -206,7 +206,7 @@ items.
     <orderedlist>
       <listitem>
         <para>
-          A specific information item is an information item which is not:
+          A specific information item is an information item that is not:
           <orderedlist>
             <listitem>
               <para>
@@ -281,9 +281,9 @@ items.
       </listitem>
       <listitem>
         <para>
-          Two CellML Infosets which differ only by the addition, removal, or
+          Two CellML Infosets that differ only by the addition, removal, or
           modification of RDF Element Information Items (or Information Items
-          descended from them), but which have the same set of all RDF triples,
+          descended from them), but that have the same set of all RDF triples,
           SHALL be termed RDF-equivalent CellML Infosets.
         </para>
       </listitem>

@@ -36,7 +36,7 @@ according to the rules described in this document.
       <glossterm>CellML Processing Software</glossterm>
       <glossdef>
         <para>
-Software which processes CellML in accordance with the rules of this document.
+Software that processes CellML in accordance with the rules of this document.
         </para>
       </glossdef>
     </glossentry>
@@ -92,7 +92,7 @@ The namespace <uri>http://www.cellml.org/metadata/1.0#</uri>
       <glossterm>Extension Namespace</glossterm>
       <glossdef>
         <para>
-          Any namespace which is not a CellML namespace, and is not the RDF namespace, the MathML namespace, <uri>http://www.w3.org/XML/1998/namespace</uri>, <uri>http://www.w3.org/2000/xmlns/</uri>, <uri>http://www.w3.org/1999/xlink</uri>, or the empty namespace.
+          Any namespace that is not a CellML namespace, and is not the RDF namespace, the MathML namespace, <uri>http://www.w3.org/XML/1998/namespace</uri>, <uri>http://www.w3.org/2000/xmlns/</uri>, <uri>http://www.w3.org/1999/xlink</uri>, or the empty namespace.
         </para>
       </glossdef>
     </glossentry>
@@ -116,7 +116,7 @@ A Unicode character in the range U+0030 to U+0039.
       <glossterm>Basic Latin alphanumeric character</glossterm>
       <glossdef>
         <para>
-A Unicode character which is either a basic Latin alphabetic character or a European numeric character.
+A Unicode character that is either a basic Latin alphabetic character or a European numeric character.
         </para>
       </glossdef>
     </glossentry>

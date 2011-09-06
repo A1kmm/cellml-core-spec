@@ -23,7 +23,7 @@
         <para>
           Every component_ref element MAY in turn contain zero or more
           component_ref element children. In addition, component_ref elements
-          which are children of encapsulation elements MUST contain at least one
+          that are children of encapsulation elements MUST contain at least one
           component_ref element child.
         </para>
       </listitem>

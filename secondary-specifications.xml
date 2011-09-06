@@ -5,7 +5,7 @@
   <orderedlist>
     <listitem>
       <para>
-        A CellML Secondary Specification SHALL be a document which places additional restrictions on the structure and interpretation of CellML Models and CellML Infosets.
+        A CellML Secondary Specification SHALL be a document that places additional restrictions on the structure and interpretation of CellML Models and CellML Infosets.
       </para>
     </listitem>
     <listitem>
@@ -19,12 +19,12 @@
         <orderedlist>
           <listitem>
             <para>
-              support one or more specific CellML Secondary Specifications, and correctly process all models which comply both with this specification and with one or more of the selected CellML Secondary Specifications, or,
+              support one or more specific CellML Secondary Specifications, and correctly process all models that comply both with this specification and with one or more of the selected CellML Secondary Specifications, or,
             </para>
           </listitem>
           <listitem>
             <para>
-              correctly process all models which comply with this specification.
+              correctly process all models that comply with this specification.
             </para>
           </listitem>
         </orderedlist>

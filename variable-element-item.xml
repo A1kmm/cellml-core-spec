@@ -5,7 +5,7 @@
   <para>
     Variable element information items (referred to in this specification as
     variable elements) are element information items in the CellML 1.2
-    namespace with local name equal to variable, and which appear as a child
+    namespace with local name equal to variable which appear as a child
     of a component element.
   </para>
   <section>
@@ -14,7 +14,7 @@
       <listitem>
         <para>
           Every variable element MUST have each of the following attribute
-          information item in the empty namespace:
+          information items in the empty namespace:
           <orderedlist>
             <listitem>
               <para>
