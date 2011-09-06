@@ -25,6 +25,14 @@
       </listitem>
       <listitem>
         <para>
+          The name attribute. The value of the name attribute MUST be a
+          valid CellML Identifier. The value of the name attribute MUST
+          NOT be identical to the name attribute on any sibling import
+          element.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
           Imported CellML Infosets make up part of the model, so for the entire model to be valid, all imported CellML Infosets MUST also be valid under this specification.
         </para>
       </listitem>
