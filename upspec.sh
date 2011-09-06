@@ -13,4 +13,4 @@ CELLML_MEMBER=`cat ~/.cellml_member`
 
 URL="http://www.cellml.org/Members/$CELLML_MEMBER/draft-normative-spec$BRANCH/"
 
-echo -e "put toplevel.xhtml\nquit" | cadaver $URL
+echo -e "delete toplevel.xhtml\nput toplevel.xhtml\nquit" | cadaver $URL
